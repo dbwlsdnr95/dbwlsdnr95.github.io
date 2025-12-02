@@ -6,8 +6,10 @@ url: "https://dbwlsdnr95.github.io"
 permalink: pretty
 
 just_the_docs:
-  css:
-    - assets/css/custom.scss
+  color_scheme: auto
+  enable_darkmode: true
+
+
 
 aux_links:
   "GitHub Repo": "https://github.com/dbwlsdnr95/dbwlsdnr95.github.io"
