@@ -2,15 +2,12 @@ title: "Security Notes by dbwlsdnr95"
 description: "Cyber Security / Penetration Testing / Notes"
 
 # 🔥 최신 Just-the-Docs 테마 사용
-remote_theme: just-the-docs/just-the-docs
+remote_theme: just-the-docs
 
 url: "https://dbwlsdnr95.github.io"
 permalink: pretty
 
-# 🔥 다크모드 지원 (auto/light/dark 선택 가능)
-just_the_docs:
-  color_scheme: auto
-  enable_darkmode: true
+
 
 # 우측 상단 Github 링크
 aux_links:
