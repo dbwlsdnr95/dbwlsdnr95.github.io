@@ -1,0 +1,115 @@
+// GitBook Dark Theme for Just the Docs
+// ------------------------------------
+
+/* 기본 컬러 변수 */
+$bg-dark: #0f0f10;
+$bg-sidebar: #111114;
+$bg-content: #18181b;
+$text-light: #d9d9e3;
+$text-lighter: #c4c4cf;
+$accent: #3ea8ff;
+
+/* 전체 배경 다크 */
+body, html {
+  background: $bg-dark !important;
+  color: $text-light !important;
+}
+
+/* 본문 */
+.main-content {
+  background: $bg-content !important;
+  color: $text-light !important;
+}
+
+/* 링크 스타일 */
+a {
+  color: $accent !important;
+
+  &:hover {
+    color: lighten($accent, 10%) !important;
+  }
+}
+
+/* 좌측 사이드바 */
+.side-bar {
+  background: $bg-sidebar !important;
+  border-right: 1px solid #222 !important;
+}
+
+.side-bar a, .navigation-list-link {
+  color: $text-lighter !important;
+}
+
+.navigation-list-link:hover {
+  color: $accent !important;
+}
+
+.navigation-list .navigation-list-item.current > a {
+  color: $accent !important;
+  font-weight: 600;
+}
+
+/* 헤더 */
+.site-header {
+  background: $bg-sidebar !important;
+  border-bottom: 1px solid #222 !important;
+  color: $text-light !important;
+}
+
+/* 검색바 */
+.search-input {
+  background: #1e1e22 !important;
+  color: $text-light !important;
+  border: 1px solid #333 !important;
+
+  &::placeholder {
+    color: #666 !important;
+  }
+}
+
+/* 코드 블록 - GitBook 스타일 */
+.highlight pre, pre, code {
+  background: #1a1a1f !important;
+  color: #e6e6f0 !important;
+  border-radius: 6px !important;
+  padding: 12px !important;
+}
+
+/* 제목 스타일: GitBook 느낌 크게 & bold */
+h1, h2, h3 {
+  color: $text-light !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.3px;
+}
+
+/* 표 스타일 */
+table {
+  background: #1b1b1e !important;
+  border: 1px solid #2c2c2f !important;
+}
+
+table th {
+  background: #222226 !important;
+  color: $text-light !important;
+}
+
+table td {
+  color: $text-lighter !important;
+  border-color: #2c2c2f !important;
+}
+
+/* 인용문 GitBook 스타일 */
+blockquote {
+  border-left: 4px solid $accent !important;
+  background: #1a1a1e !important;
+  color: $text-lighter !important;
+  padding: 12px 16px !important;
+}
+
+/* 강조박스 스타일 */
+.note {
+  background: #1a1a20 !important;
+  border-left: 3px solid $accent !important;
+  padding: 12px !important;
+  border-radius: 4px;
+}
