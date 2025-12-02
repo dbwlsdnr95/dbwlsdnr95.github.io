@@ -1,6 +1,6 @@
 ---
 title: Home
-layout: home
+nav_order: 1
+has_children: true
 ---
-
-jinwook교육
+홈 화면입니다.
