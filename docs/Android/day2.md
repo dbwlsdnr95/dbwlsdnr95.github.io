@@ -5,46 +5,7 @@ parent: Android
 nav_order: 2
 ---
 
-
-
-## 1. SQL Injection — Oracle 문제 정리
-
-### 🔸 Oracle 8번 문제
-
-```
-select * from 계정 
-where login_id = '아이디' 
-and login_pwd = '비밀번호';
-```
-
-예시 공격:
-
-```
-where login_id='qwesss2@s.com' or 'q'='w' 
-and login_pwd='암호문';
-```
-
-Boolean 평가 흐름:
-
-```
-T or F and T/F → T or F → T
-```
-
-------
-
-### 🔸 Oracle 7번 문제
-
-키워드 검색:
-
-```
-select * from 테이블 where keyword like '%검색어%'
-order by 컬럼명 ASC/DESC,
-(case when 공격쿼리 then 1 else  end)
-```
-
-------
-
-## 2. 모바일 앱 분석 환경 구축
+## 1. 모바일 앱 분석 환경 구축
 
 | 용도       | 이름                 | 설명                         |
 | ---------- | -------------------- | ---------------------------- |
@@ -70,7 +31,7 @@ order by 컬럼명 ASC/DESC,
 
 ------
 
-## 3. Nox 최초 세팅
+## 2. Nox 최초 세팅
 
 1. 실행 중인 에뮬레이터가 64bit인지 확인 (멀티 실행기 Ctrl+6)
 2. 기존 에뮬레이터 삭제 후 Android 9 64bit 추가
@@ -80,7 +41,7 @@ order by 컬럼명 ASC/DESC,
 
 ------
 
-## 4. ADB(Android Debug Bridge)
+## 3. ADB(Android Debug Bridge)
 
 ### ✔ 개념
 
@@ -103,7 +64,7 @@ PC ↔ 스마트폰을 USB로 연결해 제어/파일관리하는 도구
 
 ------
 
-## 5. ADB 명령어
+## 4. ADB 명령어
 
 | 명령어      | 설명                   |
 | ----------- | ---------------------- |
@@ -124,7 +85,7 @@ pm list packages -f | grep 검색어
 
 ------
 
-## 6. APK 설치 (수동/ADB)
+## 5. APK 설치 (수동/ADB)
 
 ### 스마트폰 수동 설치
 
@@ -139,7 +100,7 @@ adb install sample.apk
 
 ------
 
-## 7. apktool 사용법
+## 6. apktool 사용법
 
 ```
 apktool d 파일.apk     # 디컴파일
@@ -155,7 +116,7 @@ com.scottyab.sample.rootbeer
 
 ------
 
-## 8. Activity 분석
+## 7. Activity 분석
 
 예시:
 
@@ -182,7 +143,7 @@ kr.co.shop → kr.co.kakao.pay.payactivity (exported=false)
 
 ------
 
-## 9. Android Component 종류
+## 8. Android Component 종류
 
 1. Activity
 2. Service
@@ -191,7 +152,7 @@ kr.co.shop → kr.co.kakao.pay.payactivity (exported=false)
 
 ------
 
-## 10. 앱 종류 비교
+## 9. 앱 종류 비교
 
 ### ▲ Web App / Mobile Web
 
@@ -211,7 +172,7 @@ kr.co.shop → kr.co.kakao.pay.payactivity (exported=false)
 
 ------
 
-## 11. WebView 예시 요청
+## 10. WebView 예시 요청
 
 ```
 GET /
