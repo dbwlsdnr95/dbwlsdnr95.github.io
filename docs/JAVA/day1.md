@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "java 공부 1일차"
-parent: java
+parent: JAVA
 nav_order: 2
 ---
 
