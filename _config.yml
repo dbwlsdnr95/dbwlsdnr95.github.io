@@ -1,8 +1,10 @@
-title: "dbwlsdnr95"
-description: "Security Portfolio"
-theme: "just-the-docs"
+title: "Security Notes by dbwlsdnr95"
+description: "Cyber Security / Penetration Testing / Notes"
+theme: just-the-docs
 
 url: "https://dbwlsdnr95.github.io"
+
+color_scheme: dark
 
 aux_links:
   "GitHub Repo": "https://github.com/dbwlsdnr95/dbwlsdnr95.github.io"
