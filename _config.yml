@@ -9,6 +9,7 @@ color_scheme: dark
 aux_links:
   "GitHub Repo": "https://github.com/dbwlsdnr95/dbwlsdnr95.github.io"
 
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
+# ❌ GitHub Pages는 Just-the-docs에서 plugin 필요 없음
+# plugins:
+#   - jekyll-feed
+#   - jekyll-seo-tag
