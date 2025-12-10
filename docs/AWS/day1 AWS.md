@@ -5,9 +5,7 @@ parent: AWS
 nav_order: 2
 ---
 
-# ☁️ AWS Basic → IAM 전체 정리 (Markdown)
-
-------
+# ☁️ AWS Basic → IAM 전체 정리
 
 # #1. 클라우드 컴퓨팅 기본 개념
 
