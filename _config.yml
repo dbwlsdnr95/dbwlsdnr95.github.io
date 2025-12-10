@@ -1,10 +1,12 @@
-title: "Security Notes by dbwlsdnr95"
-description: "Cyber Security / Penetration Testing / Notes"
-
-remote_theme: just-the-docs/just-the-docs
+title: "dbwlsdnr95"
+description: "Security Portfolio"
+theme: "just-the-docs"
 
 url: "https://dbwlsdnr95.github.io"
-permalink: pretty
 
 aux_links:
   "GitHub Repo": "https://github.com/dbwlsdnr95/dbwlsdnr95.github.io"
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
