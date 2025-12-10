@@ -1,10 +1,15 @@
 title: "Security Notes by dbwlsdnr95"
 description: "Cyber Security / Penetration Testing / Notes"
 theme: just-the-docs
-color_scheme: custom
 
 url: "https://dbwlsdnr95.github.io"
-permalink: pretty
+
+color_scheme: dark
 
 aux_links:
   "GitHub Repo": "https://github.com/dbwlsdnr95/dbwlsdnr95.github.io"
+
+# ❌ GitHub Pages는 Just-the-docs에서 plugin 필요 없음
+# plugins:
+#   - jekyll-feed
+#   - jekyll-seo-tag
