@@ -5,7 +5,7 @@ parent: JAVA
 nav_order: 2
 ---
 
-# 🧠 Java 입문 - Hello World
+#  Java 입문 - Hello World
 
 ## 📍 개발 환경 설정
 
