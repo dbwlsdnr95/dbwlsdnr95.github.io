@@ -5,9 +5,9 @@ parent: JAVA
 nav_order: 2
 ---
 
-# 🧠 Java 입문 - Hello World
+#  Java 입문 - Hello World
 
-## 📍 개발 환경 설정
+##  개발 환경 설정
 
 ### IDE 선택
 
@@ -24,7 +24,7 @@ nav_order: 2
 
 ------
 
-## 💻 IntelliJ 설치 및 설정
+## IntelliJ 설치 및 설정
 
 1. [JetBrains IntelliJ IDEA 다운로드](https://www.jetbrains.com/ko-kr/idea/download)
 2. **Community Edition (무료 버전)** 선택
@@ -34,7 +34,7 @@ nav_order: 2
 
 ------
 
-## ⚙️ 새 프로젝트 만들기
+## 새 프로젝트 만들기
 
 **New Project 설정**
 
@@ -53,7 +53,7 @@ nav_order: 2
 
 ------
 
-## ▶️ 첫 실행
+## 첫 실행
 
 1. 프로젝트 생성 후 자동으로 `Main.java`가 생성됨
 2. 초록색 ▶ 버튼 클릭 → `Run 'Main.main()'`
@@ -63,7 +63,7 @@ nav_order: 2
 
 ------
 
-## 💡 자바 코드 구조 이해
+## 자바 코드 구조 이해
 
 ```
 public class HelloJava {
@@ -91,7 +91,7 @@ public class HelloJava {
 
 ------
 
-## ✏️ 주석(Comment)
+##  주석(Comment)
 
 - **한 줄 주석**: `//`
 - **여러 줄 주석**: `/* ... */`
@@ -108,9 +108,7 @@ public class CommentJava {
 
 > 주석은 프로그램에 영향을 주지 않으며, 사람이 읽기 위한 설명용이다1. Hello World.
 
-------
-
-## ☕ 자바란?
+##  자바란?
 
 자바는 **표준 스펙**과 **구현체**로 구성됨.
 
@@ -125,7 +123,7 @@ public class CommentJava {
 
 ------
 
-## 🔄 컴파일과 실행 과정
+## 컴파일과 실행 과정
 
 1. `.java` (소스 코드) → `javac` 컴파일러 → `.class` (바이트코드)
 2. `.class` 실행 시 → JVM(Java Virtual Machine)이 작동
@@ -137,9 +135,7 @@ java Hello
 
 > IntelliJ에서는 이 과정이 자동으로 처리됨.
 
-------
-
-## 🧩 자바와 OS 독립성
+##  자바와 OS 독립성
 
 | 일반 프로그램           | 자바 프로그램                |
 | ----------------------- | ---------------------------- |
@@ -152,7 +148,7 @@ java Hello
 
 ------
 
-## 🖥️ 개발과 배포 환경
+## 개발과 배포 환경
 
 | 구분    | 환경          | 설명                           |
 | ------- | ------------- | ------------------------------ |
@@ -164,7 +160,7 @@ java Hello
 
 ------
 
-## ✅ 정리
+## 정리
 
 - IntelliJ + JDK 21 설치 후 시작
 - `HelloJava.java` 파일로 첫 코드 실행
