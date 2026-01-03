@@ -155,7 +155,27 @@ Java.perform(() => {
 - 조건 초과 시 값 리셋됨
 - **add 함수 후킹 or 값 직접 조작**으로 해결 가능
 
-(개념 이해 중심 실습)
+```
+0 + 43 = 43 + 49 = 92 +14 = 106 +52 = 158 ...... 13 9002 9015  X -> 13
+    public static void addChall06(int i) {
+        chall06 += i;
+        if (chall06 > 9000) {
+            chall06 = i;
+        }
+    }
+1초마다 랜덤한 1~50숫자 뽑아서 addChall06(숫자) 계속 실행해~
+        challenge_06.addChall06(new Random().nextInt(50) + 1);
+        new Timer().scheduleAtFixedRate(new TimerTask() { // from class: uk.rossmarks.fridalab.MainActivity.2
+            @Override // java.util.TimerTask, java.lang.Runnable
+            public void run() {
+                int iNextInt = new Random().nextInt(50) + 1;
+                challenge_06.addChall06(iNextInt);
+
+            }
+        }, 0L, 1000L);
+```
+
+
 
 ------
 
