@@ -1,272 +1,246 @@
----
-layout: default
-title: "Android 보안 11일차"
-parent: Android
-nav_order: 11
----
+# Frida Labs 실습 정리 (FridaLab)
 
-# Frida 동적 분석 정리
+## 실습 환경
 
-## 1. Frida 기본 구조
-
-### 구성 요소
-
-- **frida-server** : 안드로이드 단말에서 실행
-- **frida-tools** : PC에서 실행 (`frida -U -l test.js`)
-- **Frida Script** : JavaScript 기반
-- **Python 연동 가능** : Python ↔ Frida JS 상호작용
-
-### 기본 실행 흐름
-
-```
-adb shell
-cd /data/local/tmp
-./frida-server &
-frida -U -f com.test.app -l test.js --no-pause
-```
+- 대상 앱: **FridaLab (Ross Marks)**
+- 분석 방식: **Frida 기반 동적 분석**
+- 핵심 기술
+  - Java.use
+  - Java.choose
+  - 메소드 후킹
+  - 필드 값 조작
+  - UI 제어
 
 ------
 
-## 2. 메모리 개념 정리
+## Lab 01 — 필드 값 조작
 
-### 문자열과 메모리
+### 목표
 
-- Java `String` → 객체
-- Native 영역 → `char[]`, `byte[]`
-- Null 종료 문자열
+- `chall01` 조건을 만족시켜 완료 처리
 
-```
-h a c k e r 00 00 00
-t e s t 00
-```
+### 핵심 포인트
 
-### 포인터
+- `chall01`은 **static 필드**
+- 메소드 호출 없이 **값만 바꾸면 해결**
+
+### Frida 스크립트
 
 ```
-ptr("0x0000")
-new NativePointer("0x0000")
-```
-
-### Native 함수
-
-```
-Module.getExportByName("libc.so", "fopen")
-```
-
-------
-
-## 3. Native / Java 후킹 차이
-
-### Native
-
-```
-var func = Module.getExportByName(null, "abc");
-
-Interceptor.attach(func, {
-    onEnter(args) {},
-    onLeave(retval) {}
-});
-```
-
-### Java
-
-```
-Java.use("클래스명").메소드.implementation = function() {
-    return 값;
-};
-```
-
-------
-
-## 4. Java.use vs Java.choose
-
-### Java.use
-
-- 클래스 설계도 자체 수정
-- static 함수, 메소드 구현 변경
-
-```
-var Main = Java.use("MainActivity");
-Main.test.implementation = function() {};
-```
-
-### Java.choose
-
-- 이미 생성된 인스턴스 탐색
-- Activity, Fragment 제어
-
-```
-Java.choose("MainActivity", {
-  onMatch: function(instance) {
-    instance.test();
-  }
+Java.perform(() => {
+    var chall01 = Java.use("uk.rossmarks.fridalab.challenge_01");
+    chall01.chall01.value = 1;
 });
 ```
 
 ------
 
-## 5. 메모리 변조 도구 개념 (Cheat Engine)
+## Lab 02 — 인스턴스 메소드 호출
 
-- 메모리 주소 검색
-- 값 필터링
-- 덮어쓰기
-- 런타임 상태 변경
+### 목표
 
-예:
+- `chall02()` 메소드 직접 호출
 
-- 전체 메모리에서 `05` 검색
-- 현재 값이 `03`인 주소만 필터
-- 값 변경
+### 핵심 포인트
 
-------
+- static 아님 → `Java.use` 불가
+- **이미 생성된 MainActivity 인스턴스 필요**
+- `Java.choose()` 사용
 
-## 6. APK / IPA 구조
-
-- **APK** = ZIP
-- **IPA** = ZIP
-- 내부에 ELF / dex 포함
-
-------
-
-## 7. Frida Java API 핵심
-
-### 메소드 후킹
+### Frida 스크립트
 
 ```
-Java.use("java.lang.String")
-```
-
-### UI 제어는 MainThread 필수
-
-```
-Java.scheduleOnMainThread(function() {
-    // UI 조작
-});
-```
-
-------
-
-## 8. 접근 제한자 개념
-
-| 키워드     | 설명               |
-| ---------- | ------------------ |
-| public     | 외부 접근 가능     |
-| private    | 내부 전용          |
-| static     | 인스턴스 없이 호출 |
-| non-static | 인스턴스 필요      |
-
-```
-MainActivity.test      // static
-ma.test                // instance
-```
-
-------
-
-## 9. Activity 생성 시점
-
-- 이미 생성 → `Java.choose`
-- 새로 생성 → `$new`
-
-```
-var Main = Java.use("MainActivity");
-var ma = Main.$new();
-```
-
-------
-
-## 10. Smali 조건 분기 정리
-
-| 명령어 | 의미         |
-| ------ | ------------ |
-| if-eq  | 같다         |
-| if-neq | 다르다       |
-| if-eqz | 0이면        |
-| if-nez | 0이 아니면   |
-| if-ltz | 0보다 작으면 |
-| if-lez | 0 이하       |
-| if-gtz | 0 초과       |
-| if-gez | 0 이상       |
-| goto   | 무조건 점프  |
-
-------
-
-## 11. Smali 패치 흐름
-
-1. APK 디컴파일
-2. `.smali` 파일 수정
-3. 재빌드
-4. 재서명
-5. 설치
-6. 실행
-
-```
-am start 패키지/액티비티
-```
-
-------
-
-## 12. 무결성 검증 우회 개념
-
-- CRC 체크
-- CPU_ABI 체크
-- 디버깅 탐지
-
-### 예시
-
-```
-var Intrinsics = Java.use("kotlin.jvm.internal.Intrinsics");
-
-Intrinsics.areEqual.implementation = function(a, b) {
-    if (a.toString() == "x86_64") {
-        return true;
-    }
-    return this.areEqual(a, b);
-};
-```
-
-### CRC 우회
-
-```
-var Zip = Java.use("java.util.zip.ZipEntry");
-Zip.getCrc.implementation = function() {
-    return 1302005358;
-};
-```
-
-------
-
-## 13. UI 제어 예제
-
-```
-Java.perform(function () {
-    Java.scheduleOnMainThread(function () {
-        Java.choose("MainActivity", {
-            onMatch: function (instance) {
-                instance.integritycheck();
-            }
-        });
+Java.perform(() => {
+    Java.choose("uk.rossmarks.fridalab.MainActivity", {
+        onMatch: function (ins) {
+            ins.chall02();
+        },
+        onComplete: function () {}
     });
 });
 ```
 
 ------
 
-## 14. FridaLab 참고
+## Lab 03 — 리턴값 강제 변경
 
-- FridaLab (Ross Marks)
-- Google 검색: `fridalab ross`
-- 실습용 난독화 / 무결성 우회 앱
+### 목표
+
+- `chall03()` 결과를 무조건 성공 처리
+
+### 핵심 포인트
+
+- 메소드 후킹
+- 리턴값을 `true`로 하드코딩
+
+### Frida 스크립트
+
+```
+Java.perform(() => {
+    var MainActivity = Java.use("uk.rossmarks.fridalab.MainActivity");
+    MainActivity.chall03.implementation = function () {
+        return true;
+    };
+});
+```
 
 ------
 
-## 15. 동적 분석 핵심 정리
+## Lab 04 — Activity 생성 타이밍 제어
 
-- 실행 중 로직 변경
-- 무결성 검사 우회 가능
-- 메모리 보호는 제한적
-- 정적 분석 + 병행 필수
-- Smali 패치 + Frida 조합 강력
+### 목표
+
+- `chall04("frida")`를 정확한 시점에 호출
+
+### 핵심 포인트
+
+- Activity 생성 직후 실행 필요
+- `onCreate()` 후킹 + `Java.choose()`
+
+### Frida 스크립트
+
+```
+Java.perform(() => {
+    var MainActivity = Java.use("uk.rossmarks.fridalab.MainActivity");
+
+    MainActivity.onCreate.implementation = function (bundle) {
+        this.onCreate(bundle);
+
+        Java.choose("uk.rossmarks.fridalab.MainActivity", {
+            onMatch: function (ins) {
+                ins.chall04("frida");
+            },
+            onComplete: function () {}
+        });
+    };
+});
+```
 
 ------
 
-원하면 다음도 바로 해줄 수 있어:
+## Lab 05 — 인자 값 강제 변경
+
+### 목표
+
+- `chall05(String str)` 조건 만족
+
+### 핵심 포인트
+
+- 함수 인자 값을 **실행 중 조작**
+- 항상 `"frida"` 전달
+
+### Frida 스크립트
+
+```
+Java.perform(() => {
+    var MainActivity = Java.use("uk.rossmarks.fridalab.MainActivity");
+
+    MainActivity.chall05.implementation = function (str) {
+        return this.chall05("frida");
+    };
+});
+```
+
+------
+
+## Lab 06 — 누적 값 조건 우회
+
+### 목표
+
+- `chall06` 값이 특정 범위를 넘기지 않도록 제어
+
+### 핵심 포인트
+
+- 내부에서 랜덤 값이 계속 누적됨
+- 조건 초과 시 값 리셋됨
+- **add 함수 후킹 or 값 직접 조작**으로 해결 가능
+
+(개념 이해 중심 실습)
+
+------
+
+## Lab 07 — 내부 비밀값 추출
+
+### 목표
+
+- 내부에 저장된 비밀번호 확인 후 전달
+
+### 핵심 포인트
+
+- static 필드에 값 저장됨
+- 값을 읽어서 그대로 메소드에 전달
+
+### Frida 스크립트
+
+```
+Java.perform(() => {
+    var chall07 = Java.use("uk.rossmarks.fridalab.challenge_07");
+    var password = chall07.chall07.value;
+
+    Java.choose("uk.rossmarks.fridalab.MainActivity", {
+        onMatch: function (ins) {
+            ins.chall07(password);
+        },
+        onComplete: function () {}
+    });
+});
+```
+
+------
+
+## Lab 08 — UI 동적 조작
+
+### 목표
+
+- 버튼 텍스트를 `"Confirm"`으로 변경
+
+### 핵심 포인트
+
+- UI 조작은 **Main Thread 필수**
+- `onResume()` 후킹
+- `findViewById()` → Button → `setText()`
+
+### Frida 스크립트
+
+```
+Java.perform(function () {
+    const Activity = Java.use("android.app.Activity");
+    const Button = Java.use("android.widget.Button");
+    const StringCls = Java.use("java.lang.String");
+
+    Activity.onResume.implementation = function () {
+        this.onResume();
+
+        Java.scheduleOnMainThread(() => {
+            const res = this.getResources();
+            const pkg = this.getPackageName();
+            const id = res.getIdentifier("check", "id", pkg);
+
+            if (id !== 0) {
+                const btn = Java.cast(this.findViewById(id), Button);
+                btn.setText(StringCls.$new("Confirm"));
+            }
+        });
+    };
+});
+```
+
+------
+
+## 종합 정리
+
+### Frida Labs 핵심 포인트
+
+- **Java.use**
+  - 클래스 설계도 수정
+  - 메소드 구현 변경
+- **Java.choose**
+  - 이미 생성된 인스턴스 제어
+- **동적 분석의 장점**
+  - 무결성 검사 우회
+  - 조건 분기 강제 통과
+  - UI / 로직 실시간 조작 가능
+- **실무 활용**
+  - CTF 문제 풀이
+  - 모바일 앱 취약점 검증
+  - 보안 솔루션 우회 분석
