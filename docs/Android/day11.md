@@ -1,3 +1,10 @@
+---
+layout: default
+title: "Android 보안 11일차"
+parent: Android
+nav_order: 11
+---
+
 # Frida Labs 실습 정리 (FridaLab)
 
 ## 실습 환경
