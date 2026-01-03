@@ -320,3 +320,165 @@ Java.perform(() => {
 
 ````
 
+### frida labs 풀이
+
+### 1️⃣ com.ad2001.frida0x1`
+
+- 스크립트: `fridalabs/1번.js`
+
+- 설명
+   `MainActivity.get_random()` 메서드를 후킹하여
+   랜덤 값을 고정하거나 직접 제어해 조건을 만족시킴.
+
+  ```
+  Java.perform(() => {
+  var MainActivity = Java.use("com.ad2001.frida0x1.MainActivity");
+  MainActivity["get_random"].implementation = function () {
+      console.log(`MainActivity.get_random is called`);
+      let result = this["get_random"]();
+      console.log(`MainActivity.get_random result=${result}`);
+      return result;
+  };
+  });
+  ```
+
+  
+
+------
+
+### 2️⃣ `com.ad2001.frida0x2`
+
+- 스크립트: `fridalabs/2번.js`
+
+- 설명
+   `MainActivity.get_flag(4919)` 메서드를 직접 호출하여
+   조건 검증을 우회하고 FLAG 획득.
+
+  ```
+  Java.perform(function () {
+      var Main = Java.use('com.ad2001.frida0x2.MainActivity');
+      Main.get_flag(4919);
+  });
+  ```
+
+  
+
+------
+
+### 3️⃣ `com.ad2001.frida0x3`
+
+- 스크립트: `fridalabs/3번.js`
+
+- 설명
+   `Checker.code` 정적 필드를 **512로 강제 설정**하여
+   버튼 클릭 시 `YOU WON!!!` 조건을 만족하도록 조작.
+
+  ```
+  Java.perform(function () {
+      var Checker = Java.use("com.ad2001.frida0x3.Checker");
+      Checker.code.value = 512;
+  });
+  ```
+
+  
+
+------
+
+### 4️⃣ `com.ad2001.frida0x4`
+
+- 스크립트: `fridalabs/4번.js`
+
+- 설명
+   `Check` 클래스의 인스턴스를 Frida로 생성한 뒤
+   `get_flag(1337)`을 직접 호출하여 XOR 기반 복호화 결과 획득.
+
+  ```
+  Java.perform(function () {
+      var Check = Java.use("com.ad2001.frida0x4.Check");
+  
+      var obj = Check.$new();
+      var result = obj.get_flag(1337);
+  
+      console.log("플레그 =", result);
+  });
+  ```
+
+  
+
+------
+
+### 5️⃣ `com.ad2001.frida0x5`
+
+- 스크립트: `fridalabs/5번.js`
+
+- 설명
+   현재 실행 중인 `MainActivity` 인스턴스를 탐색한 후
+   `flag(1337)` 메서드를 호출하여 AES 복호화된 FLAG 출력.
+
+  ```
+  Java.perform(function () {
+      Java.choose("com.ad2001.frida0x5.MainActivity", {
+          onMatch: function (obj) {
+              obj.flag(1337);
+          },
+          onComplete: function () {
+          }
+      });
+  });
+  ```
+
+  
+
+------
+
+### 6️⃣ `com.ad2001.frida0x6`
+
+- 스크립트: `fridalabs/6번.js`
+
+- 설명
+   `Checker` 객체를 Frida에서 직접 생성하여
+
+  - `num1 = 1234`
+
+  - `num2 = 4321`
+     로 세팅한 뒤 `MainActivity.get_flag(obj)` 호출로 조건 통과.
+
+    ```
+    Java.perform(function () {
+        Java.choose("com.ad2001.frida0x6.MainActivity", {
+            onMatch: function (activity) {
+                var Checker = Java.use("com.ad2001.frida0x6.Checker");
+                var obj = Checker.$new();
+                obj.num1.value = 1234;
+                obj.num2.value = 4321;
+                activity.get_flag(obj);
+            },
+            onComplete: function () {
+            }
+        });
+    });
+    ```
+
+    
+
+------
+
+### 7️⃣ `com.ad2001.frida0x7`
+
+- 스크립트: `fridalabs/7번.js`
+
+- 설명
+   `Checker` 생성자(오버로드)를 후킹하여
+   전달되는 인자 값을 강제로 **513 이상**으로 변경함으로써
+   조건문(`num1 > 512 && num2 > 512`)을 항상 만족시키도록 우회.
+
+  ```
+  Java.perform(function () {
+      var Checker = Java.use("com.ad2001.frida0x7.Checker");
+      Checker.$init.overload('int', 'int').implementation = function (a, b) {
+          return this.$init(513, 513);
+      };
+  });
+  ```
+
+  
