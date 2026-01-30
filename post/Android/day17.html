@@ -1,0 +1,182 @@
+<!DOCTYPE html><html lang="ko"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" as="image" href="/profile_cute.png"/><link rel="stylesheet" href="/_next/static/css/fff7d7d50ba66cff.css" crossorigin="" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-c5f8510880a90daa.js" crossorigin=""/><script src="/_next/static/chunks/fd9d1056-c50cb70e7323352b.js" async="" crossorigin=""></script><script src="/_next/static/chunks/69-f8546037c2082669.js" async="" crossorigin=""></script><script src="/_next/static/chunks/main-app-baff347ce7e39457.js" async="" crossorigin=""></script><script src="/_next/static/chunks/250-069982e43c2ae463.js" async=""></script><script src="/_next/static/chunks/app/layout-ada0ccfdc2732042.js" async=""></script><title>jinwk note</title><meta name="description" content="jinwk dev note"/><script>
+              (function() {
+                try {
+                  const savedTheme = localStorage.getItem('theme');
+                  // Default to 'dark' if no save found, ignoring system preference for now to start dark
+                  const theme = savedTheme || 'dark';
+                  document.documentElement.setAttribute('data-theme', theme);
+                } catch (e) {}
+              })();
+            </script><script src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js" crossorigin="" noModule=""></script></head><body><div class="app-container"><aside class="sidebar"><div class="profile-section"><div class="profile-img-wrapper"><img src="/profile_cute.png" alt="Profile" class="profile-img"/></div><div class="profile-name" style="display:flex;align-items:center;justify-content:center;gap:0.5rem">jinwook yu<a style="font-size:0.9rem;opacity:0.5;text-decoration:none" href="/admin">⚙️</a></div><div class="profile-subtitle" style="font-size:0.9rem;color:var(--text-muted);margin-bottom:1rem">dbwlsdnr95</div><div class="profile-bio" style="white-space:pre-line;font-size:0.85rem;text-align:left;width:100%">웹·모바일 진단 ,솔루션 운영 및 클라우드 보안을 경험했고, 현재는 모의해킹·취약점 분석·CVE 연구에 집중하고 있습니다. 실전 기반 보안 역량을 꾸준히 확장하고 있습니다.</div></div><nav class="nav-section"><div class="nav-title">분류 전체보기</div><ul class="nav-list" style="margin-bottom:2rem"><li class="nav-item"><a class="" href="/">전체보기</a></li></ul><div style="margin-bottom:2rem"><div class="nav-title">교육</div><ul class="nav-list"><li class="nav-item"><a class="" href="/category/Android">Android</a></li><li class="nav-item"><a class="" href="/category/JAVA">JAVA</a></li><li class="nav-item"><a class="" href="/category/AWS">AWS</a></li></ul></div></nav></aside><main class="main-content"><article class="article-container"><div class="article-header"><span class="article-category">Android</span><h1 class="article-title">Android 보안 17일차</h1></div><div class="article-content"><h1>EQST LMS Wargame – JNI 분석 정리</h1>
+<h2>1. Frida 버전 이슈</h2>
+<h3>Export 함수 찾기 변화</h3>
+<ul>
+<li>예전 방식 (동작 X)</li>
+</ul>
+<pre><code>Module.findExportByName(null, "함수명");
+</code></pre>
+<ul>
+<li>현재 Frida 권장 방식</li>
+</ul>
+<pre><code>Module.findGlobalExportByName("함수명");
+</code></pre>
+<h3>버전 호환성</h3>
+<ul>
+<li>최신 Frida에서 일부 Wargame 동작 문제 발생</li>
+<li><strong>Frida 17 → 14로 다운그레이드 후 정상 동작</strong></li>
+</ul>
+<hr>
+<h2>2. C / Java boolean 차이</h2>
+<h3>C / C++</h3>
+<ul>
+<li><code>bool</code>
+<ul>
+<li><code>0</code> : false</li>
+<li><code>1</code> : true</li>
+</ul>
+</li>
+<li>내부적으로 <code>int</code></li>
+</ul>
+<h3>Java / JNI</h3>
+<ul>
+<li><code>boolean</code>, <code>jboolean</code></li>
+<li>JNI 시그니처에서는 <code>undefined8</code> 등으로 보일 수 있음</li>
+</ul>
+<h3>JNI 함수 시그니처 예시</h3>
+<pre><code>bool Java_kr_co_eqst_aos_app039_MainActivity_koalavsmonkey(JNIEnv* env, jobject thiz)
+</code></pre>
+<hr>
+<h2>3. JNI 함수 호출 구조</h2>
+<ul>
+<li>Java Activity에서 Native 함수 호출</li>
+<li>JNI 함수는 항상 다음 인자를 가짐</li>
+</ul>
+<pre><code>JNIEnv*
+jobject (this)
+[추가 인자들]
+</code></pre>
+<hr>
+<h2>4. 3번 문제 – strcmp 리턴값 변조</h2>
+<h3>핵심 아이디어</h3>
+<ul>
+<li><code>strcmp()</code> 결과를 조작해 조건을 항상 참으로 만들기</li>
+<li><code>"eqst"</code> 와 비교되는 경우만 타겟팅</li>
+</ul>
+<h3>Frida 코드</h3>
+<pre><code>var strcmpPtr = Module.findGlobalExportByName("strcmp");
+var inja2;
+
+Interceptor.attach(strcmpPtr, {
+    onEnter: function (args) {
+        inja2 = args[1].readCString();
+        if (inja2 == "eqst") {
+            console.log("비교 대상:", args[0].readCString());
+            console.log("strcmp 호출됨");
+        }
+    },
+    onLeave: function (re) {
+        if (inja2 == "eqst") {
+            console.log("결과를 참으로 변조");
+            re.replace(0x0); // strcmp == 0 → 동일
+        }
+    }
+});
+</code></pre>
+<hr>
+<h2>5. Spawn 모드 주의사항</h2>
+<pre><code>frida -U -f 패키지명
+</code></pre>
+<ul>
+<li>Spawn 상태에서는 Native 모듈이 아직 로드되지 않아
+<ul>
+<li><code>Process.findModuleByName()</code> 실패 가능</li>
+</ul>
+</li>
+<li>해결 방법
+<ul>
+<li><code>System.loadLibrary</code> 이후 후킹</li>
+<li><code>onCreate</code> 후킹</li>
+<li>일정 시간 delay 후 실행</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2>6. Native 함수 Offset 기반 후킹</h2>
+<h3>메모리 구조</h3>
+<pre><code>libnative-lib.so
+base = 0x00100000
+함수 = 0x00101930
+offset = 0x1930
+</code></pre>
+<h3>Frida 코드</h3>
+<pre><code>var libMod = Process.findModuleByName("libnative-lib.so");
+console.log("native-lib base:", libMod.base);
+
+var funcPtr = libMod.base.add(0x1930);
+console.log("LMS 문자열 리턴 함수:", funcPtr);
+
+Interceptor.attach(funcPtr, {
+    onLeave: function (ret) {
+        var newPtr = Memory.allocUtf8String("eqst");
+        ret.replace(newPtr);
+    }
+});
+</code></pre>
+<hr>
+<h2>7. strcmp 모니터링용 후킹 (확인용)</h2>
+<pre><code>var strcmpPtr = Module.findGlobalExportByName("strcmp");
+var inja2;
+
+Interceptor.attach(strcmpPtr, {
+    onEnter: function (args) {
+        inja2 = args[1].readCString();
+        if (inja2 == "eqst") {
+            console.log("비교 문자열:", args[0].readUtf8String());
+            console.log("strcmp 호출됨");
+        }
+    }
+});
+</code></pre>
+<hr>
+<h2>8. Native 함수 직접 호출 (Flag 추출)</h2>
+<h3>목표</h3>
+<ul>
+<li>Native 함수가 반환하는 <code>jstring</code> 직접 호출하여 Flag 획득</li>
+</ul>
+<h3>Frida 코드</h3>
+<pre><code>Java.perform(function () {
+
+    const soName = "libnative-lib.so";
+    const module = Process.getModuleByName(soName);
+    const realflagPtr = module.base.add(0x1070);
+
+    console.log("[+] realflag 주소:", realflagPtr);
+
+    const realflag = new NativeFunction(
+        realflagPtr,
+        "pointer",              // jstring
+        ["pointer", "pointer"]  // JNIEnv*, jclass
+    );
+
+    const env = Java.vm.getEnv();
+    const clazz = ptr(0);
+
+    const jstr = realflag(env.handle, clazz);
+    console.log("[+] jstring:", jstr);
+
+    const result = env.getStringUtfChars(jstr).readCString();
+    console.log("[+] result:", result);
+});
+</code></pre>
+<hr>
+<h2>9. 핵심 개념 요약</h2>
+<ul>
+<li><code>Module.findGlobalExportByName</code> 사용</li>
+<li><code>strcmp == 0</code> → 문자열 동일</li>
+<li>Native 함수는 <strong>base + offset</strong> 사고</li>
+<li>Spawn 모드에서는 Native 로딩 타이밍 중요</li>
+<li><code>jstring</code>은 반드시 <code>JNIEnv</code>를 통해 문자열로 변환</li>
+<li>attach = 감시 + 변조</li>
+<li>replace = 완전 치환</li>
+</ul>
+</div></article></main></div><script src="/_next/static/chunks/webpack-c5f8510880a90daa.js" crossorigin="" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0]);self.__next_f.push([2,null])</script><script>self.__next_f.push([1,"1:HL[\"/_next/static/css/fff7d7d50ba66cff.css\",\"style\",{\"crossOrigin\":\"\"}]\n0:\"$L2\"\n"])</script><script>self.__next_f.push([1,"3:I[7690,[],\"\"]\n6:I[5613,[],\"\"]\n9:I[1778,[],\"\"]\na:I[8383,[\"250\",\"static/chunks/250-069982e43c2ae463.js\",\"185\",\"static/chunks/app/layout-ada0ccfdc2732042.js\"],\"\"]\nc:I[8955,[],\"\"]\n7:[\"category\",\"Android\",\"d\"]\n8:[\"slug\",\"day17\",\"d\"]\nd:[]\n"])</script><script>self.__next_f.push([1,"2:[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/fff7d7d50ba66cff.css\",\"precedence\":\"next\",\"crossOrigin\":\"\"}]],[\"$\",\"$L3\",null,{\"buildId\":\"Abs63gimMocH9GC6KfM8u\",\"assetPrefix\":\"\",\"initialCanonicalUrl\":\"/post/Android/day17\",\"initialTree\":[\"\",{\"children\":[\"post\",{\"children\":[[\"category\",\"Android\",\"d\"],{\"children\":[[\"slug\",\"day17\",\"d\"],{\"children\":[\"__PAGE__?{\\\"category\\\":\\\"Android\\\",\\\"slug\\\":\\\"day17\\\"}\",{}]}]}]}]},\"$undefined\",\"$undefined\",true],\"initialSeedData\":[\"\",{\"children\":[\"post\",{\"children\":[[\"category\",\"Android\",\"d\"],{\"children\":[[\"slug\",\"day17\",\"d\"],{\"children\":[\"__PAGE__\",{},[\"$L4\",\"$L5\",null]]},[\"$\",\"$L6\",null,{\"parallelRouterKey\":\"children\",\"segmentPath\":[\"children\",\"post\",\"children\",\"$7\",\"children\",\"$8\",\"children\"],\"loading\":\"$undefined\",\"loadingStyles\":\"$undefined\",\"loadingScripts\":\"$undefined\",\"hasLoading\":false,\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L9\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"notFoundStyles\":\"$undefined\",\"styles\":null}]]},[\"$\",\"$L6\",null,{\"parallelRouterKey\":\"children\",\"segmentPath\":[\"children\",\"post\",\"children\",\"$7\",\"children\"],\"loading\":\"$undefined\",\"loadingStyles\":\"$undefined\",\"loadingScripts\":\"$undefined\",\"hasLoading\":false,\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L9\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"notFoundStyles\":\"$undefined\",\"styles\":null}]]},[\"$\",\"$L6\",null,{\"parallelRouterKey\":\"children\",\"segmentPath\":[\"children\",\"post\",\"children\"],\"loading\":\"$undefined\",\"loadingStyles\":\"$undefined\",\"loadingScripts\":\"$undefined\",\"hasLoading\":false,\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L9\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"notFoundStyles\":\"$undefined\",\"styles\":null}]]},[null,[\"$\",\"html\",null,{\"lang\":\"ko\",\"suppressHydrationWarning\":true,\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"script\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"\\n              (function() {\\n                try {\\n                  const savedTheme = localStorage.getItem('theme');\\n                  // Default to 'dark' if no save found, ignoring system preference for now to start dark\\n                  const theme = savedTheme || 'dark';\\n                  document.documentElement.setAttribute('data-theme', theme);\\n                } catch (e) {}\\n              })();\\n            \"}}]}],[\"$\",\"body\",null,{\"children\":[\"$\",\"div\",null,{\"className\":\"app-container\",\"children\":[[\"$\",\"$La\",null,{\"categories\":[\"AWS\",\"Android\",\"JAVA\"]}],[\"$\",\"main\",null,{\"className\":\"main-content\",\"children\":[\"$\",\"$L6\",null,{\"parallelRouterKey\":\"children\",\"segmentPath\":[\"children\"],\"loading\":\"$undefined\",\"loadingStyles\":\"$undefined\",\"loadingScripts\":\"$undefined\",\"hasLoading\":false,\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L9\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":\"404\"}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],\"notFoundStyles\":[],\"styles\":null}]}]]}]}]]}],null]],\"initialHead\":[false,\"$Lb\"],\"globalErrorComponent\":\"$c\",\"missingSlots\":\"$Wd\"}]]\n"])</script><script>self.__next_f.push([1,"e:T132a,"])</script><script>self.__next_f.push([1,"\u003ch1\u003eEQST LMS Wargame – JNI 분석 정리\u003c/h1\u003e\n\u003ch2\u003e1. Frida 버전 이슈\u003c/h2\u003e\n\u003ch3\u003eExport 함수 찾기 변화\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e예전 방식 (동작 X)\u003c/li\u003e\n\u003c/ul\u003e\n\u003cpre\u003e\u003ccode\u003eModule.findExportByName(null, \"함수명\");\n\u003c/code\u003e\u003c/pre\u003e\n\u003cul\u003e\n\u003cli\u003e현재 Frida 권장 방식\u003c/li\u003e\n\u003c/ul\u003e\n\u003cpre\u003e\u003ccode\u003eModule.findGlobalExportByName(\"함수명\");\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003e버전 호환성\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e최신 Frida에서 일부 Wargame 동작 문제 발생\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eFrida 17 → 14로 다운그레이드 후 정상 동작\u003c/strong\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003chr\u003e\n\u003ch2\u003e2. C / Java boolean 차이\u003c/h2\u003e\n\u003ch3\u003eC / C++\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ccode\u003ebool\u003c/code\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ccode\u003e0\u003c/code\u003e : false\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003e1\u003c/code\u003e : true\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e내부적으로 \u003ccode\u003eint\u003c/code\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003eJava / JNI\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ccode\u003eboolean\u003c/code\u003e, \u003ccode\u003ejboolean\u003c/code\u003e\u003c/li\u003e\n\u003cli\u003eJNI 시그니처에서는 \u003ccode\u003eundefined8\u003c/code\u003e 등으로 보일 수 있음\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003eJNI 함수 시그니처 예시\u003c/h3\u003e\n\u003cpre\u003e\u003ccode\u003ebool Java_kr_co_eqst_aos_app039_MainActivity_koalavsmonkey(JNIEnv* env, jobject thiz)\n\u003c/code\u003e\u003c/pre\u003e\n\u003chr\u003e\n\u003ch2\u003e3. JNI 함수 호출 구조\u003c/h2\u003e\n\u003cul\u003e\n\u003cli\u003eJava Activity에서 Native 함수 호출\u003c/li\u003e\n\u003cli\u003eJNI 함수는 항상 다음 인자를 가짐\u003c/li\u003e\n\u003c/ul\u003e\n\u003cpre\u003e\u003ccode\u003eJNIEnv*\r\njobject (this)\r\n[추가 인자들]\n\u003c/code\u003e\u003c/pre\u003e\n\u003chr\u003e\n\u003ch2\u003e4. 3번 문제 – strcmp 리턴값 변조\u003c/h2\u003e\n\u003ch3\u003e핵심 아이디어\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ccode\u003estrcmp()\u003c/code\u003e 결과를 조작해 조건을 항상 참으로 만들기\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003e\"eqst\"\u003c/code\u003e 와 비교되는 경우만 타겟팅\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003eFrida 코드\u003c/h3\u003e\n\u003cpre\u003e\u003ccode\u003evar strcmpPtr = Module.findGlobalExportByName(\"strcmp\");\r\nvar inja2;\r\n\r\nInterceptor.attach(strcmpPtr, {\r\n    onEnter: function (args) {\r\n        inja2 = args[1].readCString();\r\n        if (inja2 == \"eqst\") {\r\n            console.log(\"비교 대상:\", args[0].readCString());\r\n            console.log(\"strcmp 호출됨\");\r\n        }\r\n    },\r\n    onLeave: function (re) {\r\n        if (inja2 == \"eqst\") {\r\n            console.log(\"결과를 참으로 변조\");\r\n            re.replace(0x0); // strcmp == 0 → 동일\r\n        }\r\n    }\r\n});\n\u003c/code\u003e\u003c/pre\u003e\n\u003chr\u003e\n\u003ch2\u003e5. Spawn 모드 주의사항\u003c/h2\u003e\n\u003cpre\u003e\u003ccode\u003efrida -U -f 패키지명\n\u003c/code\u003e\u003c/pre\u003e\n\u003cul\u003e\n\u003cli\u003eSpawn 상태에서는 Native 모듈이 아직 로드되지 않아\n\u003cul\u003e\n\u003cli\u003e\u003ccode\u003eProcess.findModuleByName()\u003c/code\u003e 실패 가능\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e해결 방법\n\u003cul\u003e\n\u003cli\u003e\u003ccode\u003eSystem.loadLibrary\u003c/code\u003e 이후 후킹\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003eonCreate\u003c/code\u003e 후킹\u003c/li\u003e\n\u003cli\u003e일정 시간 delay 후 실행\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003chr\u003e\n\u003ch2\u003e6. Native 함수 Offset 기반 후킹\u003c/h2\u003e\n\u003ch3\u003e메모리 구조\u003c/h3\u003e\n\u003cpre\u003e\u003ccode\u003elibnative-lib.so\r\nbase = 0x00100000\r\n함수 = 0x00101930\r\noffset = 0x1930\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003eFrida 코드\u003c/h3\u003e\n\u003cpre\u003e\u003ccode\u003evar libMod = Process.findModuleByName(\"libnative-lib.so\");\r\nconsole.log(\"native-lib base:\", libMod.base);\r\n\r\nvar funcPtr = libMod.base.add(0x1930);\r\nconsole.log(\"LMS 문자열 리턴 함수:\", funcPtr);\r\n\r\nInterceptor.attach(funcPtr, {\r\n    onLeave: function (ret) {\r\n        var newPtr = Memory.allocUtf8String(\"eqst\");\r\n        ret.replace(newPtr);\r\n    }\r\n});\n\u003c/code\u003e\u003c/pre\u003e\n\u003chr\u003e\n\u003ch2\u003e7. strcmp 모니터링용 후킹 (확인용)\u003c/h2\u003e\n\u003cpre\u003e\u003ccode\u003evar strcmpPtr = Module.findGlobalExportByName(\"strcmp\");\r\nvar inja2;\r\n\r\nInterceptor.attach(strcmpPtr, {\r\n    onEnter: function (args) {\r\n        inja2 = args[1].readCString();\r\n        if (inja2 == \"eqst\") {\r\n            console.log(\"비교 문자열:\", args[0].readUtf8String());\r\n            console.log(\"strcmp 호출됨\");\r\n        }\r\n    }\r\n});\n\u003c/code\u003e\u003c/pre\u003e\n\u003chr\u003e\n\u003ch2\u003e8. Native 함수 직접 호출 (Flag 추출)\u003c/h2\u003e\n\u003ch3\u003e목표\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003eNative 함수가 반환하는 \u003ccode\u003ejstring\u003c/code\u003e 직접 호출하여 Flag 획득\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003eFrida 코드\u003c/h3\u003e\n\u003cpre\u003e\u003ccode\u003eJava.perform(function () {\r\n\r\n    const soName = \"libnative-lib.so\";\r\n    const module = Process.getModuleByName(soName);\r\n    const realflagPtr = module.base.add(0x1070);\r\n\r\n    console.log(\"[+] realflag 주소:\", realflagPtr);\r\n\r\n    const realflag = new NativeFunction(\r\n        realflagPtr,\r\n        \"pointer\",              // jstring\r\n        [\"pointer\", \"pointer\"]  // JNIEnv*, jclass\r\n    );\r\n\r\n    const env = Java.vm.getEnv();\r\n    const clazz = ptr(0);\r\n\r\n    const jstr = realflag(env.handle, clazz);\r\n    console.log(\"[+] jstring:\", jstr);\r\n\r\n    const result = env.getStringUtfChars(jstr).readCString();\r\n    console.log(\"[+] result:\", result);\r\n});\n\u003c/code\u003e\u003c/pre\u003e\n\u003chr\u003e\n\u003ch2\u003e9. 핵심 개념 요약\u003c/h2\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ccode\u003eModule.findGlobalExportByName\u003c/code\u003e 사용\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003estrcmp == 0\u003c/code\u003e → 문자열 동일\u003c/li\u003e\n\u003cli\u003eNative 함수는 \u003cstrong\u003ebase + offset\u003c/strong\u003e 사고\u003c/li\u003e\n\u003cli\u003eSpawn 모드에서는 Native 로딩 타이밍 중요\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003ejstring\u003c/code\u003e은 반드시 \u003ccode\u003eJNIEnv\u003c/code\u003e를 통해 문자열로 변환\u003c/li\u003e\n\u003cli\u003eattach = 감시 + 변조\u003c/li\u003e\n\u003cli\u003ereplace = 완전 치환\u003c/li\u003e\n\u003c/ul\u003e\n"])</script><script>self.__next_f.push([1,"5:[\"$\",\"article\",null,{\"className\":\"article-container\",\"children\":[[\"$\",\"div\",null,{\"className\":\"article-header\",\"children\":[[\"$\",\"span\",null,{\"className\":\"article-category\",\"children\":\"Android\"}],[\"$\",\"h1\",null,{\"className\":\"article-title\",\"children\":\"Android 보안 17일차\"}]]}],[\"$\",\"div\",null,{\"className\":\"article-content\",\"dangerouslySetInnerHTML\":{\"__html\":\"$e\"}}]]}]\nb:[[\"$\",\"meta\",\"0\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}],[\"$\",\"meta\",\"1\",{\"charSet\":\"utf-8\"}],[\"$\",\"titl"])</script><script>self.__next_f.push([1,"e\",\"2\",{\"children\":\"jinwk note\"}],[\"$\",\"meta\",\"3\",{\"name\":\"description\",\"content\":\"jinwk dev note\"}]]\n4:null\n"])</script><script>self.__next_f.push([1,""])</script></body></html>

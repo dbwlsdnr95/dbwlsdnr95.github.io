@@ -1,0 +1,147 @@
+<!DOCTYPE html><html lang="ko"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" as="image" href="/profile_cute.png"/><link rel="stylesheet" href="/_next/static/css/fff7d7d50ba66cff.css" crossorigin="" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-c5f8510880a90daa.js" crossorigin=""/><script src="/_next/static/chunks/fd9d1056-c50cb70e7323352b.js" async="" crossorigin=""></script><script src="/_next/static/chunks/69-f8546037c2082669.js" async="" crossorigin=""></script><script src="/_next/static/chunks/main-app-baff347ce7e39457.js" async="" crossorigin=""></script><script src="/_next/static/chunks/250-069982e43c2ae463.js" async=""></script><script src="/_next/static/chunks/app/layout-ada0ccfdc2732042.js" async=""></script><title>jinwk note</title><meta name="description" content="jinwk dev note"/><script>
+              (function() {
+                try {
+                  const savedTheme = localStorage.getItem('theme');
+                  // Default to 'dark' if no save found, ignoring system preference for now to start dark
+                  const theme = savedTheme || 'dark';
+                  document.documentElement.setAttribute('data-theme', theme);
+                } catch (e) {}
+              })();
+            </script><script src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js" crossorigin="" noModule=""></script></head><body><div class="app-container"><aside class="sidebar"><div class="profile-section"><div class="profile-img-wrapper"><img src="/profile_cute.png" alt="Profile" class="profile-img"/></div><div class="profile-name" style="display:flex;align-items:center;justify-content:center;gap:0.5rem">jinwook yu<a style="font-size:0.9rem;opacity:0.5;text-decoration:none" href="/admin">⚙️</a></div><div class="profile-subtitle" style="font-size:0.9rem;color:var(--text-muted);margin-bottom:1rem">dbwlsdnr95</div><div class="profile-bio" style="white-space:pre-line;font-size:0.85rem;text-align:left;width:100%">웹·모바일 진단 ,솔루션 운영 및 클라우드 보안을 경험했고, 현재는 모의해킹·취약점 분석·CVE 연구에 집중하고 있습니다. 실전 기반 보안 역량을 꾸준히 확장하고 있습니다.</div></div><nav class="nav-section"><div class="nav-title">분류 전체보기</div><ul class="nav-list" style="margin-bottom:2rem"><li class="nav-item"><a class="" href="/">전체보기</a></li></ul><div style="margin-bottom:2rem"><div class="nav-title">교육</div><ul class="nav-list"><li class="nav-item"><a class="" href="/category/Android">Android</a></li><li class="nav-item"><a class="" href="/category/JAVA">JAVA</a></li><li class="nav-item"><a class="" href="/category/AWS">AWS</a></li></ul></div></nav></aside><main class="main-content"><article class="article-container"><div class="article-header"><span class="article-category">JAVA</span><h1 class="article-title">java 공부 3일차</h1></div><div class="article-content"><h1>연산자 (Operators)</h1>
+<p>자바에서 <strong>연산자(operator)</strong> 는 값을 계산·비교·대입하기 위한 기호이다.
+예: <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>==</code>, <code>&#x26;&#x26;</code>, <code>=</code> 등 3. 연산자</p>
+<hr>
+<h2>1. 연산자와 피연산자</h2>
+<pre><code>3 + 4
+a + b
+</code></pre>
+<ul>
+<li><strong>연산자 (Operator)</strong>: 연산 기호 (<code>+</code>, <code>-</code> 등)</li>
+<li><strong>피연산자 (Operand)</strong>: 연산 대상 (<code>3</code>, <code>4</code>, <code>a</code>, <code>b</code>)</li>
+</ul>
+<hr>
+<h2>2. 산술 연산자</h2>
+<p>숫자 계산에 사용되는 기본 연산자 3. 연산자</p>
+<p>| 연산자 | 의미   |
+| ------ | ------ |
+| <code>+</code>    | 더하기 |
+| <code>-</code>    | 빼기   |
+| <code>*</code>    | 곱하기 |
+| <code>/</code>    | 나누기 |
+| <code>%</code>    | 나머지 |</p>
+<h3>️ 주의 사항</h3>
+<ul>
+<li>
+<p><strong>int / int → int 결과</strong></p>
+<pre><code>5 / 2 = 2   // 소수점 버림
+</code></pre>
+</li>
+<li>
+<p><strong>0으로 나누기 불가</strong></p>
+<pre><code>10 / 0 → ArithmeticException
+</code></pre>
+</li>
+</ul>
+<hr>
+<h2>3. 문자열 더하기 (<code>+</code>)</h2>
+<p>자바에서는 문자열에도 <code>+</code> 연산자를 사용할 수 있다 3. 연산자</p>
+<pre><code>"hello" + "world"     // "helloworld"
+"a + b = " + 10       // "a + b = 10"
+</code></pre>
+<h3>핵심 규칙</h3>
+<ul>
+<li>문자열 + 숫자 → <strong>숫자가 문자열로 변환</strong></li>
+<li>문자열이 하나라도 있으면 결과는 <strong>문자열</strong></li>
+</ul>
+<hr>
+<h2>4. 연산자 우선순위</h2>
+<p>자바도 수학과 동일한 우선순위를 따른다 3. 연산자</p>
+<pre><code>1 + 2 * 3     // 7
+(1 + 2) * 3   // 9
+</code></pre>
+<h3>우선순위 핵심 정리</h3>
+<ol>
+<li><code>()</code></li>
+<li>단항 연산자 (<code>++</code>, <code>--</code>, <code>!</code>)</li>
+<li>산술 (<code>* / %</code> → <code>+ -</code>)</li>
+<li>비교 (<code>&#x3C;</code>, <code>></code>, <code>&#x3C;=</code>, <code>>=</code>)</li>
+<li>논리 (<code>&#x26;&#x26;</code>, <code>||</code>)</li>
+<li>대입 (<code>=</code>)</li>
+</ol>
+<p><strong>애매하면 무조건 괄호 사용</strong></p>
+<hr>
+<h2>5. 증감 연산자 (<code>++</code>, <code>--</code>)</h2>
+<p>값을 <strong>1 증가 / 감소</strong>시킨다 3. 연산자</p>
+<pre><code>++a;  // a = a + 1
+--a;  // a = a - 1
+</code></pre>
+<h3>전위 / 후위 차이</h3>
+<p>| 형태  | 설명              |
+| ----- | ----------------- |
+| <code>++a</code> | 먼저 증가 후 사용 |
+| <code>a++</code> | 먼저 사용 후 증가 |</p>
+<pre><code>b = ++a; // a 증가 → b 대입
+b = a++; // b 대입 → a 증가
+</code></pre>
+<hr>
+<h2>6. 비교 연산자</h2>
+<p>두 값을 비교하여 <strong>boolean(true/false)</strong> 반환 3. 연산자</p>
+<p>| 연산자 | 의미        |
+| ------ | ----------- |
+| <code>==</code>   | 같다        |
+| <code>!=</code>   | 다르다      |
+| <code>></code>    | 크다        |
+| <code>&#x3C;</code>    | 작다        |
+| <code>>=</code>   | 크거나 같다 |
+| <code>&#x3C;=</code>   | 작거나 같다 |</p>
+<h3>️ 문자열 비교 주의</h3>
+<pre><code>str1 == str2      //  사용 금지
+str1.equals(str2) //  문자열 비교
+</code></pre>
+<hr>
+<h2>7. 논리 연산자</h2>
+<p>boolean 값의 논리 연산 3. 연산자</p>
+<p>| 연산자 | 의미            |
+| ------ | --------------- |
+| <code>&#x26;&#x26;</code>   | AND (모두 true) |
+| <code>     |                 | |</code>!`    | NOT (반전)      |</p>
+<pre><code>a > 10 &#x26;&#x26; a &#x3C; 20
+</code></pre>
+<hr>
+<h2>8. 대입 연산자</h2>
+<p>값을 변수에 저장 3. 연산자</p>
+<pre><code>int a = 5;
+</code></pre>
+<h3>복합 대입 연산자</h3>
+<pre><code>a += 3;  // a = a + 3
+a *= 2;  // a = a * 2
+</code></pre>
+<hr>
+<h2>9. 실습 문제 핵심 요약</h2>
+<h3>평균 계산 (int)</h3>
+<pre><code>int avg = sum / 3; // 소수점 버림
+</code></pre>
+<h3>평균 계산 (double)</h3>
+<pre><code>double avg = sum / 3;
+</code></pre>
+<h3>범위 체크</h3>
+<pre><code>score >= 80 &#x26;&#x26; score &#x3C;= 100
+</code></pre>
+<hr>
+<h2>최종 정리</h2>
+<h3>자주 사용하는 연산자</h3>
+<ul>
+<li>산술: <code>+ - * / %</code></li>
+<li>증감: <code>++ --</code></li>
+<li>비교: <code>== != > &#x3C; >= &#x3C;=</code></li>
+<li>논리: <code>&#x26;&#x26; || !</code></li>
+<li>대입: <code>= += -= *= /= %=</code></li>
+</ul>
+<h3>핵심 원칙</h3>
+<ul>
+<li><strong>연산자 우선순위는 상식선</strong></li>
+<li><strong>애매하면 괄호</strong></li>
+<li><strong>문자열 비교는 equals()</strong></li>
+<li><strong>가독성이 유지보수보다 중요</strong></li>
+</ul>
+</div></article></main></div><script src="/_next/static/chunks/webpack-c5f8510880a90daa.js" crossorigin="" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0]);self.__next_f.push([2,null])</script><script>self.__next_f.push([1,"1:HL[\"/_next/static/css/fff7d7d50ba66cff.css\",\"style\",{\"crossOrigin\":\"\"}]\n0:\"$L2\"\n"])</script><script>self.__next_f.push([1,"3:I[7690,[],\"\"]\n6:I[5613,[],\"\"]\n9:I[1778,[],\"\"]\na:I[8383,[\"250\",\"static/chunks/250-069982e43c2ae463.js\",\"185\",\"static/chunks/app/layout-ada0ccfdc2732042.js\"],\"\"]\nc:I[8955,[],\"\"]\n7:[\"category\",\"JAVA\",\"d\"]\n8:[\"slug\",\"dat3\",\"d\"]\nd:[]\n"])</script><script>self.__next_f.push([1,"2:[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/fff7d7d50ba66cff.css\",\"precedence\":\"next\",\"crossOrigin\":\"\"}]],[\"$\",\"$L3\",null,{\"buildId\":\"Abs63gimMocH9GC6KfM8u\",\"assetPrefix\":\"\",\"initialCanonicalUrl\":\"/post/JAVA/dat3\",\"initialTree\":[\"\",{\"children\":[\"post\",{\"children\":[[\"category\",\"JAVA\",\"d\"],{\"children\":[[\"slug\",\"dat3\",\"d\"],{\"children\":[\"__PAGE__?{\\\"category\\\":\\\"JAVA\\\",\\\"slug\\\":\\\"dat3\\\"}\",{}]}]}]}]},\"$undefined\",\"$undefined\",true],\"initialSeedData\":[\"\",{\"children\":[\"post\",{\"children\":[[\"category\",\"JAVA\",\"d\"],{\"children\":[[\"slug\",\"dat3\",\"d\"],{\"children\":[\"__PAGE__\",{},[\"$L4\",\"$L5\",null]]},[\"$\",\"$L6\",null,{\"parallelRouterKey\":\"children\",\"segmentPath\":[\"children\",\"post\",\"children\",\"$7\",\"children\",\"$8\",\"children\"],\"loading\":\"$undefined\",\"loadingStyles\":\"$undefined\",\"loadingScripts\":\"$undefined\",\"hasLoading\":false,\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L9\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"notFoundStyles\":\"$undefined\",\"styles\":null}]]},[\"$\",\"$L6\",null,{\"parallelRouterKey\":\"children\",\"segmentPath\":[\"children\",\"post\",\"children\",\"$7\",\"children\"],\"loading\":\"$undefined\",\"loadingStyles\":\"$undefined\",\"loadingScripts\":\"$undefined\",\"hasLoading\":false,\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L9\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"notFoundStyles\":\"$undefined\",\"styles\":null}]]},[\"$\",\"$L6\",null,{\"parallelRouterKey\":\"children\",\"segmentPath\":[\"children\",\"post\",\"children\"],\"loading\":\"$undefined\",\"loadingStyles\":\"$undefined\",\"loadingScripts\":\"$undefined\",\"hasLoading\":false,\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L9\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"notFoundStyles\":\"$undefined\",\"styles\":null}]]},[null,[\"$\",\"html\",null,{\"lang\":\"ko\",\"suppressHydrationWarning\":true,\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"script\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"\\n              (function() {\\n                try {\\n                  const savedTheme = localStorage.getItem('theme');\\n                  // Default to 'dark' if no save found, ignoring system preference for now to start dark\\n                  const theme = savedTheme || 'dark';\\n                  document.documentElement.setAttribute('data-theme', theme);\\n                } catch (e) {}\\n              })();\\n            \"}}]}],[\"$\",\"body\",null,{\"children\":[\"$\",\"div\",null,{\"className\":\"app-container\",\"children\":[[\"$\",\"$La\",null,{\"categories\":[\"AWS\",\"Android\",\"JAVA\"]}],[\"$\",\"main\",null,{\"className\":\"main-content\",\"children\":[\"$\",\"$L6\",null,{\"parallelRouterKey\":\"children\",\"segmentPath\":[\"children\"],\"loading\":\"$undefined\",\"loadingStyles\":\"$undefined\",\"loadingScripts\":\"$undefined\",\"hasLoading\":false,\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L9\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":\"404\"}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],\"notFoundStyles\":[],\"styles\":null}]}]]}]}]]}],null]],\"initialHead\":[false,\"$Lb\"],\"globalErrorComponent\":\"$c\",\"missingSlots\":\"$Wd\"}]]\n"])</script><script>self.__next_f.push([1,"e:T12c1,"])</script><script>self.__next_f.push([1,"\u003ch1\u003e연산자 (Operators)\u003c/h1\u003e\n\u003cp\u003e자바에서 \u003cstrong\u003e연산자(operator)\u003c/strong\u003e 는 값을 계산·비교·대입하기 위한 기호이다.\r\n예: \u003ccode\u003e+\u003c/code\u003e, \u003ccode\u003e-\u003c/code\u003e, \u003ccode\u003e*\u003c/code\u003e, \u003ccode\u003e/\u003c/code\u003e, \u003ccode\u003e==\u003c/code\u003e, \u003ccode\u003e\u0026#x26;\u0026#x26;\u003c/code\u003e, \u003ccode\u003e=\u003c/code\u003e 등 3. 연산자\u003c/p\u003e\n\u003chr\u003e\n\u003ch2\u003e1. 연산자와 피연산자\u003c/h2\u003e\n\u003cpre\u003e\u003ccode\u003e3 + 4\r\na + b\n\u003c/code\u003e\u003c/pre\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003e연산자 (Operator)\u003c/strong\u003e: 연산 기호 (\u003ccode\u003e+\u003c/code\u003e, \u003ccode\u003e-\u003c/code\u003e 등)\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e피연산자 (Operand)\u003c/strong\u003e: 연산 대상 (\u003ccode\u003e3\u003c/code\u003e, \u003ccode\u003e4\u003c/code\u003e, \u003ccode\u003ea\u003c/code\u003e, \u003ccode\u003eb\u003c/code\u003e)\u003c/li\u003e\n\u003c/ul\u003e\n\u003chr\u003e\n\u003ch2\u003e2. 산술 연산자\u003c/h2\u003e\n\u003cp\u003e숫자 계산에 사용되는 기본 연산자 3. 연산자\u003c/p\u003e\n\u003cp\u003e| 연산자 | 의미   |\r\n| ------ | ------ |\r\n| \u003ccode\u003e+\u003c/code\u003e    | 더하기 |\r\n| \u003ccode\u003e-\u003c/code\u003e    | 빼기   |\r\n| \u003ccode\u003e*\u003c/code\u003e    | 곱하기 |\r\n| \u003ccode\u003e/\u003c/code\u003e    | 나누기 |\r\n| \u003ccode\u003e%\u003c/code\u003e    | 나머지 |\u003c/p\u003e\n\u003ch3\u003e️ 주의 사항\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003eint / int → int 결과\u003c/strong\u003e\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e5 / 2 = 2   // 소수점 버림\n\u003c/code\u003e\u003c/pre\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003e0으로 나누기 불가\u003c/strong\u003e\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e10 / 0 → ArithmeticException\n\u003c/code\u003e\u003c/pre\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003chr\u003e\n\u003ch2\u003e3. 문자열 더하기 (\u003ccode\u003e+\u003c/code\u003e)\u003c/h2\u003e\n\u003cp\u003e자바에서는 문자열에도 \u003ccode\u003e+\u003c/code\u003e 연산자를 사용할 수 있다 3. 연산자\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e\"hello\" + \"world\"     // \"helloworld\"\r\n\"a + b = \" + 10       // \"a + b = 10\"\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003e핵심 규칙\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e문자열 + 숫자 → \u003cstrong\u003e숫자가 문자열로 변환\u003c/strong\u003e\u003c/li\u003e\n\u003cli\u003e문자열이 하나라도 있으면 결과는 \u003cstrong\u003e문자열\u003c/strong\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003chr\u003e\n\u003ch2\u003e4. 연산자 우선순위\u003c/h2\u003e\n\u003cp\u003e자바도 수학과 동일한 우선순위를 따른다 3. 연산자\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e1 + 2 * 3     // 7\r\n(1 + 2) * 3   // 9\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003e우선순위 핵심 정리\u003c/h3\u003e\n\u003col\u003e\n\u003cli\u003e\u003ccode\u003e()\u003c/code\u003e\u003c/li\u003e\n\u003cli\u003e단항 연산자 (\u003ccode\u003e++\u003c/code\u003e, \u003ccode\u003e--\u003c/code\u003e, \u003ccode\u003e!\u003c/code\u003e)\u003c/li\u003e\n\u003cli\u003e산술 (\u003ccode\u003e* / %\u003c/code\u003e → \u003ccode\u003e+ -\u003c/code\u003e)\u003c/li\u003e\n\u003cli\u003e비교 (\u003ccode\u003e\u0026#x3C;\u003c/code\u003e, \u003ccode\u003e\u003e\u003c/code\u003e, \u003ccode\u003e\u0026#x3C;=\u003c/code\u003e, \u003ccode\u003e\u003e=\u003c/code\u003e)\u003c/li\u003e\n\u003cli\u003e논리 (\u003ccode\u003e\u0026#x26;\u0026#x26;\u003c/code\u003e, \u003ccode\u003e||\u003c/code\u003e)\u003c/li\u003e\n\u003cli\u003e대입 (\u003ccode\u003e=\u003c/code\u003e)\u003c/li\u003e\n\u003c/ol\u003e\n\u003cp\u003e\u003cstrong\u003e애매하면 무조건 괄호 사용\u003c/strong\u003e\u003c/p\u003e\n\u003chr\u003e\n\u003ch2\u003e5. 증감 연산자 (\u003ccode\u003e++\u003c/code\u003e, \u003ccode\u003e--\u003c/code\u003e)\u003c/h2\u003e\n\u003cp\u003e값을 \u003cstrong\u003e1 증가 / 감소\u003c/strong\u003e시킨다 3. 연산자\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e++a;  // a = a + 1\r\n--a;  // a = a - 1\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003e전위 / 후위 차이\u003c/h3\u003e\n\u003cp\u003e| 형태  | 설명              |\r\n| ----- | ----------------- |\r\n| \u003ccode\u003e++a\u003c/code\u003e | 먼저 증가 후 사용 |\r\n| \u003ccode\u003ea++\u003c/code\u003e | 먼저 사용 후 증가 |\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003eb = ++a; // a 증가 → b 대입\r\nb = a++; // b 대입 → a 증가\n\u003c/code\u003e\u003c/pre\u003e\n\u003chr\u003e\n\u003ch2\u003e6. 비교 연산자\u003c/h2\u003e\n\u003cp\u003e두 값을 비교하여 \u003cstrong\u003eboolean(true/false)\u003c/strong\u003e 반환 3. 연산자\u003c/p\u003e\n\u003cp\u003e| 연산자 | 의미        |\r\n| ------ | ----------- |\r\n| \u003ccode\u003e==\u003c/code\u003e   | 같다        |\r\n| \u003ccode\u003e!=\u003c/code\u003e   | 다르다      |\r\n| \u003ccode\u003e\u003e\u003c/code\u003e    | 크다        |\r\n| \u003ccode\u003e\u0026#x3C;\u003c/code\u003e    | 작다        |\r\n| \u003ccode\u003e\u003e=\u003c/code\u003e   | 크거나 같다 |\r\n| \u003ccode\u003e\u0026#x3C;=\u003c/code\u003e   | 작거나 같다 |\u003c/p\u003e\n\u003ch3\u003e️ 문자열 비교 주의\u003c/h3\u003e\n\u003cpre\u003e\u003ccode\u003estr1 == str2      //  사용 금지\r\nstr1.equals(str2) //  문자열 비교\n\u003c/code\u003e\u003c/pre\u003e\n\u003chr\u003e\n\u003ch2\u003e7. 논리 연산자\u003c/h2\u003e\n\u003cp\u003eboolean 값의 논리 연산 3. 연산자\u003c/p\u003e\n\u003cp\u003e| 연산자 | 의미            |\r\n| ------ | --------------- |\r\n| \u003ccode\u003e\u0026#x26;\u0026#x26;\u003c/code\u003e   | AND (모두 true) |\r\n| \u003ccode\u003e     |                 | |\u003c/code\u003e!`    | NOT (반전)      |\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003ea \u003e 10 \u0026#x26;\u0026#x26; a \u0026#x3C; 20\n\u003c/code\u003e\u003c/pre\u003e\n\u003chr\u003e\n\u003ch2\u003e8. 대입 연산자\u003c/h2\u003e\n\u003cp\u003e값을 변수에 저장 3. 연산자\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003eint a = 5;\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003e복합 대입 연산자\u003c/h3\u003e\n\u003cpre\u003e\u003ccode\u003ea += 3;  // a = a + 3\r\na *= 2;  // a = a * 2\n\u003c/code\u003e\u003c/pre\u003e\n\u003chr\u003e\n\u003ch2\u003e9. 실습 문제 핵심 요약\u003c/h2\u003e\n\u003ch3\u003e평균 계산 (int)\u003c/h3\u003e\n\u003cpre\u003e\u003ccode\u003eint avg = sum / 3; // 소수점 버림\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003e평균 계산 (double)\u003c/h3\u003e\n\u003cpre\u003e\u003ccode\u003edouble avg = sum / 3;\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003e범위 체크\u003c/h3\u003e\n\u003cpre\u003e\u003ccode\u003escore \u003e= 80 \u0026#x26;\u0026#x26; score \u0026#x3C;= 100\n\u003c/code\u003e\u003c/pre\u003e\n\u003chr\u003e\n\u003ch2\u003e최종 정리\u003c/h2\u003e\n\u003ch3\u003e자주 사용하는 연산자\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e산술: \u003ccode\u003e+ - * / %\u003c/code\u003e\u003c/li\u003e\n\u003cli\u003e증감: \u003ccode\u003e++ --\u003c/code\u003e\u003c/li\u003e\n\u003cli\u003e비교: \u003ccode\u003e== != \u003e \u0026#x3C; \u003e= \u0026#x3C;=\u003c/code\u003e\u003c/li\u003e\n\u003cli\u003e논리: \u003ccode\u003e\u0026#x26;\u0026#x26; || !\u003c/code\u003e\u003c/li\u003e\n\u003cli\u003e대입: \u003ccode\u003e= += -= *= /= %=\u003c/code\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003e핵심 원칙\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003e연산자 우선순위는 상식선\u003c/strong\u003e\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e애매하면 괄호\u003c/strong\u003e\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e문자열 비교는 equals()\u003c/strong\u003e\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e가독성이 유지보수보다 중요\u003c/strong\u003e\u003c/li\u003e\n\u003c/ul\u003e\n"])</script><script>self.__next_f.push([1,"5:[\"$\",\"article\",null,{\"className\":\"article-container\",\"children\":[[\"$\",\"div\",null,{\"className\":\"article-header\",\"children\":[[\"$\",\"span\",null,{\"className\":\"article-category\",\"children\":\"JAVA\"}],[\"$\",\"h1\",null,{\"className\":\"article-title\",\"children\":\"java 공부 3일차\"}]]}],[\"$\",\"div\",null,{\"className\":\"article-content\",\"dangerouslySetInnerHTML\":{\"__html\":\"$e\"}}]]}]\nb:[[\"$\",\"meta\",\"0\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}],[\"$\",\"meta\",\"1\",{\"charSet\":\"utf-8\"}],[\"$\",\"title\",\"2\","])</script><script>self.__next_f.push([1,"{\"children\":\"jinwk note\"}],[\"$\",\"meta\",\"3\",{\"name\":\"description\",\"content\":\"jinwk dev note\"}]]\n4:null\n"])</script><script>self.__next_f.push([1,""])</script></body></html>

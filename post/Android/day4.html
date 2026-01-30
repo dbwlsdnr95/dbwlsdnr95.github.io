@@ -1,0 +1,170 @@
+<!DOCTYPE html><html lang="ko"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" as="image" href="/profile_cute.png"/><link rel="stylesheet" href="/_next/static/css/fff7d7d50ba66cff.css" crossorigin="" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-c5f8510880a90daa.js" crossorigin=""/><script src="/_next/static/chunks/fd9d1056-c50cb70e7323352b.js" async="" crossorigin=""></script><script src="/_next/static/chunks/69-f8546037c2082669.js" async="" crossorigin=""></script><script src="/_next/static/chunks/main-app-baff347ce7e39457.js" async="" crossorigin=""></script><script src="/_next/static/chunks/250-069982e43c2ae463.js" async=""></script><script src="/_next/static/chunks/app/layout-ada0ccfdc2732042.js" async=""></script><title>jinwk note</title><meta name="description" content="jinwk dev note"/><script>
+              (function() {
+                try {
+                  const savedTheme = localStorage.getItem('theme');
+                  // Default to 'dark' if no save found, ignoring system preference for now to start dark
+                  const theme = savedTheme || 'dark';
+                  document.documentElement.setAttribute('data-theme', theme);
+                } catch (e) {}
+              })();
+            </script><script src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js" crossorigin="" noModule=""></script></head><body><div class="app-container"><aside class="sidebar"><div class="profile-section"><div class="profile-img-wrapper"><img src="/profile_cute.png" alt="Profile" class="profile-img"/></div><div class="profile-name" style="display:flex;align-items:center;justify-content:center;gap:0.5rem">jinwook yu<a style="font-size:0.9rem;opacity:0.5;text-decoration:none" href="/admin">⚙️</a></div><div class="profile-subtitle" style="font-size:0.9rem;color:var(--text-muted);margin-bottom:1rem">dbwlsdnr95</div><div class="profile-bio" style="white-space:pre-line;font-size:0.85rem;text-align:left;width:100%">웹·모바일 진단 ,솔루션 운영 및 클라우드 보안을 경험했고, 현재는 모의해킹·취약점 분석·CVE 연구에 집중하고 있습니다. 실전 기반 보안 역량을 꾸준히 확장하고 있습니다.</div></div><nav class="nav-section"><div class="nav-title">분류 전체보기</div><ul class="nav-list" style="margin-bottom:2rem"><li class="nav-item"><a class="" href="/">전체보기</a></li></ul><div style="margin-bottom:2rem"><div class="nav-title">교육</div><ul class="nav-list"><li class="nav-item"><a class="" href="/category/Android">Android</a></li><li class="nav-item"><a class="" href="/category/JAVA">JAVA</a></li><li class="nav-item"><a class="" href="/category/AWS">AWS</a></li></ul></div></nav></aside><main class="main-content"><article class="article-container"><div class="article-header"><span class="article-category">Android</span><h1 class="article-title">Android 보안 4일차</h1></div><div class="article-content"><h1>Android 기본 컴포넌트 &#x26; 취약점 개념 정리</h1>
+<h2>Android 주요 컴포넌트(Component)</h2>
+<p>| 컴포넌트              | 설명                                                        |
+| --------------------- | ----------------------------------------------------------- |
+| <strong>Activity</strong>          | 화면(UI)을 구성하는 요소. 액티비티는 사용자 인터페이스 단위 |
+| <strong>Service</strong>           | 화면 없이 백그라운드에서 실행되는 컴포넌트                  |
+| <strong>Content Provider</strong>  | 앱 간 데이터를 공유/조회하기 위한 데이터 제공자             |
+| <strong>BroadcastReceiver</strong> | 시스템/앱 이벤트를 받아서 동작하는 이벤트 핸들러            |</p>
+<hr>
+<h2>AndroidManifest.xml</h2>
+<p>Android 앱의 전체 구성 정보를 담고 있는 파일.</p>
+<ul>
+<li>앱 이름, 퍼미션, Activity/Service/Receiver 선언</li>
+<li>외부 공개 여부(<code>exported=true/false</code>)</li>
+<li>Intent filter 설정 등</li>
+</ul>
+<hr>
+<h1>Android 데이터 저장 위치</h1>
+<h2>앱 내부 데이터 (private)</h2>
+<pre><code>/data/data/&#x3C;패키지명>/
+</code></pre>
+<p>예:</p>
+<ul>
+<li>shared_prefs</li>
+<li>files</li>
+<li>databases</li>
+<li>cache</li>
+</ul>
+<p>→ <strong>root / adb shell 권한</strong> 있어야 접근 가능</p>
+<hr>
+<h2>사용자 저장소 (sdcard)</h2>
+<pre><code>/sdcard/
+</code></pre>
+<p>대표 경로</p>
+<ul>
+<li><code>/DCIM</code> : 사진</li>
+<li><code>/Download</code> : 다운로드 파일</li>
+<li><code>/Documents</code> : 문서</li>
+</ul>
+<p>→ <strong>앱 권한이 있어야 접근 가능 (READ_EXTERNAL_STORAGE 등)</strong></p>
+<hr>
+<h1>Activity 강제 실행 (ADB 명령)</h1>
+<h3>기본 Activity 실행</h3>
+<pre><code>am start 패키지명/패키지명.액티비티명
+</code></pre>
+<p>예시:</p>
+<pre><code>am start kr.co.eqst.aos.app000/.MainActivity
+</code></pre>
+<h3>Extra 데이터 전달 (Intent 파라미터)</h3>
+<ul>
+<li><code>--es</code> : 문자열</li>
+<li><code>--ei</code> : 정수</li>
+<li><code>--ez</code> : boolean</li>
+</ul>
+<p>예:</p>
+<pre><code>am start --es role admin --ei level 9 --ez admin true kr.co.eqst.aos.app019/.AdminActivity
+</code></pre>
+<hr>
+<h1>Activity 내부 Extra 처리</h1>
+<pre><code>getIntent().hasExtra("key")
+getIntent().getStringExtra("password")
+</code></pre>
+<p>예시:</p>
+<pre><code>--es password 0810
+</code></pre>
+<hr>
+<h1>Content Provider</h1>
+<p>Content Provider는 다른 앱이 데이터를 <strong>조회/삽입/삭제/업데이트</strong>할 수 있는 인터페이스.</p>
+<h3>Content Provider 호출</h3>
+<pre><code>content query --uri content://패키지명/경로
+</code></pre>
+<h3>SQL 인젝션 취약 Content Provider 예시 구조</h3>
+<pre><code>SELECT id, owner, memo
+FROM memos
+WHERE owner != 'admin'
+  AND ( &#x3C;selection> )
+ORDER BY &#x3C;sortOrder>
+</code></pre>
+<h3>→ 공격 포인트</h3>
+<p><code>selection</code>, <code>sortOrder</code> 자리에 인젝션 가능</p>
+<hr>
+<h1>AndroGoat / DIVA Android</h1>
+<p>OWASP 기반의 안드로이드 취약점 학습 앱</p>
+<p>주요 취약점:</p>
+<ul>
+<li>Unprotected Android Components</li>
+<li>Insecure Data Storage</li>
+<li>Hardcoded Issues</li>
+<li>Intent Injection</li>
+<li>Content Provider Injection</li>
+<li>Backup/Exported Components</li>
+</ul>
+<hr>
+<h1>Activity 찾기 &#x26; 앱 내부 흐름</h1>
+<h3>현재 실행 중인 Activity 확인</h3>
+<pre><code>dumpsys activity activities
+</code></pre>
+<p>출력에서:</p>
+<pre><code>mResumedActivity &#x3C;--- 현재 화면(Activity)
+</code></pre>
+<h3>앱 실행 흐름 예시</h3>
+<p>SplashActivity → finish() → MainActivity</p>
+<hr>
+<h1>BroadcastReceiver 강제 실행</h1>
+<pre><code>am broadcast -a &#x3C;ACTION> -n &#x3C;패키지명/.리시버명> -e &#x3C;KEY> &#x3C;VALUE>
+</code></pre>
+<p>예시:</p>
+<pre><code>am broadcast -a android.intent.action.BOOT_COMPLETED -n com.test/.BootReceiver
+</code></pre>
+<hr>
+<h1>Service 강제 실행</h1>
+<pre><code>am start-service 패키지명/.서비스명
+</code></pre>
+<hr>
+<h1>URL Scheme / DeepLink</h1>
+<p>앱을 직접 실행시키는 링크 형태</p>
+<h3>예:</h3>
+<pre><code>am start -a android.intent.action.VIEW -d androgoat://vulnapp
+</code></pre>
+<p>웹에서 <code>androgoat://vulnapp</code> 링크를 클릭하면 앱이 실행될 수 있음.</p>
+<h3>예: 은행앱 이체 DeepLink</h3>
+<pre><code>bank://transfer?account=123-456-7890&#x26;amount=50000
+</code></pre>
+<hr>
+<h1>Unprotected Android Components 취약점</h1>
+<p>다음 조건에서 취약해짐:</p>
+<h3>Activity exported=true</h3>
+<p>→ PIN 없이 바로 내부 화면 실행 가능</p>
+<h3>Download 기능 Activity 직접 실행</h3>
+<p>→ 파일 임의 다운로드</p>
+<h3>DeepLink로 민감 기능 실행</h3>
+<p>→ (로그인 우회, 특정 기능 동작)</p>
+<hr>
+<h1>Component Attack Summary</h1>
+<p>| 공격 대상             | 방법                                         |
+| --------------------- | -------------------------------------------- |
+| <strong>Activity</strong>          | <code>am start</code> 로 강제 실행 (Extra 조작 포함)    |
+| <strong>Service</strong>           | <code>am start-service</code> 로 실행                   |
+| <strong>BroadcastReceiver</strong> | <code>am broadcast -a ACTION</code> 로 이벤트 강제 전달 |
+| <strong>Content Provider</strong>  | <code>content query --uri</code> 로 데이터 조작/조회    |</p>
+<hr>
+<h1>️ Useful ADB Commands</h1>
+<pre><code>am start -n 패키지명/.메인액티비티
+am start -a ACTION -d DATA
+am start-service 패키지명/.서비스명
+am broadcast -a ACTION -n 패키지명/.리시버명
+content query --uri content://패키지명/테이블
+dumpsys activity activities
+</code></pre>
+<hr>
+<h1>요약</h1>
+<ul>
+<li><strong>Activity</strong> → 화면 + Intent Extra로 파라미터 조작</li>
+<li><strong>Service</strong> → 백그라운드 실행</li>
+<li><strong>ContentProvider</strong> → SQL 인젝션 취약 가능</li>
+<li><strong>BroadcastReceiver</strong> → 이벤트 강제 트리거 가능</li>
+<li><strong>DeepLink</strong> → 로그인 우회/기능 실행 위험</li>
+<li><strong>Manifest</strong> → exported 설정 여부가 보안 핵심</li>
+<li><strong>adb am/content/broadcast</strong> → 실습 시 반드시 익혀야 하는 명령어</li>
+</ul>
+</div></article></main></div><script src="/_next/static/chunks/webpack-c5f8510880a90daa.js" crossorigin="" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0]);self.__next_f.push([2,null])</script><script>self.__next_f.push([1,"1:HL[\"/_next/static/css/fff7d7d50ba66cff.css\",\"style\",{\"crossOrigin\":\"\"}]\n0:\"$L2\"\n"])</script><script>self.__next_f.push([1,"3:I[7690,[],\"\"]\n6:I[5613,[],\"\"]\n9:I[1778,[],\"\"]\na:I[8383,[\"250\",\"static/chunks/250-069982e43c2ae463.js\",\"185\",\"static/chunks/app/layout-ada0ccfdc2732042.js\"],\"\"]\nc:I[8955,[],\"\"]\n7:[\"category\",\"Android\",\"d\"]\n8:[\"slug\",\"day4\",\"d\"]\nd:[]\n"])</script><script>self.__next_f.push([1,"2:[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/fff7d7d50ba66cff.css\",\"precedence\":\"next\",\"crossOrigin\":\"\"}]],[\"$\",\"$L3\",null,{\"buildId\":\"Abs63gimMocH9GC6KfM8u\",\"assetPrefix\":\"\",\"initialCanonicalUrl\":\"/post/Android/day4\",\"initialTree\":[\"\",{\"children\":[\"post\",{\"children\":[[\"category\",\"Android\",\"d\"],{\"children\":[[\"slug\",\"day4\",\"d\"],{\"children\":[\"__PAGE__?{\\\"category\\\":\\\"Android\\\",\\\"slug\\\":\\\"day4\\\"}\",{}]}]}]}]},\"$undefined\",\"$undefined\",true],\"initialSeedData\":[\"\",{\"children\":[\"post\",{\"children\":[[\"category\",\"Android\",\"d\"],{\"children\":[[\"slug\",\"day4\",\"d\"],{\"children\":[\"__PAGE__\",{},[\"$L4\",\"$L5\",null]]},[\"$\",\"$L6\",null,{\"parallelRouterKey\":\"children\",\"segmentPath\":[\"children\",\"post\",\"children\",\"$7\",\"children\",\"$8\",\"children\"],\"loading\":\"$undefined\",\"loadingStyles\":\"$undefined\",\"loadingScripts\":\"$undefined\",\"hasLoading\":false,\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L9\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"notFoundStyles\":\"$undefined\",\"styles\":null}]]},[\"$\",\"$L6\",null,{\"parallelRouterKey\":\"children\",\"segmentPath\":[\"children\",\"post\",\"children\",\"$7\",\"children\"],\"loading\":\"$undefined\",\"loadingStyles\":\"$undefined\",\"loadingScripts\":\"$undefined\",\"hasLoading\":false,\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L9\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"notFoundStyles\":\"$undefined\",\"styles\":null}]]},[\"$\",\"$L6\",null,{\"parallelRouterKey\":\"children\",\"segmentPath\":[\"children\",\"post\",\"children\"],\"loading\":\"$undefined\",\"loadingStyles\":\"$undefined\",\"loadingScripts\":\"$undefined\",\"hasLoading\":false,\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L9\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"notFoundStyles\":\"$undefined\",\"styles\":null}]]},[null,[\"$\",\"html\",null,{\"lang\":\"ko\",\"suppressHydrationWarning\":true,\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"script\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"\\n              (function() {\\n                try {\\n                  const savedTheme = localStorage.getItem('theme');\\n                  // Default to 'dark' if no save found, ignoring system preference for now to start dark\\n                  const theme = savedTheme || 'dark';\\n                  document.documentElement.setAttribute('data-theme', theme);\\n                } catch (e) {}\\n              })();\\n            \"}}]}],[\"$\",\"body\",null,{\"children\":[\"$\",\"div\",null,{\"className\":\"app-container\",\"children\":[[\"$\",\"$La\",null,{\"categories\":[\"AWS\",\"Android\",\"JAVA\"]}],[\"$\",\"main\",null,{\"className\":\"main-content\",\"children\":[\"$\",\"$L6\",null,{\"parallelRouterKey\":\"children\",\"segmentPath\":[\"children\"],\"loading\":\"$undefined\",\"loadingStyles\":\"$undefined\",\"loadingScripts\":\"$undefined\",\"hasLoading\":false,\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L9\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":\"404\"}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],\"notFoundStyles\":[],\"styles\":null}]}]]}]}]]}],null]],\"initialHead\":[false,\"$Lb\"],\"globalErrorComponent\":\"$c\",\"missingSlots\":\"$Wd\"}]]\n"])</script><script>self.__next_f.push([1,"e:T190c,"])</script><script>self.__next_f.push([1,"\u003ch1\u003eAndroid 기본 컴포넌트 \u0026#x26; 취약점 개념 정리\u003c/h1\u003e\n\u003ch2\u003eAndroid 주요 컴포넌트(Component)\u003c/h2\u003e\n\u003cp\u003e| 컴포넌트              | 설명                                                        |\r\n| --------------------- | ----------------------------------------------------------- |\r\n| \u003cstrong\u003eActivity\u003c/strong\u003e          | 화면(UI)을 구성하는 요소. 액티비티는 사용자 인터페이스 단위 |\r\n| \u003cstrong\u003eService\u003c/strong\u003e           | 화면 없이 백그라운드에서 실행되는 컴포넌트                  |\r\n| \u003cstrong\u003eContent Provider\u003c/strong\u003e  | 앱 간 데이터를 공유/조회하기 위한 데이터 제공자             |\r\n| \u003cstrong\u003eBroadcastReceiver\u003c/strong\u003e | 시스템/앱 이벤트를 받아서 동작하는 이벤트 핸들러            |\u003c/p\u003e\n\u003chr\u003e\n\u003ch2\u003eAndroidManifest.xml\u003c/h2\u003e\n\u003cp\u003eAndroid 앱의 전체 구성 정보를 담고 있는 파일.\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e앱 이름, 퍼미션, Activity/Service/Receiver 선언\u003c/li\u003e\n\u003cli\u003e외부 공개 여부(\u003ccode\u003eexported=true/false\u003c/code\u003e)\u003c/li\u003e\n\u003cli\u003eIntent filter 설정 등\u003c/li\u003e\n\u003c/ul\u003e\n\u003chr\u003e\n\u003ch1\u003eAndroid 데이터 저장 위치\u003c/h1\u003e\n\u003ch2\u003e앱 내부 데이터 (private)\u003c/h2\u003e\n\u003cpre\u003e\u003ccode\u003e/data/data/\u0026#x3C;패키지명\u003e/\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003e예:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eshared_prefs\u003c/li\u003e\n\u003cli\u003efiles\u003c/li\u003e\n\u003cli\u003edatabases\u003c/li\u003e\n\u003cli\u003ecache\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e→ \u003cstrong\u003eroot / adb shell 권한\u003c/strong\u003e 있어야 접근 가능\u003c/p\u003e\n\u003chr\u003e\n\u003ch2\u003e사용자 저장소 (sdcard)\u003c/h2\u003e\n\u003cpre\u003e\u003ccode\u003e/sdcard/\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003e대표 경로\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ccode\u003e/DCIM\u003c/code\u003e : 사진\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003e/Download\u003c/code\u003e : 다운로드 파일\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003e/Documents\u003c/code\u003e : 문서\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e→ \u003cstrong\u003e앱 권한이 있어야 접근 가능 (READ_EXTERNAL_STORAGE 등)\u003c/strong\u003e\u003c/p\u003e\n\u003chr\u003e\n\u003ch1\u003eActivity 강제 실행 (ADB 명령)\u003c/h1\u003e\n\u003ch3\u003e기본 Activity 실행\u003c/h3\u003e\n\u003cpre\u003e\u003ccode\u003eam start 패키지명/패키지명.액티비티명\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003e예시:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003eam start kr.co.eqst.aos.app000/.MainActivity\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003eExtra 데이터 전달 (Intent 파라미터)\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ccode\u003e--es\u003c/code\u003e : 문자열\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003e--ei\u003c/code\u003e : 정수\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003e--ez\u003c/code\u003e : boolean\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e예:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003eam start --es role admin --ei level 9 --ez admin true kr.co.eqst.aos.app019/.AdminActivity\n\u003c/code\u003e\u003c/pre\u003e\n\u003chr\u003e\n\u003ch1\u003eActivity 내부 Extra 처리\u003c/h1\u003e\n\u003cpre\u003e\u003ccode\u003egetIntent().hasExtra(\"key\")\r\ngetIntent().getStringExtra(\"password\")\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003e예시:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e--es password 0810\n\u003c/code\u003e\u003c/pre\u003e\n\u003chr\u003e\n\u003ch1\u003eContent Provider\u003c/h1\u003e\n\u003cp\u003eContent Provider는 다른 앱이 데이터를 \u003cstrong\u003e조회/삽입/삭제/업데이트\u003c/strong\u003e할 수 있는 인터페이스.\u003c/p\u003e\n\u003ch3\u003eContent Provider 호출\u003c/h3\u003e\n\u003cpre\u003e\u003ccode\u003econtent query --uri content://패키지명/경로\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003eSQL 인젝션 취약 Content Provider 예시 구조\u003c/h3\u003e\n\u003cpre\u003e\u003ccode\u003eSELECT id, owner, memo\r\nFROM memos\r\nWHERE owner != 'admin'\r\n  AND ( \u0026#x3C;selection\u003e )\r\nORDER BY \u0026#x3C;sortOrder\u003e\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003e→ 공격 포인트\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003eselection\u003c/code\u003e, \u003ccode\u003esortOrder\u003c/code\u003e 자리에 인젝션 가능\u003c/p\u003e\n\u003chr\u003e\n\u003ch1\u003eAndroGoat / DIVA Android\u003c/h1\u003e\n\u003cp\u003eOWASP 기반의 안드로이드 취약점 학습 앱\u003c/p\u003e\n\u003cp\u003e주요 취약점:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eUnprotected Android Components\u003c/li\u003e\n\u003cli\u003eInsecure Data Storage\u003c/li\u003e\n\u003cli\u003eHardcoded Issues\u003c/li\u003e\n\u003cli\u003eIntent Injection\u003c/li\u003e\n\u003cli\u003eContent Provider Injection\u003c/li\u003e\n\u003cli\u003eBackup/Exported Components\u003c/li\u003e\n\u003c/ul\u003e\n\u003chr\u003e\n\u003ch1\u003eActivity 찾기 \u0026#x26; 앱 내부 흐름\u003c/h1\u003e\n\u003ch3\u003e현재 실행 중인 Activity 확인\u003c/h3\u003e\n\u003cpre\u003e\u003ccode\u003edumpsys activity activities\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003e출력에서:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003emResumedActivity \u0026#x3C;--- 현재 화면(Activity)\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003e앱 실행 흐름 예시\u003c/h3\u003e\n\u003cp\u003eSplashActivity → finish() → MainActivity\u003c/p\u003e\n\u003chr\u003e\n\u003ch1\u003eBroadcastReceiver 강제 실행\u003c/h1\u003e\n\u003cpre\u003e\u003ccode\u003eam broadcast -a \u0026#x3C;ACTION\u003e -n \u0026#x3C;패키지명/.리시버명\u003e -e \u0026#x3C;KEY\u003e \u0026#x3C;VALUE\u003e\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003e예시:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003eam broadcast -a android.intent.action.BOOT_COMPLETED -n com.test/.BootReceiver\n\u003c/code\u003e\u003c/pre\u003e\n\u003chr\u003e\n\u003ch1\u003eService 강제 실행\u003c/h1\u003e\n\u003cpre\u003e\u003ccode\u003eam start-service 패키지명/.서비스명\n\u003c/code\u003e\u003c/pre\u003e\n\u003chr\u003e\n\u003ch1\u003eURL Scheme / DeepLink\u003c/h1\u003e\n\u003cp\u003e앱을 직접 실행시키는 링크 형태\u003c/p\u003e\n\u003ch3\u003e예:\u003c/h3\u003e\n\u003cpre\u003e\u003ccode\u003eam start -a android.intent.action.VIEW -d androgoat://vulnapp\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003e웹에서 \u003ccode\u003eandrogoat://vulnapp\u003c/code\u003e 링크를 클릭하면 앱이 실행될 수 있음.\u003c/p\u003e\n\u003ch3\u003e예: 은행앱 이체 DeepLink\u003c/h3\u003e\n\u003cpre\u003e\u003ccode\u003ebank://transfer?account=123-456-7890\u0026#x26;amount=50000\n\u003c/code\u003e\u003c/pre\u003e\n\u003chr\u003e\n\u003ch1\u003eUnprotected Android Components 취약점\u003c/h1\u003e\n\u003cp\u003e다음 조건에서 취약해짐:\u003c/p\u003e\n\u003ch3\u003eActivity exported=true\u003c/h3\u003e\n\u003cp\u003e→ PIN 없이 바로 내부 화면 실행 가능\u003c/p\u003e\n\u003ch3\u003eDownload 기능 Activity 직접 실행\u003c/h3\u003e\n\u003cp\u003e→ 파일 임의 다운로드\u003c/p\u003e\n\u003ch3\u003eDeepLink로 민감 기능 실행\u003c/h3\u003e\n\u003cp\u003e→ (로그인 우회, 특정 기능 동작)\u003c/p\u003e\n\u003chr\u003e\n\u003ch1\u003eComponent Attack Summary\u003c/h1\u003e\n\u003cp\u003e| 공격 대상             | 방법                                         |\r\n| --------------------- | -------------------------------------------- |\r\n| \u003cstrong\u003eActivity\u003c/strong\u003e          | \u003ccode\u003eam start\u003c/code\u003e 로 강제 실행 (Extra 조작 포함)    |\r\n| \u003cstrong\u003eService\u003c/strong\u003e           | \u003ccode\u003eam start-service\u003c/code\u003e 로 실행                   |\r\n| \u003cstrong\u003eBroadcastReceiver\u003c/strong\u003e | \u003ccode\u003eam broadcast -a ACTION\u003c/code\u003e 로 이벤트 강제 전달 |\r\n| \u003cstrong\u003eContent Provider\u003c/strong\u003e  | \u003ccode\u003econtent query --uri\u003c/code\u003e 로 데이터 조작/조회    |\u003c/p\u003e\n\u003chr\u003e\n\u003ch1\u003e️ Useful ADB Commands\u003c/h1\u003e\n\u003cpre\u003e\u003ccode\u003eam start -n 패키지명/.메인액티비티\r\nam start -a ACTION -d DATA\r\nam start-service 패키지명/.서비스명\r\nam broadcast -a ACTION -n 패키지명/.리시버명\r\ncontent query --uri content://패키지명/테이블\r\ndumpsys activity activities\n\u003c/code\u003e\u003c/pre\u003e\n\u003chr\u003e\n\u003ch1\u003e요약\u003c/h1\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003eActivity\u003c/strong\u003e → 화면 + Intent Extra로 파라미터 조작\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eService\u003c/strong\u003e → 백그라운드 실행\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eContentProvider\u003c/strong\u003e → SQL 인젝션 취약 가능\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eBroadcastReceiver\u003c/strong\u003e → 이벤트 강제 트리거 가능\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eDeepLink\u003c/strong\u003e → 로그인 우회/기능 실행 위험\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eManifest\u003c/strong\u003e → exported 설정 여부가 보안 핵심\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eadb am/content/broadcast\u003c/strong\u003e → 실습 시 반드시 익혀야 하는 명령어\u003c/li\u003e\n\u003c/ul\u003e\n"])</script><script>self.__next_f.push([1,"5:[\"$\",\"article\",null,{\"className\":\"article-container\",\"children\":[[\"$\",\"div\",null,{\"className\":\"article-header\",\"children\":[[\"$\",\"span\",null,{\"className\":\"article-category\",\"children\":\"Android\"}],[\"$\",\"h1\",null,{\"className\":\"article-title\",\"children\":\"Android 보안 4일차\"}]]}],[\"$\",\"div\",null,{\"className\":\"article-content\",\"dangerouslySetInnerHTML\":{\"__html\":\"$e\"}}]]}]\nb:[[\"$\",\"meta\",\"0\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}],[\"$\",\"meta\",\"1\",{\"charSet\":\"utf-8\"}],[\"$\",\"title"])</script><script>self.__next_f.push([1,"\",\"2\",{\"children\":\"jinwk note\"}],[\"$\",\"meta\",\"3\",{\"name\":\"description\",\"content\":\"jinwk dev note\"}]]\n4:null\n"])</script><script>self.__next_f.push([1,""])</script></body></html>

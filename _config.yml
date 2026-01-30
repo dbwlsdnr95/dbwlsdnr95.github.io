@@ -16,4 +16,4 @@ aux_links:
 
 # Next.js asset folder inclusion
 include:
-  - blog/_next
+  - _next

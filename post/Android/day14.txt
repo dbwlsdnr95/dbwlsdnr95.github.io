@@ -1,0 +1,295 @@
+3:I[5613,[],""]
+6:I[1778,[],""]
+7:I[8383,["250","static/chunks/250-069982e43c2ae463.js","185","static/chunks/app/layout-ada0ccfdc2732042.js"],""]
+4:["category","Android","d"]
+5:["slug","day14","d"]
+0:["Abs63gimMocH9GC6KfM8u",[[["",{"children":["post",{"children":[["category","Android","d"],{"children":[["slug","day14","d"],{"children":["__PAGE__?{\"category\":\"Android\",\"slug\":\"day14\"}",{}]}]}]}]},"$undefined","$undefined",true],["",{"children":["post",{"children":[["category","Android","d"],{"children":[["slug","day14","d"],{"children":["__PAGE__",{},["$L1","$L2",null]]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","post","children","$4","children","$5","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","post","children","$4","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","post","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},[null,["$","html",null,{"lang":"ko","suppressHydrationWarning":true,"children":[["$","head",null,{"children":["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n              (function() {\n                try {\n                  const savedTheme = localStorage.getItem('theme');\n                  // Default to 'dark' if no save found, ignoring system preference for now to start dark\n                  const theme = savedTheme || 'dark';\n                  document.documentElement.setAttribute('data-theme', theme);\n                } catch (e) {}\n              })();\n            "}}]}],["$","body",null,{"children":["$","div",null,{"className":"app-container","children":[["$","$L7",null,{"categories":["AWS","Android","JAVA"]}],["$","main",null,{"className":"main-content","children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[],"styles":null}]}]]}]}]]}],null]],[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/fff7d7d50ba66cff.css","precedence":"next","crossOrigin":""}]],"$L8"]]]]
+9:T19f3,<h1>JNI (Java Native Interface) 정리</h1>
+<h2>1. JNI 개요</h2>
+<h3>JNI란?</h3>
+<ul>
+<li><strong>Java/Kotlin ↔ C/C++</strong> 간의 상호 호출을 가능하게 하는 인터페이스</li>
+<li>Android에서 <strong>Native 코드(.so)</strong> 를 사용하기 위한 표준 방식</li>
+</ul>
+<h3>기본 구조</h3>
+<ul>
+<li>Java/Kotlin → JNI → C/C++</li>
+<li>Native 라이브러리 형태: <code>.so</code></li>
+</ul>
+<hr>
+<h2>2. 개발 환경 구축</h2>
+<h3>Android Studio</h3>
+<ul>
+<li>Android 앱 개발용 공식 IDE</li>
+<li>에뮬레이터는 사용하지 않음 (NOX 사용)</li>
+</ul>
+<h3>Ghidra</h3>
+<ul>
+<li>오픈소스 리버싱 도구</li>
+<li>다운로드
+<ul>
+<li>Google 검색: <code>ghidra github</code></li>
+<li>Release 버전 다운로드</li>
+</ul>
+</li>
+<li>실행
+<ul>
+<li>압축 해제</li>
+<li><code>ghidraRun.bat</code> 실행</li>
+</ul>
+</li>
+</ul>
+<h3>Java 환경 오류 해결</h3>
+<ul>
+<li>오류 예시
+<ul>
+<li><code>JAVA_HOME</code></li>
+<li><code>java version not found</code></li>
+</ul>
+</li>
+<li>해결 방법
+<ol>
+<li>기존 Java 삭제</li>
+<li><strong>OpenJDK 재설치</strong></li>
+<li>설치 옵션 전체 선택</li>
+<li><code>JAVA_HOME</code> 자동 설정 확인</li>
+</ol>
+</li>
+</ul>
+<h3>OpenJDK 다운로드</h3>
+<ul>
+<li>https://adoptium.net/</li>
+</ul>
+<hr>
+<h2>3. NOX + ADB 환경 구성</h2>
+<h3>ADB 파일 교체 이유</h3>
+<ul>
+<li>NOX 기본 ADB가 불안정</li>
+<li>Android Studio ADB로 교체 필요</li>
+</ul>
+<h3>원본 ADB 경로</h3>
+<pre><code>C:\Users\사용자\AppData\Local\Android\Sdk\platform-tools\
+</code></pre>
+<h3>복사 대상 파일</h3>
+<ul>
+<li>adb.exe</li>
+<li>AdbWinApi.dll</li>
+<li>AdbWinUsbApi.dll</li>
+</ul>
+<h3>NOX 경로</h3>
+<pre><code>C:\Program Files (x86)\Nox\bin\
+</code></pre>
+<h3>적용 방법</h3>
+<ul>
+<li>기존 파일 덮어쓰기</li>
+<li><code>adb.exe</code> 복사 → 이름 변경 → <code>nox_adb.exe</code></li>
+</ul>
+<hr>
+<h2>4. NOX USB 디버깅 활성화</h2>
+<ol>
+<li>NOX 설정 → 시스템 → 태블릿 정보</li>
+<li><strong>빌드 번호 연속 클릭</strong></li>
+<li>개발자 모드 활성화</li>
+<li>고급 설정 → 개발자 옵션</li>
+<li>USB 디버깅 활성화</li>
+</ol>
+<hr>
+<h2>5. Android 프로젝트 생성</h2>
+<h3>프로젝트 설정</h3>
+<ul>
+<li>App Name: <code>testapp</code></li>
+<li>Package Name: <code>kr.seyong.testapp</code></li>
+<li>SDK: 24</li>
+<li>Language: Java</li>
+<li>Native(C/C++): 기본 옵션</li>
+<li>Finish</li>
+</ul>
+<hr>
+<h2>6. 설치된 앱 추출</h2>
+<pre><code>adb shell
+pm list packages -f | grep 패키지명
+</code></pre>
+<hr>
+<h2>7. Java와 C 문자열 차이</h2>
+<h3>Java String</h3>
+<pre><code>String a = new String("abcd");
+</code></pre>
+<ul>
+<li>객체</li>
+<li>JVM Heap에 저장</li>
+</ul>
+<h3>C String</h3>
+<pre><code>char* a = {'a','b','c','d','\0'};
+</code></pre>
+<ul>
+<li>Null 종료 문자열</li>
+<li>메모리 직접 관리</li>
+</ul>
+<hr>
+<h2>8. JNI를 사용하는 이유</h2>
+<h3>Google 권장</h3>
+<ul>
+<li>“가능하면 JNI 쓰지 마라”</li>
+<li>Kotlin / Java API로 대부분 해결 가능</li>
+</ul>
+<h3>그럼에도 JNI를 쓰는 이유</h3>
+<ol>
+<li><strong>성능</strong>
+<ul>
+<li>게임</li>
+<li>그래픽</li>
+<li>하드웨어 연산</li>
+</ul>
+</li>
+<li><strong>OS 레벨 접근</strong>
+<ul>
+<li>파일 시스템</li>
+<li>저수준 연산</li>
+</ul>
+</li>
+<li><strong>보안</strong>
+<ul>
+<li>코드 은닉 목적</li>
+<li>리버싱 난이도 상승</li>
+</ul>
+</li>
+</ol>
+<h3>보안 솔루션</h3>
+<ul>
+<li>모바일 보안 솔루션 대부분 JNI 사용</li>
+<li>Native 레벨에서 무결성 / 탐지 수행</li>
+</ul>
+<hr>
+<h2>9. JVM vs Native 실행 구조</h2>
+<h3>Java / Kotlin</h3>
+<ul>
+<li>JVM 위에서 실행</li>
+<li>Cross-platform</li>
+<li>동일 APK → 모든 기기 실행 가능</li>
+</ul>
+<h3>Native (C/C++)</h3>
+<ul>
+<li>OS / 아키텍처 의존</li>
+<li>환경별 빌드 필요</li>
+</ul>
+<p>| 환경    | 결과           |
+| ------- | -------------- |
+| Windows | <code>.exe</code>, <code>.dll</code> |
+| Linux   | ELF, <code>.so</code>     |
+| Android | <code>.so</code>          |</p>
+<hr>
+<h2>10. ABI와 Native 라이브러리</h2>
+<h3>ABI 종류</h3>
+<ul>
+<li>arm</li>
+<li>arm64-v8a</li>
+<li>x86</li>
+<li>x86_64</li>
+</ul>
+<h3>기본 포함 구조</h3>
+<ul>
+<li>각 ABI별 <code>.so</code> 파일 필요</li>
+<li>32bit / 64bit 에뮬레이터 별도 대응</li>
+</ul>
+<hr>
+<h2>11. JNI 라이브러리 로딩</h2>
+<h3>System.loadLibrary</h3>
+<pre><code>System.loadLibrary("test");
+</code></pre>
+<ul>
+<li>실제 로드 파일</li>
+</ul>
+<pre><code>libtest.so
+</code></pre>
+<ul>
+<li>APK 내부 <code>/lib/&#x3C;abi>/libtest.so</code></li>
+</ul>
+<h3>System.load</h3>
+<pre><code>System.load("/sdcard/android/data/lib/arm64/libtest.so");
+</code></pre>
+<hr>
+<h2>12. JNI 기본 코드 구조</h2>
+<h3>Java 코드</h3>
+<pre><code>class MainActivity {
+
+    static {
+        System.loadLibrary("testapp");
+    }
+
+    public native void callJni();
+}
+</code></pre>
+<h3>Native 함수 시그니처</h3>
+<pre><code>Java_kr_seyong_testapp_MainActivity_callJni(
+    JNIEnv* env,
+    jobject thiz
+) {
+    // Native 로직
+}
+</code></pre>
+<hr>
+<h2>13. JNI_OnLoad &#x26; RegisterNative</h2>
+<h3>JNI_OnLoad</h3>
+<ul>
+<li>라이브러리 로드 시 자동 실행</li>
+<li>Native 함수 등록 가능</li>
+</ul>
+<pre><code>JNI_OnLoad(JavaVM* vm, void* reserved) {
+    // RegisterNativeMethods
+}
+</code></pre>
+<hr>
+<h2>14. 문자열 비교 (보안 핵심)</h2>
+<h3>Java</h3>
+<pre><code>String a = "aaa";
+String b = "bbb";
+
+if (a == b) {
+    // 주소 비교
+}
+
+if (a.equals(b)) {
+    // 값 비교
+}
+</code></pre>
+<h3>C / C++</h3>
+<pre><code>strcmp(a, b); // 값 비교
+std::string a = "aaa";
+std::string b = "aaa";
+
+if (a == b) // 주소 비교 (의도와 다를 수 있음)
+</code></pre>
+<hr>
+<h2>15. 인증 로직 예시</h2>
+<pre><code>private boolean checkPassword(String pw) {
+    if (pw.equals("hacker")) {
+        return true;
+    } else {
+        return false;
+    }
+}
+</code></pre>
+<ul>
+<li>JNI에서 이런 로직을 처리하면
+<ul>
+<li>Java 코드 노출 감소</li>
+<li>리버싱 난이도 증가</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2>16. 보안 관점 정리</h2>
+<ul>
+<li>JNI는 <strong>성능 + 보안 목적</strong></li>
+<li>Native 코드도 결국 리버싱 가능</li>
+<li>Ghidra / IDA로 분석 가능</li>
+<li>Frida와 결합 시 동적 우회 가능</li>
+</ul>
+<hr>
+<h3>요약 한 줄</h3>
+<blockquote>
+<p>JNI는 성능과 보안을 위해 사용되며, Java/Kotlin과 Native 간의 경계를 이해하는 것이 모바일 보안 분석의 핵심이다.</p>
+</blockquote>
+2:["$","article",null,{"className":"article-container","children":[["$","div",null,{"className":"article-header","children":[["$","span",null,{"className":"article-category","children":"Android"}],["$","h1",null,{"className":"article-title","children":"Android 보안 14일차"}]]}],["$","div",null,{"className":"article-content","dangerouslySetInnerHTML":{"__html":"$9"}}]]}]
+8:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"jinwk note"}],["$","meta","3",{"name":"description","content":"jinwk dev note"}]]
+1:null
