@@ -1,0 +1,153 @@
+3:I[5613,[],""]
+6:I[1778,[],""]
+7:I[8383,["250","static/chunks/250-63ba7a57e29c9f6e.js","185","static/chunks/app/layout-ada0ccfdc2732042.js"],""]
+4:["category","JAVA","d"]
+5:["slug","day1","d"]
+0:["UQ-na9S7VveNwpUsd699O",[[["",{"children":["post",{"children":[["category","JAVA","d"],{"children":[["slug","day1","d"],{"children":["__PAGE__?{\"category\":\"JAVA\",\"slug\":\"day1\"}",{}]}]}]}]},"$undefined","$undefined",true],["",{"children":["post",{"children":[["category","JAVA","d"],{"children":[["slug","day1","d"],{"children":["__PAGE__",{},["$L1","$L2",null]]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","post","children","$4","children","$5","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","post","children","$4","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","post","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},[null,["$","html",null,{"lang":"ko","suppressHydrationWarning":true,"children":[["$","head",null,{"children":["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n              (function() {\n                try {\n                  const savedTheme = localStorage.getItem('theme');\n                  // Default to 'dark' if no save found, ignoring system preference for now to start dark\n                  const theme = savedTheme || 'dark';\n                  document.documentElement.setAttribute('data-theme', theme);\n                } catch (e) {}\n              })();\n            "}}]}],["$","body",null,{"children":["$","div",null,{"className":"app-container","children":[["$","$L7",null,{"categories":["AWS","Android","JAVA"]}],["$","main",null,{"className":"main-content","children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[],"styles":null}]}]]}]}]]}],null]],[[["$","link","0",{"rel":"stylesheet","href":"/blog/_next/static/css/fff7d7d50ba66cff.css","precedence":"next","crossOrigin":""}]],"$L8"]]]]
+9:T14f0,<h1>Java 입문 - Hello World</h1>
+<h2>개발 환경 설정</h2>
+<h3>IDE 선택</h3>
+<ul>
+<li><strong>IntelliJ IDEA</strong> (추천)
+<ul>
+<li>빠른 속도와 편의성</li>
+<li>대부분의 회사가 IntelliJ를 사용</li>
+</ul>
+</li>
+<li><strong>Eclipse</strong>
+<ul>
+<li>과거에는 많이 사용했으나 현재는 비추천</li>
+</ul>
+</li>
+</ul>
+<h3>운영체제</h3>
+<ul>
+<li>Mac을 사용하는 기업이 많지만 <strong>Windows도 문제없음</strong></li>
+<li>강의에서는 Mac 기준이지만 Windows 단축키와 화면도 함께 설명됨</li>
+</ul>
+<hr>
+<h2>IntelliJ 설치 및 설정</h2>
+<ol>
+<li><a href="https://www.jetbrains.com/ko-kr/idea/download">JetBrains IntelliJ IDEA 다운로드</a></li>
+<li><strong>Community Edition (무료 버전)</strong> 선택</li>
+<li>OS에 맞는 버전 다운로드
+<ul>
+<li>Windows → <code>.exe</code></li>
+<li>macOS (M1/M2/M3) → Apple Silicon</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2>새 프로젝트 만들기</h2>
+<p><strong>New Project 설정</strong></p>
+<ul>
+<li>Name: <code>java-start</code></li>
+<li>Location: 원하는 폴더</li>
+<li>Language: Java</li>
+<li>Build System: IntelliJ</li>
+<li>JDK: 17 이상</li>
+<li>Add sample code:  체크</li>
+</ul>
+<p><strong>JDK 설치</strong></p>
+<ul>
+<li>Version: <code>21</code></li>
+<li>Vendor: <code>Oracle OpenJDK</code> 또는 <code>Eclipse Temurin</code></li>
+<li>Location: 기본값 유지</li>
+</ul>
+<hr>
+<h2>첫 실행</h2>
+<ol>
+<li>프로젝트 생성 후 자동으로 <code>Main.java</code>가 생성됨</li>
+<li>초록색 ▶ 버튼 클릭 → <code>Run 'Main.main()'</code></li>
+<li>콘솔에 <code>Hello World!</code> 출력</li>
+</ol>
+<blockquote>
+<p>참고: Java 25 이상에서는 <code>System.out.println()</code> 대신 <code>IO.print()</code>도 사용 가능함1. Hello World.</p>
+</blockquote>
+<hr>
+<h2>자바 코드 구조 이해</h2>
+<pre><code>public class HelloJava {
+    public static void main(String[] args) {
+        System.out.println("hello java");
+    }
+}
+</code></pre>
+<h3>주요 구성</h3>
+<p>| 구문                                     | 설명            |
+| ---------------------------------------- | --------------- |
+| <code>public class HelloJava</code>                 | 클래스 선언     |
+| <code>public static void main(String[] args)</code> | 프로그램 시작점 |
+| <code>System.out.println()</code>                   | 콘솔 출력 명령  |
+| <code>;</code>                                      | 문장 끝 구분자  |</p>
+<p><strong>실행 과정</strong></p>
+<ol>
+<li>프로그램 시작</li>
+<li><code>main()</code> 실행</li>
+<li><code>"hello java"</code> 출력</li>
+<li>종료</li>
+</ol>
+<hr>
+<h2>주석(Comment)</h2>
+<ul>
+<li><strong>한 줄 주석</strong>: <code>//</code></li>
+<li><strong>여러 줄 주석</strong>: <code>/* ... */</code></li>
+</ul>
+<pre><code>public class CommentJava {
+    public static void main(String[] args) {
+        // 한 줄 주석
+        /* 여러 줄 주석 */
+        System.out.println("hello java");
+    }
+}
+</code></pre>
+<blockquote>
+<p>주석은 프로그램에 영향을 주지 않으며, 사람이 읽기 위한 설명용이다1. Hello World.</p>
+</blockquote>
+<h2>자바란?</h2>
+<p>자바는 <strong>표준 스펙</strong>과 <strong>구현체</strong>로 구성됨.</p>
+<p>| 표준 스펙          | 구현체 예시     |
+| ------------------ | --------------- |
+| 자바 컴파일러, JVM | Oracle OpenJDK  |
+|                    | Eclipse Temurin |
+|                    | Amazon Corretto |</p>
+<p>→ 모두 <strong>서로 호환 가능</strong>
+→ OpenJDK에서 Temurin으로 바꿔도 대부분 문제 없이 동작</p>
+<hr>
+<h2>컴파일과 실행 과정</h2>
+<ol>
+<li><code>.java</code> (소스 코드) → <code>javac</code> 컴파일러 → <code>.class</code> (바이트코드)</li>
+<li><code>.class</code> 실행 시 → JVM(Java Virtual Machine)이 작동</li>
+</ol>
+<pre><code>javac Hello.java
+java Hello
+</code></pre>
+<blockquote>
+<p>IntelliJ에서는 이 과정이 자동으로 처리됨.</p>
+</blockquote>
+<h2>자바와 OS 독립성</h2>
+<p>| 일반 프로그램           | 자바 프로그램                |
+| ----------------------- | ---------------------------- |
+| OS 전용 실행파일 (.exe) | JVM 위에서 실행되는 <code>.class</code> |
+| OS 간 호환 불가         | 모든 OS에서 실행 가능        |</p>
+<p>즉,
+Windows에서 작성한 Java 코드 → Mac/Linux에서도 실행 가능.
+운영체제 호환 문제를 <strong>JVM이 해결</strong>해 준다1. Hello World.</p>
+<hr>
+<h2>개발과 배포 환경</h2>
+<p>| 구분    | 환경          | 설명                           |
+| ------- | ------------- | ------------------------------ |
+| 개발 PC | Windows / Mac | OpenJDK 사용                   |
+| 서버    | Linux         | Amazon Corretto 자바 사용 가능 |</p>
+<p>자바의 운영체제 독립성 덕분에
+<strong>개발 환경과 서버 환경이 달라도 문제 없이 동작</strong>한다1. Hello World.</p>
+<hr>
+<h2>정리</h2>
+<ul>
+<li>IntelliJ + JDK 21 설치 후 시작</li>
+<li><code>HelloJava.java</code> 파일로 첫 코드 실행</li>
+<li>자바는 <strong>“한 번 작성, 어디서나 실행 (Write Once, Run Anywhere)”</strong> 언어</li>
+<li>학습 초기에는 <strong>Eclipse Temurin 21</strong> 사용 권장</li>
+</ul>
+2:["$","article",null,{"className":"article-container","children":[["$","div",null,{"className":"article-header","children":[["$","span",null,{"className":"article-category","children":"JAVA"}],["$","h1",null,{"className":"article-title","children":"java 공부 1일차"}]]}],["$","div",null,{"className":"article-content","dangerouslySetInnerHTML":{"__html":"$9"}}]]}]
+8:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"jinwk note"}],["$","meta","3",{"name":"description","content":"jinwk dev note"}]]
+1:null
