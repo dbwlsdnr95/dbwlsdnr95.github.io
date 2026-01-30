@@ -4,8 +4,8 @@
 8:I[5250,["250","static/chunks/250-069982e43c2ae463.js","931","static/chunks/app/page-e31ae51de7be232e.js"],""]
 4:["category","AWS","d"]
 5:["slug","day4-AWS","d"]
-0:["16MaIM6sfU5RrcCsiLE0O",[[["",{"children":["post",{"children":[["category","AWS","d"],{"children":[["slug","day4-AWS","d"],{"children":["__PAGE__?{\"category\":\"AWS\",\"slug\":\"day4-AWS\"}",{}]}]}]}]},"$undefined","$undefined",true],["",{"children":["post",{"children":[["category","AWS","d"],{"children":[["slug","day4-AWS","d"],{"children":["__PAGE__",{},["$L1","$L2",null]]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","post","children","$4","children","$5","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","post","children","$4","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","post","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},[null,["$","html",null,{"lang":"ko","suppressHydrationWarning":true,"children":[["$","head",null,{"children":["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n              (function() {\n                try {\n                  const savedTheme = localStorage.getItem('theme');\n                  // Default to 'dark' if no save found, ignoring system preference for now to start dark\n                  const theme = savedTheme || 'dark';\n                  document.documentElement.setAttribute('data-theme', theme);\n                } catch (e) {}\n              })();\n            "}}]}],["$","body",null,{"children":["$","div",null,{"className":"app-container","children":[["$","$L7",null,{"categories":["AWS","Android","JAVA"]}],["$","main",null,{"className":"main-content","children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","div",null,{"className":"flex flex-col items-center justify-center min-h-[60vh] text-center px-4","children":[["$","h2",null,{"className":"text-4xl font-bold mb-4","children":"404 - Not Found"}],["$","p",null,{"className":"text-gray-500 mb-8","children":"요청하신 페이지를 찾을 수 없습니다."}],["$","$L8",null,{"href":"/","className":"px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition","children":"홈으로 돌아가기"}]]}],"notFoundStyles":[],"styles":null}]}]]}]}]]}],null]],[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/fff7d7d50ba66cff.css","precedence":"next","crossOrigin":""}]],"$L9"]]]]
-a:T2d76,<h1>AWS 네트워크 서비스 (VPC)</h1>
+0:["2BDZlJ6cDPI6q5M9NRLC3",[[["",{"children":["post",{"children":[["category","AWS","d"],{"children":[["slug","day4-AWS","d"],{"children":["__PAGE__?{\"category\":\"AWS\",\"slug\":\"day4-AWS\"}",{}]}]}]}]},"$undefined","$undefined",true],["",{"children":["post",{"children":[["category","AWS","d"],{"children":[["slug","day4-AWS","d"],{"children":["__PAGE__",{},["$L1","$L2",null]]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","post","children","$4","children","$5","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","post","children","$4","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","post","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},[null,["$","html",null,{"lang":"ko","suppressHydrationWarning":true,"children":[["$","head",null,{"children":["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n              (function() {\n                try {\n                  const savedTheme = localStorage.getItem('theme');\n                  // Default to 'dark' if no save found, ignoring system preference for now to start dark\n                  const theme = savedTheme || 'dark';\n                  document.documentElement.setAttribute('data-theme', theme);\n                } catch (e) {}\n              })();\n            "}}]}],["$","body",null,{"children":["$","div",null,{"className":"app-container","children":[["$","$L7",null,{"categories":["AWS","Android","JAVA"]}],["$","main",null,{"className":"main-content","children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","div",null,{"className":"flex flex-col items-center justify-center min-h-[60vh] text-center px-4","children":[["$","h2",null,{"className":"text-4xl font-bold mb-4","children":"404 - Not Found"}],["$","p",null,{"className":"text-gray-500 mb-8","children":"요청하신 페이지를 찾을 수 없습니다."}],["$","$L8",null,{"href":"/","className":"px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition","children":"홈으로 돌아가기"}]]}],"notFoundStyles":[],"styles":null}]}]]}]}]]}],null]],[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/fff7d7d50ba66cff.css","precedence":"next","crossOrigin":""}]],"$L9"]]]]
+a:T2e19,<h1>AWS 네트워크 서비스 (VPC)</h1>
 <hr>
 <h2>1. Amazon VPC (Virtual Private Cloud)</h2>
 <h3>1.1 VPC 개요</h3>
@@ -118,12 +118,37 @@ a:T2d76,<h1>AWS 네트워크 서비스 (VPC)</h1>
 </ul>
 <hr>
 <h2>9. 보안 그룹 vs NACL</h2>
-<p>| 구분      | 보안 그룹 | NACL        |
-| --------- | --------- | ----------- |
-| 적용 대상 | 인스턴스  | 서브넷      |
-| 상태      | Stateful  | Stateless   |
-| 규칙      | 허용만    | 허용 + 거부 |
-| 평가 방식 | 전체      | 순서        |</p>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>보안 그룹</th>
+<th>NACL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>적용 대상</td>
+<td>인스턴스</td>
+<td>서브넷</td>
+</tr>
+<tr>
+<td>상태</td>
+<td>Stateful</td>
+<td>Stateless</td>
+</tr>
+<tr>
+<td>규칙</td>
+<td>허용만</td>
+<td>허용 + 거부</td>
+</tr>
+<tr>
+<td>평가 방식</td>
+<td>전체</td>
+<td>순서</td>
+</tr>
+</tbody>
+</table>
 <hr>
 <h2>10. VPC Peering</h2>
 <h3>개요</h3>
@@ -312,13 +337,42 @@ a:T2d76,<h1>AWS 네트워크 서비스 (VPC)</h1>
 </ul>
 <hr>
 <h3>18.3 CloudFront vs Global Accelerator</h3>
-<p>| 항목      | CloudFront  | Global Accelerator       |
-| --------- | ----------- | ------------------------ |
-| 목적      | 콘텐츠 전달 | 네트워크 가속            |
-| 캐싱      | O           | X                        |
-| 프로토콜  | HTTP/HTTPS  | TCP/UDP                  |
-| IP 주소   | 변경 가능   | 고정 Anycast             |
-| 사용 대상 | 웹 콘텐츠   | 게임, API, 실시간 서비스 |</p>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>CloudFront</th>
+<th>Global Accelerator</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>목적</td>
+<td>콘텐츠 전달</td>
+<td>네트워크 가속</td>
+</tr>
+<tr>
+<td>캐싱</td>
+<td>O</td>
+<td>X</td>
+</tr>
+<tr>
+<td>프로토콜</td>
+<td>HTTP/HTTPS</td>
+<td>TCP/UDP</td>
+</tr>
+<tr>
+<td>IP 주소</td>
+<td>변경 가능</td>
+<td>고정 Anycast</td>
+</tr>
+<tr>
+<td>사용 대상</td>
+<td>웹 콘텐츠</td>
+<td>게임, API, 실시간 서비스</td>
+</tr>
+</tbody>
+</table>
 <hr>
 <h2>19. AWS 요금 모델 (Pricing)</h2>
 <h3>19.1 기본 원칙</h3>

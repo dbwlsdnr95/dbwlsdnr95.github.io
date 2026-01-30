@@ -4,15 +4,40 @@
 8:I[5250,["250","static/chunks/250-069982e43c2ae463.js","931","static/chunks/app/page-e31ae51de7be232e.js"],""]
 4:["category","Android","d"]
 5:["slug","day1","d"]
-0:["16MaIM6sfU5RrcCsiLE0O",[[["",{"children":["post",{"children":[["category","Android","d"],{"children":[["slug","day1","d"],{"children":["__PAGE__?{\"category\":\"Android\",\"slug\":\"day1\"}",{}]}]}]}]},"$undefined","$undefined",true],["",{"children":["post",{"children":[["category","Android","d"],{"children":[["slug","day1","d"],{"children":["__PAGE__",{},["$L1","$L2",null]]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","post","children","$4","children","$5","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","post","children","$4","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","post","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},[null,["$","html",null,{"lang":"ko","suppressHydrationWarning":true,"children":[["$","head",null,{"children":["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n              (function() {\n                try {\n                  const savedTheme = localStorage.getItem('theme');\n                  // Default to 'dark' if no save found, ignoring system preference for now to start dark\n                  const theme = savedTheme || 'dark';\n                  document.documentElement.setAttribute('data-theme', theme);\n                } catch (e) {}\n              })();\n            "}}]}],["$","body",null,{"children":["$","div",null,{"className":"app-container","children":[["$","$L7",null,{"categories":["AWS","Android","JAVA"]}],["$","main",null,{"className":"main-content","children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","div",null,{"className":"flex flex-col items-center justify-center min-h-[60vh] text-center px-4","children":[["$","h2",null,{"className":"text-4xl font-bold mb-4","children":"404 - Not Found"}],["$","p",null,{"className":"text-gray-500 mb-8","children":"요청하신 페이지를 찾을 수 없습니다."}],["$","$L8",null,{"href":"/","className":"px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition","children":"홈으로 돌아가기"}]]}],"notFoundStyles":[],"styles":null}]}]]}]}]]}],null]],[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/fff7d7d50ba66cff.css","precedence":"next","crossOrigin":""}]],"$L9"]]]]
-a:T1921,<h1>모바일 보안 기초 정리 (Android &#x26; iOS)</h1>
+0:["2BDZlJ6cDPI6q5M9NRLC3",[[["",{"children":["post",{"children":[["category","Android","d"],{"children":[["slug","day1","d"],{"children":["__PAGE__?{\"category\":\"Android\",\"slug\":\"day1\"}",{}]}]}]}]},"$undefined","$undefined",true],["",{"children":["post",{"children":[["category","Android","d"],{"children":[["slug","day1","d"],{"children":["__PAGE__",{},["$L1","$L2",null]]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","post","children","$4","children","$5","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","post","children","$4","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","post","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},[null,["$","html",null,{"lang":"ko","suppressHydrationWarning":true,"children":[["$","head",null,{"children":["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n              (function() {\n                try {\n                  const savedTheme = localStorage.getItem('theme');\n                  // Default to 'dark' if no save found, ignoring system preference for now to start dark\n                  const theme = savedTheme || 'dark';\n                  document.documentElement.setAttribute('data-theme', theme);\n                } catch (e) {}\n              })();\n            "}}]}],["$","body",null,{"children":["$","div",null,{"className":"app-container","children":[["$","$L7",null,{"categories":["AWS","Android","JAVA"]}],["$","main",null,{"className":"main-content","children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","div",null,{"className":"flex flex-col items-center justify-center min-h-[60vh] text-center px-4","children":[["$","h2",null,{"className":"text-4xl font-bold mb-4","children":"404 - Not Found"}],["$","p",null,{"className":"text-gray-500 mb-8","children":"요청하신 페이지를 찾을 수 없습니다."}],["$","$L8",null,{"href":"/","className":"px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition","children":"홈으로 돌아가기"}]]}],"notFoundStyles":[],"styles":null}]}]]}]}]]}],null]],[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/fff7d7d50ba66cff.css","precedence":"next","crossOrigin":""}]],"$L9"]]]]
+a:T1878,<h1>모바일 보안 기초 정리 (Android &#x26; iOS)</h1>
 <h2>1. 운영체제 개념</h2>
-<p>| 구분                | Android (갤럭시)        | iOS (아이폰)                   |
-| ------------------- | ----------------------- | ------------------------------ |
-| 기반 OS             | Linux 기반              | Unix 기반 (Darwin)             |
-| 사용자 커스터마이징 | 높음                    | 낮음                           |
-| 앱 설치 방식        | APK 파일 직접 설치 가능 | App Store 우선, 외부 설치 제한 |
-| 루팅/탈옥           | 비교적 쉬움             | 매우 어려움                    |</p>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>Android (갤럭시)</th>
+<th>iOS (아이폰)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>기반 OS</td>
+<td>Linux 기반</td>
+<td>Unix 기반 (Darwin)</td>
+</tr>
+<tr>
+<td>사용자 커스터마이징</td>
+<td>높음</td>
+<td>낮음</td>
+</tr>
+<tr>
+<td>앱 설치 방식</td>
+<td>APK 파일 직접 설치 가능</td>
+<td>App Store 우선, 외부 설치 제한</td>
+</tr>
+<tr>
+<td>루팅/탈옥</td>
+<td>비교적 쉬움</td>
+<td>매우 어려움</td>
+</tr>
+</tbody>
+</table>
 <hr>
 <h1>2. 루팅(Rooting) &#x26; 탈옥(Jailbreak)</h1>
 <h2>Android 루팅 이유</h2>
@@ -85,14 +110,47 @@ a:T1921,<h1>모바일 보안 기초 정리 (Android &#x26; iOS)</h1>
 </ul>
 <hr>
 <h1>7. 모바일 리버싱 난이도 비교</h1>
-<p>| 항목               | Android                  | iOS                            |
-| ------------------ | ------------------------ | ------------------------------ |
-| 언어               | Java/Kotlin              | Swift/Obj-C                    |
-| 코드를 얻는 난이도 | 쉬움(디컴파일 잘됨)      | 어려움(바이너리 분석)          |
-| 실행 파일          | APK                      | IPA                            |
-| Native 코드        | JNI(.so)                 | 거의 모두 Native               |
-| 에뮬레이터         | 가능 (Nox, Bluestack 등) | 어려움(맥 필요)                |
-| 보안               | 중간                     | 매우 강함 (탈옥 자체가 어려움) |</p>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>Android</th>
+<th>iOS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>언어</td>
+<td>Java/Kotlin</td>
+<td>Swift/Obj-C</td>
+</tr>
+<tr>
+<td>코드를 얻는 난이도</td>
+<td>쉬움(디컴파일 잘됨)</td>
+<td>어려움(바이너리 분석)</td>
+</tr>
+<tr>
+<td>실행 파일</td>
+<td>APK</td>
+<td>IPA</td>
+</tr>
+<tr>
+<td>Native 코드</td>
+<td>JNI(.so)</td>
+<td>거의 모두 Native</td>
+</tr>
+<tr>
+<td>에뮬레이터</td>
+<td>가능 (Nox, Bluestack 등)</td>
+<td>어려움(맥 필요)</td>
+</tr>
+<tr>
+<td>보안</td>
+<td>중간</td>
+<td>매우 강함 (탈옥 자체가 어려움)</td>
+</tr>
+</tbody>
+</table>
 <hr>
 <h1>8. Rooting / Jailbreak 도구</h1>
 <h3>Android 루팅 도구</h3>

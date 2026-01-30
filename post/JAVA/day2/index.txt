@@ -4,8 +4,8 @@
 8:I[5250,["250","static/chunks/250-069982e43c2ae463.js","931","static/chunks/app/page-e31ae51de7be232e.js"],""]
 4:["category","JAVA","d"]
 5:["slug","day2","d"]
-0:["16MaIM6sfU5RrcCsiLE0O",[[["",{"children":["post",{"children":[["category","JAVA","d"],{"children":[["slug","day2","d"],{"children":["__PAGE__?{\"category\":\"JAVA\",\"slug\":\"day2\"}",{}]}]}]}]},"$undefined","$undefined",true],["",{"children":["post",{"children":[["category","JAVA","d"],{"children":[["slug","day2","d"],{"children":["__PAGE__",{},["$L1","$L2",null]]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","post","children","$4","children","$5","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","post","children","$4","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","post","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},[null,["$","html",null,{"lang":"ko","suppressHydrationWarning":true,"children":[["$","head",null,{"children":["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n              (function() {\n                try {\n                  const savedTheme = localStorage.getItem('theme');\n                  // Default to 'dark' if no save found, ignoring system preference for now to start dark\n                  const theme = savedTheme || 'dark';\n                  document.documentElement.setAttribute('data-theme', theme);\n                } catch (e) {}\n              })();\n            "}}]}],["$","body",null,{"children":["$","div",null,{"className":"app-container","children":[["$","$L7",null,{"categories":["AWS","Android","JAVA"]}],["$","main",null,{"className":"main-content","children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","div",null,{"className":"flex flex-col items-center justify-center min-h-[60vh] text-center px-4","children":[["$","h2",null,{"className":"text-4xl font-bold mb-4","children":"404 - Not Found"}],["$","p",null,{"className":"text-gray-500 mb-8","children":"요청하신 페이지를 찾을 수 없습니다."}],["$","$L8",null,{"href":"/","className":"px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition","children":"홈으로 돌아가기"}]]}],"notFoundStyles":[],"styles":null}]}]]}]}]]}],null]],[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/fff7d7d50ba66cff.css","precedence":"next","crossOrigin":""}]],"$L9"]]]]
-a:T167b,<h1>변수 (Variable)</h1>
+0:["2BDZlJ6cDPI6q5M9NRLC3",[[["",{"children":["post",{"children":[["category","JAVA","d"],{"children":[["slug","day2","d"],{"children":["__PAGE__?{\"category\":\"JAVA\",\"slug\":\"day2\"}",{}]}]}]}]},"$undefined","$undefined",true],["",{"children":["post",{"children":[["category","JAVA","d"],{"children":[["slug","day2","d"],{"children":["__PAGE__",{},["$L1","$L2",null]]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","post","children","$4","children","$5","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","post","children","$4","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","post","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},[null,["$","html",null,{"lang":"ko","suppressHydrationWarning":true,"children":[["$","head",null,{"children":["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n              (function() {\n                try {\n                  const savedTheme = localStorage.getItem('theme');\n                  // Default to 'dark' if no save found, ignoring system preference for now to start dark\n                  const theme = savedTheme || 'dark';\n                  document.documentElement.setAttribute('data-theme', theme);\n                } catch (e) {}\n              })();\n            "}}]}],["$","body",null,{"children":["$","div",null,{"className":"app-container","children":[["$","$L7",null,{"categories":["AWS","Android","JAVA"]}],["$","main",null,{"className":"main-content","children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","div",null,{"className":"flex flex-col items-center justify-center min-h-[60vh] text-center px-4","children":[["$","h2",null,{"className":"text-4xl font-bold mb-4","children":"404 - Not Found"}],["$","p",null,{"className":"text-gray-500 mb-8","children":"요청하신 페이지를 찾을 수 없습니다."}],["$","$L8",null,{"href":"/","className":"px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition","children":"홈으로 돌아가기"}]]}],"notFoundStyles":[],"styles":null}]}]]}]}]]}],null]],[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/fff7d7d50ba66cff.css","precedence":"next","crossOrigin":""}]],"$L9"]]]]
+a:T17c5,<h1>변수 (Variable)</h1>
 <h2>개요</h2>
 <ul>
 <li>변수(variable)는 <strong>값을 저장하고 재사용하기 위한 데이터 저장소</strong></li>
@@ -99,13 +99,36 @@ char d = 'A';        // 문자 1개
 String e = "Hello";  // 문자열
 </code></pre>
 <h3>주요 타입 정리</h3>
-<p>| 타입    | 설명                 |
-| ------- | -------------------- |
-| int     | 정수                 |
-| double  | 실수                 |
-| boolean | true / false         |
-| char    | 문자 1개             |
-| String  | 문자열 (특별한 타입) |</p>
+<table>
+<thead>
+<tr>
+<th>타입</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>int</td>
+<td>정수</td>
+</tr>
+<tr>
+<td>double</td>
+<td>실수</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>true / false</td>
+</tr>
+<tr>
+<td>char</td>
+<td>문자 1개</td>
+</tr>
+<tr>
+<td>String</td>
+<td>문자열 (특별한 타입)</td>
+</tr>
+</tbody>
+</table>
 <hr>
 <h2>6. 리터럴(Literal)</h2>
 <ul>
@@ -121,19 +144,61 @@ boolean c = true;
 <hr>
 <h2>7. 숫자 타입 상세</h2>
 <h3>정수형</h3>
-<p>| 타입  | 범위             | 크기 |
-| ----- | ---------------- | ---- |
-| byte  | -128 ~ 127       | 1B   |
-| short | -32,768 ~ 32,767 | 2B   |
-| int   | 약 ±20억         | 4B   |
-| long  | 매우 큰 정수     | 8B   |</p>
+<table>
+<thead>
+<tr>
+<th>타입</th>
+<th>범위</th>
+<th>크기</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>byte</td>
+<td>-128 ~ 127</td>
+<td>1B</td>
+</tr>
+<tr>
+<td>short</td>
+<td>-32,768 ~ 32,767</td>
+<td>2B</td>
+</tr>
+<tr>
+<td>int</td>
+<td>약 ±20억</td>
+<td>4B</td>
+</tr>
+<tr>
+<td>long</td>
+<td>매우 큰 정수</td>
+<td>8B</td>
+</tr>
+</tbody>
+</table>
 <pre><code>long l = 10000000000L;
 </code></pre>
 <h3>실수형</h3>
-<p>| 타입   | 정밀도 | 크기 |
-| ------ | ------ | ---- |
-| float  | 7자리  | 4B   |
-| double | 15자리 | 8B   |</p>
+<table>
+<thead>
+<tr>
+<th>타입</th>
+<th>정밀도</th>
+<th>크기</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>float</td>
+<td>7자리</td>
+<td>4B</td>
+</tr>
+<tr>
+<td>double</td>
+<td>15자리</td>
+<td>8B</td>
+</tr>
+</tbody>
+</table>
 <pre><code>float f = 10.0f;
 double d = 10.0;
 </code></pre>
@@ -170,12 +235,32 @@ double d = 10.0;
 int orderDetail;
 </code></pre>
 <h3>자바 전체 네이밍 규칙 요약</h3>
-<p>| 대상        | 규칙              |
-| ----------- | ----------------- |
-| 클래스      | 대문자 시작       |
-| 변수/메서드 | 소문자 시작       |
-| 상수        | 전부 대문자 + <code>_</code> |
-| 패키지      | 전부 소문자       |</p>
+<table>
+<thead>
+<tr>
+<th>대상</th>
+<th>규칙</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>클래스</td>
+<td>대문자 시작</td>
+</tr>
+<tr>
+<td>변수/메서드</td>
+<td>소문자 시작</td>
+</tr>
+<tr>
+<td>상수</td>
+<td>전부 대문자 + <code>_</code></td>
+</tr>
+<tr>
+<td>패키지</td>
+<td>전부 소문자</td>
+</tr>
+</tbody>
+</table>
 <hr>
 <h2>10. 연습 문제 요약</h2>
 <h3>문제 1 – 변수로 중복 제거</h3>

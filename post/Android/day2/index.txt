@@ -4,17 +4,54 @@
 8:I[5250,["250","static/chunks/250-069982e43c2ae463.js","931","static/chunks/app/page-e31ae51de7be232e.js"],""]
 4:["category","Android","d"]
 5:["slug","day2","d"]
-0:["16MaIM6sfU5RrcCsiLE0O",[[["",{"children":["post",{"children":[["category","Android","d"],{"children":[["slug","day2","d"],{"children":["__PAGE__?{\"category\":\"Android\",\"slug\":\"day2\"}",{}]}]}]}]},"$undefined","$undefined",true],["",{"children":["post",{"children":[["category","Android","d"],{"children":[["slug","day2","d"],{"children":["__PAGE__",{},["$L1","$L2",null]]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","post","children","$4","children","$5","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","post","children","$4","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","post","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},[null,["$","html",null,{"lang":"ko","suppressHydrationWarning":true,"children":[["$","head",null,{"children":["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n              (function() {\n                try {\n                  const savedTheme = localStorage.getItem('theme');\n                  // Default to 'dark' if no save found, ignoring system preference for now to start dark\n                  const theme = savedTheme || 'dark';\n                  document.documentElement.setAttribute('data-theme', theme);\n                } catch (e) {}\n              })();\n            "}}]}],["$","body",null,{"children":["$","div",null,{"className":"app-container","children":[["$","$L7",null,{"categories":["AWS","Android","JAVA"]}],["$","main",null,{"className":"main-content","children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","div",null,{"className":"flex flex-col items-center justify-center min-h-[60vh] text-center px-4","children":[["$","h2",null,{"className":"text-4xl font-bold mb-4","children":"404 - Not Found"}],["$","p",null,{"className":"text-gray-500 mb-8","children":"요청하신 페이지를 찾을 수 없습니다."}],["$","$L8",null,{"href":"/","className":"px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition","children":"홈으로 돌아가기"}]]}],"notFoundStyles":[],"styles":null}]}]]}]}]]}],null]],[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/fff7d7d50ba66cff.css","precedence":"next","crossOrigin":""}]],"$L9"]]]]
-a:T1077,<h2>1. 모바일 앱 분석 환경 구축</h2>
-<p>| 용도       | 이름                 | 설명                         |
-| ---------- | -------------------- | ---------------------------- |
-| 에뮬레이터 | Nox App Player       | 구글 검색 후 다운로드 &#x26; 설치 |
-| 디컴파일러 | jadx                 | GitHub 최신 Release 다운로드 |
-| 디컴파일러 | apkstudio            | APK 분석용 GUI               |
-| APK 변환   | apkeasytool portable | apktool 기반 CLI 툴          |
-| 자바       | Adoptium OpenJDK     | adoptium 검색 후 설치        |
-| 파이썬     | Python 3.x           | python download              |
-| 디버깅     | adb                  | ADB &#x26; Fastboot               |</p>
+0:["2BDZlJ6cDPI6q5M9NRLC3",[[["",{"children":["post",{"children":[["category","Android","d"],{"children":[["slug","day2","d"],{"children":["__PAGE__?{\"category\":\"Android\",\"slug\":\"day2\"}",{}]}]}]}]},"$undefined","$undefined",true],["",{"children":["post",{"children":[["category","Android","d"],{"children":[["slug","day2","d"],{"children":["__PAGE__",{},["$L1","$L2",null]]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","post","children","$4","children","$5","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","post","children","$4","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","post","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},[null,["$","html",null,{"lang":"ko","suppressHydrationWarning":true,"children":[["$","head",null,{"children":["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n              (function() {\n                try {\n                  const savedTheme = localStorage.getItem('theme');\n                  // Default to 'dark' if no save found, ignoring system preference for now to start dark\n                  const theme = savedTheme || 'dark';\n                  document.documentElement.setAttribute('data-theme', theme);\n                } catch (e) {}\n              })();\n            "}}]}],["$","body",null,{"children":["$","div",null,{"className":"app-container","children":[["$","$L7",null,{"categories":["AWS","Android","JAVA"]}],["$","main",null,{"className":"main-content","children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","div",null,{"className":"flex flex-col items-center justify-center min-h-[60vh] text-center px-4","children":[["$","h2",null,{"className":"text-4xl font-bold mb-4","children":"404 - Not Found"}],["$","p",null,{"className":"text-gray-500 mb-8","children":"요청하신 페이지를 찾을 수 없습니다."}],["$","$L8",null,{"href":"/","className":"px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition","children":"홈으로 돌아가기"}]]}],"notFoundStyles":[],"styles":null}]}]]}]}]]}],null]],[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/fff7d7d50ba66cff.css","precedence":"next","crossOrigin":""}]],"$L9"]]]]
+a:T1121,<h2>1. 모바일 앱 분석 환경 구축</h2>
+<table>
+<thead>
+<tr>
+<th>용도</th>
+<th>이름</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>에뮬레이터</td>
+<td>Nox App Player</td>
+<td>구글 검색 후 다운로드 &#x26; 설치</td>
+</tr>
+<tr>
+<td>디컴파일러</td>
+<td>jadx</td>
+<td>GitHub 최신 Release 다운로드</td>
+</tr>
+<tr>
+<td>디컴파일러</td>
+<td>apkstudio</td>
+<td>APK 분석용 GUI</td>
+</tr>
+<tr>
+<td>APK 변환</td>
+<td>apkeasytool portable</td>
+<td>apktool 기반 CLI 툴</td>
+</tr>
+<tr>
+<td>자바</td>
+<td>Adoptium OpenJDK</td>
+<td>adoptium 검색 후 설치</td>
+</tr>
+<tr>
+<td>파이썬</td>
+<td>Python 3.x</td>
+<td>python download</td>
+</tr>
+<tr>
+<td>디버깅</td>
+<td>adb</td>
+<td>ADB &#x26; Fastboot</td>
+</tr>
+</tbody>
+</table>
 <hr>
 <h3>기타 세팅</h3>
 <h4>• Rooting / VT-x</h4>
@@ -27,7 +64,7 @@ a:T1077,<h2>1. 모바일 앱 분석 환경 구축</h2>
 </li>
 <li>VT-x 활성 여부 확인:
 <ul>
-<li>https://leomoon.com/downloads/desktop-apps/leomoon-cpu-v/</li>
+<li><a href="https://leomoon.com/downloads/desktop-apps/leomoon-cpu-v/">https://leomoon.com/downloads/desktop-apps/leomoon-cpu-v/</a></li>
 </ul>
 </li>
 </ul>
@@ -60,13 +97,36 @@ a:T1077,<h2>1. 모바일 앱 분석 환경 구축</h2>
 </ul>
 <hr>
 <h2>4. ADB 명령어</h2>
-<p>| 명령어      | 설명                   |
-| ----------- | ---------------------- |
-| adb devices | 연결된 기기 확인       |
-| adb shell   | 스마트폰 OS Shell 접속 |
-| adb install | APK 설치               |
-| adb pull    | 폰 → PC 파일 추출      |
-| adb push    | PC → 폰 파일 전송      |</p>
+<table>
+<thead>
+<tr>
+<th>명령어</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>adb devices</td>
+<td>연결된 기기 확인</td>
+</tr>
+<tr>
+<td>adb shell</td>
+<td>스마트폰 OS Shell 접속</td>
+</tr>
+<tr>
+<td>adb install</td>
+<td>APK 설치</td>
+</tr>
+<tr>
+<td>adb pull</td>
+<td>폰 → PC 파일 추출</td>
+</tr>
+<tr>
+<td>adb push</td>
+<td>PC → 폰 파일 전송</td>
+</tr>
+</tbody>
+</table>
 <hr>
 <h3>설치된 앱 패키지 확인</h3>
 <pre><code>adb shell

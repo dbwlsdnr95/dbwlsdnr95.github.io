@@ -4,15 +4,35 @@
 8:I[5250,["250","static/chunks/250-069982e43c2ae463.js","931","static/chunks/app/page-e31ae51de7be232e.js"],""]
 4:["category","Android","d"]
 5:["slug","day4","d"]
-0:["16MaIM6sfU5RrcCsiLE0O",[[["",{"children":["post",{"children":[["category","Android","d"],{"children":[["slug","day4","d"],{"children":["__PAGE__?{\"category\":\"Android\",\"slug\":\"day4\"}",{}]}]}]}]},"$undefined","$undefined",true],["",{"children":["post",{"children":[["category","Android","d"],{"children":[["slug","day4","d"],{"children":["__PAGE__",{},["$L1","$L2",null]]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","post","children","$4","children","$5","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","post","children","$4","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","post","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},[null,["$","html",null,{"lang":"ko","suppressHydrationWarning":true,"children":[["$","head",null,{"children":["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n              (function() {\n                try {\n                  const savedTheme = localStorage.getItem('theme');\n                  // Default to 'dark' if no save found, ignoring system preference for now to start dark\n                  const theme = savedTheme || 'dark';\n                  document.documentElement.setAttribute('data-theme', theme);\n                } catch (e) {}\n              })();\n            "}}]}],["$","body",null,{"children":["$","div",null,{"className":"app-container","children":[["$","$L7",null,{"categories":["AWS","Android","JAVA"]}],["$","main",null,{"className":"main-content","children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","div",null,{"className":"flex flex-col items-center justify-center min-h-[60vh] text-center px-4","children":[["$","h2",null,{"className":"text-4xl font-bold mb-4","children":"404 - Not Found"}],["$","p",null,{"className":"text-gray-500 mb-8","children":"요청하신 페이지를 찾을 수 없습니다."}],["$","$L8",null,{"href":"/","className":"px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition","children":"홈으로 돌아가기"}]]}],"notFoundStyles":[],"styles":null}]}]]}]}]]}],null]],[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/fff7d7d50ba66cff.css","precedence":"next","crossOrigin":""}]],"$L9"]]]]
-a:T190c,<h1>Android 기본 컴포넌트 &#x26; 취약점 개념 정리</h1>
+0:["2BDZlJ6cDPI6q5M9NRLC3",[[["",{"children":["post",{"children":[["category","Android","d"],{"children":[["slug","day4","d"],{"children":["__PAGE__?{\"category\":\"Android\",\"slug\":\"day4\"}",{}]}]}]}]},"$undefined","$undefined",true],["",{"children":["post",{"children":[["category","Android","d"],{"children":[["slug","day4","d"],{"children":["__PAGE__",{},["$L1","$L2",null]]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","post","children","$4","children","$5","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","post","children","$4","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","post","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},[null,["$","html",null,{"lang":"ko","suppressHydrationWarning":true,"children":[["$","head",null,{"children":["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n              (function() {\n                try {\n                  const savedTheme = localStorage.getItem('theme');\n                  // Default to 'dark' if no save found, ignoring system preference for now to start dark\n                  const theme = savedTheme || 'dark';\n                  document.documentElement.setAttribute('data-theme', theme);\n                } catch (e) {}\n              })();\n            "}}]}],["$","body",null,{"children":["$","div",null,{"className":"app-container","children":[["$","$L7",null,{"categories":["AWS","Android","JAVA"]}],["$","main",null,{"className":"main-content","children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","div",null,{"className":"flex flex-col items-center justify-center min-h-[60vh] text-center px-4","children":[["$","h2",null,{"className":"text-4xl font-bold mb-4","children":"404 - Not Found"}],["$","p",null,{"className":"text-gray-500 mb-8","children":"요청하신 페이지를 찾을 수 없습니다."}],["$","$L8",null,{"href":"/","className":"px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition","children":"홈으로 돌아가기"}]]}],"notFoundStyles":[],"styles":null}]}]]}]}]]}],null]],[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/fff7d7d50ba66cff.css","precedence":"next","crossOrigin":""}]],"$L9"]]]]
+a:T18bf,<h1>Android 기본 컴포넌트 &#x26; 취약점 개념 정리</h1>
 <h2>Android 주요 컴포넌트(Component)</h2>
-<p>| 컴포넌트              | 설명                                                        |
-| --------------------- | ----------------------------------------------------------- |
-| <strong>Activity</strong>          | 화면(UI)을 구성하는 요소. 액티비티는 사용자 인터페이스 단위 |
-| <strong>Service</strong>           | 화면 없이 백그라운드에서 실행되는 컴포넌트                  |
-| <strong>Content Provider</strong>  | 앱 간 데이터를 공유/조회하기 위한 데이터 제공자             |
-| <strong>BroadcastReceiver</strong> | 시스템/앱 이벤트를 받아서 동작하는 이벤트 핸들러            |</p>
+<table>
+<thead>
+<tr>
+<th>컴포넌트</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Activity</strong></td>
+<td>화면(UI)을 구성하는 요소. 액티비티는 사용자 인터페이스 단위</td>
+</tr>
+<tr>
+<td><strong>Service</strong></td>
+<td>화면 없이 백그라운드에서 실행되는 컴포넌트</td>
+</tr>
+<tr>
+<td><strong>Content Provider</strong></td>
+<td>앱 간 데이터를 공유/조회하기 위한 데이터 제공자</td>
+</tr>
+<tr>
+<td><strong>BroadcastReceiver</strong></td>
+<td>시스템/앱 이벤트를 받아서 동작하는 이벤트 핸들러</td>
+</tr>
+</tbody>
+</table>
 <hr>
 <h2>AndroidManifest.xml</h2>
 <p>Android 앱의 전체 구성 정보를 담고 있는 파일.</p>
@@ -139,12 +159,32 @@ ORDER BY &#x3C;sortOrder>
 <p>→ (로그인 우회, 특정 기능 동작)</p>
 <hr>
 <h1>Component Attack Summary</h1>
-<p>| 공격 대상             | 방법                                         |
-| --------------------- | -------------------------------------------- |
-| <strong>Activity</strong>          | <code>am start</code> 로 강제 실행 (Extra 조작 포함)    |
-| <strong>Service</strong>           | <code>am start-service</code> 로 실행                   |
-| <strong>BroadcastReceiver</strong> | <code>am broadcast -a ACTION</code> 로 이벤트 강제 전달 |
-| <strong>Content Provider</strong>  | <code>content query --uri</code> 로 데이터 조작/조회    |</p>
+<table>
+<thead>
+<tr>
+<th>공격 대상</th>
+<th>방법</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Activity</strong></td>
+<td><code>am start</code> 로 강제 실행 (Extra 조작 포함)</td>
+</tr>
+<tr>
+<td><strong>Service</strong></td>
+<td><code>am start-service</code> 로 실행</td>
+</tr>
+<tr>
+<td><strong>BroadcastReceiver</strong></td>
+<td><code>am broadcast -a ACTION</code> 로 이벤트 강제 전달</td>
+</tr>
+<tr>
+<td><strong>Content Provider</strong></td>
+<td><code>content query --uri</code> 로 데이터 조작/조회</td>
+</tr>
+</tbody>
+</table>
 <hr>
 <h1>️ Useful ADB Commands</h1>
 <pre><code>am start -n 패키지명/.메인액티비티

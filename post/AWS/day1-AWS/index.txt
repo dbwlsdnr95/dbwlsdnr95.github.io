@@ -4,8 +4,8 @@
 8:I[5250,["250","static/chunks/250-069982e43c2ae463.js","931","static/chunks/app/page-e31ae51de7be232e.js"],""]
 4:["category","AWS","d"]
 5:["slug","day1-AWS","d"]
-0:["16MaIM6sfU5RrcCsiLE0O",[[["",{"children":["post",{"children":[["category","AWS","d"],{"children":[["slug","day1-AWS","d"],{"children":["__PAGE__?{\"category\":\"AWS\",\"slug\":\"day1-AWS\"}",{}]}]}]}]},"$undefined","$undefined",true],["",{"children":["post",{"children":[["category","AWS","d"],{"children":[["slug","day1-AWS","d"],{"children":["__PAGE__",{},["$L1","$L2",null]]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","post","children","$4","children","$5","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","post","children","$4","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","post","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},[null,["$","html",null,{"lang":"ko","suppressHydrationWarning":true,"children":[["$","head",null,{"children":["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n              (function() {\n                try {\n                  const savedTheme = localStorage.getItem('theme');\n                  // Default to 'dark' if no save found, ignoring system preference for now to start dark\n                  const theme = savedTheme || 'dark';\n                  document.documentElement.setAttribute('data-theme', theme);\n                } catch (e) {}\n              })();\n            "}}]}],["$","body",null,{"children":["$","div",null,{"className":"app-container","children":[["$","$L7",null,{"categories":["AWS","Android","JAVA"]}],["$","main",null,{"className":"main-content","children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","div",null,{"className":"flex flex-col items-center justify-center min-h-[60vh] text-center px-4","children":[["$","h2",null,{"className":"text-4xl font-bold mb-4","children":"404 - Not Found"}],["$","p",null,{"className":"text-gray-500 mb-8","children":"요청하신 페이지를 찾을 수 없습니다."}],["$","$L8",null,{"href":"/","className":"px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition","children":"홈으로 돌아가기"}]]}],"notFoundStyles":[],"styles":null}]}]]}]}]]}],null]],[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/fff7d7d50ba66cff.css","precedence":"next","crossOrigin":""}]],"$L9"]]]]
-a:T1829,<h1>AWS Basic → IAM 전체 정리</h1>
+0:["2BDZlJ6cDPI6q5M9NRLC3",[[["",{"children":["post",{"children":[["category","AWS","d"],{"children":[["slug","day1-AWS","d"],{"children":["__PAGE__?{\"category\":\"AWS\",\"slug\":\"day1-AWS\"}",{}]}]}]}]},"$undefined","$undefined",true],["",{"children":["post",{"children":[["category","AWS","d"],{"children":[["slug","day1-AWS","d"],{"children":["__PAGE__",{},["$L1","$L2",null]]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","post","children","$4","children","$5","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","post","children","$4","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","post","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},[null,["$","html",null,{"lang":"ko","suppressHydrationWarning":true,"children":[["$","head",null,{"children":["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n              (function() {\n                try {\n                  const savedTheme = localStorage.getItem('theme');\n                  // Default to 'dark' if no save found, ignoring system preference for now to start dark\n                  const theme = savedTheme || 'dark';\n                  document.documentElement.setAttribute('data-theme', theme);\n                } catch (e) {}\n              })();\n            "}}]}],["$","body",null,{"children":["$","div",null,{"className":"app-container","children":[["$","$L7",null,{"categories":["AWS","Android","JAVA"]}],["$","main",null,{"className":"main-content","children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","div",null,{"className":"flex flex-col items-center justify-center min-h-[60vh] text-center px-4","children":[["$","h2",null,{"className":"text-4xl font-bold mb-4","children":"404 - Not Found"}],["$","p",null,{"className":"text-gray-500 mb-8","children":"요청하신 페이지를 찾을 수 없습니다."}],["$","$L8",null,{"href":"/","className":"px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition","children":"홈으로 돌아가기"}]]}],"notFoundStyles":[],"styles":null}]}]]}]}]]}],null]],[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/fff7d7d50ba66cff.css","precedence":"next","crossOrigin":""}]],"$L9"]]]]
+a:T1863,<h1>AWS Basic → IAM 전체 정리</h1>
 <h1>#1. 클라우드 컴퓨팅 기본 개념</h1>
 <h2>클라우드 컴퓨팅이란?</h2>
 <blockquote>
@@ -71,13 +71,42 @@ a:T1829,<h1>AWS Basic → IAM 전체 정리</h1>
 </blockquote>
 <hr>
 <h1>#5. AWS 핵심 서비스(간단 정리)</h1>
-<p>| 영역       | 서비스              | 설명                  |
-| ---------- | ------------------- | --------------------- |
-| Compute    | <strong>EC2</strong>             | 가상 서버             |
-| Storage    | <strong>S3</strong>              | 객체 스토리지         |
-| Database   | <strong>RDS / DynamoDB</strong>  | 관계형 / NoSQL DB     |
-| Networking | <strong>VPC</strong>             | 네트워크 구성         |
-| Security   | <strong>IAM / KMS / WAF</strong> | 권한, 암호화, 웹 보안 |</p>
+<table>
+<thead>
+<tr>
+<th>영역</th>
+<th>서비스</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Compute</td>
+<td><strong>EC2</strong></td>
+<td>가상 서버</td>
+</tr>
+<tr>
+<td>Storage</td>
+<td><strong>S3</strong></td>
+<td>객체 스토리지</td>
+</tr>
+<tr>
+<td>Database</td>
+<td><strong>RDS / DynamoDB</strong></td>
+<td>관계형 / NoSQL DB</td>
+</tr>
+<tr>
+<td>Networking</td>
+<td><strong>VPC</strong></td>
+<td>네트워크 구성</td>
+</tr>
+<tr>
+<td>Security</td>
+<td><strong>IAM / KMS / WAF</strong></td>
+<td>권한, 암호화, 웹 보안</td>
+</tr>
+</tbody>
+</table>
 <hr>
 <h1>#6. IAM (Identity and Access Management)</h1>
 <p>IAM은 AWS 리소스에 대한 접근을 제어하는 <strong>보안 핵심 서비스</strong>이다.</p>
@@ -145,18 +174,52 @@ a:T1829,<h1>AWS Basic → IAM 전체 정리</h1>
 </ul>
 <hr>
 <h1>## IAM 정책 유형</h1>
-<p>| 정책 타입        | 설명                              |
-| ---------------- | --------------------------------- |
-| AWS 관리형 정책  | AWS가 제공하는 표준 정책          |
-| 고객 관리형 정책 | 직접 정의한 JSON 정책             |
-| 인라인 정책      | 특정 사용자/역할/그룹에 직접 삽입 |</p>
+<table>
+<thead>
+<tr>
+<th>정책 타입</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AWS 관리형 정책</td>
+<td>AWS가 제공하는 표준 정책</td>
+</tr>
+<tr>
+<td>고객 관리형 정책</td>
+<td>직접 정의한 JSON 정책</td>
+</tr>
+<tr>
+<td>인라인 정책</td>
+<td>특정 사용자/역할/그룹에 직접 삽입</td>
+</tr>
+</tbody>
+</table>
 <hr>
 <h1>## IAM 인증 방식</h1>
-<p>| 방식            | 설명                        |
-| --------------- | --------------------------- |
-| 비밀번호        | 콘솔 로그인                 |
-| Access Key      | CLI/API 요청                |
-| Temporary Token | STS를 통한 일시적 권한 부여 |</p>
+<table>
+<thead>
+<tr>
+<th>방식</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>비밀번호</td>
+<td>콘솔 로그인</td>
+</tr>
+<tr>
+<td>Access Key</td>
+<td>CLI/API 요청</td>
+</tr>
+<tr>
+<td>Temporary Token</td>
+<td>STS를 통한 일시적 권한 부여</td>
+</tr>
+</tbody>
+</table>
 <hr>
 <h1>## IAM 핵심 서비스 연결 흐름</h1>
 <pre><code>User → IAM User → Policy → API/Console → AWS Resource

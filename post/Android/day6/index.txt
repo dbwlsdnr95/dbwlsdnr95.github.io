@@ -4,8 +4,8 @@
 8:I[5250,["250","static/chunks/250-069982e43c2ae463.js","931","static/chunks/app/page-e31ae51de7be232e.js"],""]
 4:["category","Android","d"]
 5:["slug","day6","d"]
-0:["16MaIM6sfU5RrcCsiLE0O",[[["",{"children":["post",{"children":[["category","Android","d"],{"children":[["slug","day6","d"],{"children":["__PAGE__?{\"category\":\"Android\",\"slug\":\"day6\"}",{}]}]}]}]},"$undefined","$undefined",true],["",{"children":["post",{"children":[["category","Android","d"],{"children":[["slug","day6","d"],{"children":["__PAGE__",{},["$L1","$L2",null]]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","post","children","$4","children","$5","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","post","children","$4","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","post","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},[null,["$","html",null,{"lang":"ko","suppressHydrationWarning":true,"children":[["$","head",null,{"children":["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n              (function() {\n                try {\n                  const savedTheme = localStorage.getItem('theme');\n                  // Default to 'dark' if no save found, ignoring system preference for now to start dark\n                  const theme = savedTheme || 'dark';\n                  document.documentElement.setAttribute('data-theme', theme);\n                } catch (e) {}\n              })();\n            "}}]}],["$","body",null,{"children":["$","div",null,{"className":"app-container","children":[["$","$L7",null,{"categories":["AWS","Android","JAVA"]}],["$","main",null,{"className":"main-content","children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","div",null,{"className":"flex flex-col items-center justify-center min-h-[60vh] text-center px-4","children":[["$","h2",null,{"className":"text-4xl font-bold mb-4","children":"404 - Not Found"}],["$","p",null,{"className":"text-gray-500 mb-8","children":"요청하신 페이지를 찾을 수 없습니다."}],["$","$L8",null,{"href":"/","className":"px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition","children":"홈으로 돌아가기"}]]}],"notFoundStyles":[],"styles":null}]}]]}]}]]}],null]],[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/fff7d7d50ba66cff.css","precedence":"next","crossOrigin":""}]],"$L9"]]]]
-a:T1a03,<h2>1. 모바일 API &#x26; Web 통신 구조</h2>
+0:["2BDZlJ6cDPI6q5M9NRLC3",[[["",{"children":["post",{"children":[["category","Android","d"],{"children":[["slug","day6","d"],{"children":["__PAGE__?{\"category\":\"Android\",\"slug\":\"day6\"}",{}]}]}]}]},"$undefined","$undefined",true],["",{"children":["post",{"children":[["category","Android","d"],{"children":[["slug","day6","d"],{"children":["__PAGE__",{},["$L1","$L2",null]]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","post","children","$4","children","$5","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","post","children","$4","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","post","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},[null,["$","html",null,{"lang":"ko","suppressHydrationWarning":true,"children":[["$","head",null,{"children":["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n              (function() {\n                try {\n                  const savedTheme = localStorage.getItem('theme');\n                  // Default to 'dark' if no save found, ignoring system preference for now to start dark\n                  const theme = savedTheme || 'dark';\n                  document.documentElement.setAttribute('data-theme', theme);\n                } catch (e) {}\n              })();\n            "}}]}],["$","body",null,{"children":["$","div",null,{"className":"app-container","children":[["$","$L7",null,{"categories":["AWS","Android","JAVA"]}],["$","main",null,{"className":"main-content","children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","div",null,{"className":"flex flex-col items-center justify-center min-h-[60vh] text-center px-4","children":[["$","h2",null,{"className":"text-4xl font-bold mb-4","children":"404 - Not Found"}],["$","p",null,{"className":"text-gray-500 mb-8","children":"요청하신 페이지를 찾을 수 없습니다."}],["$","$L8",null,{"href":"/","className":"px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition","children":"홈으로 돌아가기"}]]}],"notFoundStyles":[],"styles":null}]}]]}]}]]}],null]],[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/fff7d7d50ba66cff.css","precedence":"next","crossOrigin":""}]],"$L9"]]]]
+a:T1aa8,<h2>1. 모바일 API &#x26; Web 통신 구조</h2>
 <h3>1.1 HTTP API 통신 예시</h3>
 <pre><code>GET /api/v2/ HTTP/1.1
 {
@@ -129,12 +129,32 @@ iilllll1()
 </ul>
 <hr>
 <h3>7.2 디컴파일 도구</h3>
-<p>| 도구            | 설명             |
-| --------------- | ---------------- |
-| apktool         | 리소스 분석      |
-| jadx / jadx-gui | Java 소스 복원   |
-| APK Studio      | GUI 기반         |
-| APK Easy Tool   | Windows Portable |</p>
+<table>
+<thead>
+<tr>
+<th>도구</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>apktool</td>
+<td>리소스 분석</td>
+</tr>
+<tr>
+<td>jadx / jadx-gui</td>
+<td>Java 소스 복원</td>
+</tr>
+<tr>
+<td>APK Studio</td>
+<td>GUI 기반</td>
+</tr>
+<tr>
+<td>APK Easy Tool</td>
+<td>Windows Portable</td>
+</tr>
+</tbody>
+</table>
 <hr>
 <h3>7.3 코드 변환 흐름</h3>
 <pre><code>Java / Kotlin → class → smali → classes.dex
@@ -142,12 +162,32 @@ C / C++ → .so → JNI → Java
 </code></pre>
 <hr>
 <h2>8. Android Component 구조</h2>
-<p>| Component          | 설명        |
-| ------------------ | ----------- |
-| Activity           | 화면        |
-| Service            | 백그라운드  |
-| Content Provider   | 데이터 공유 |
-| Broadcast Receiver | 이벤트 처리 |</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Activity</td>
+<td>화면</td>
+</tr>
+<tr>
+<td>Service</td>
+<td>백그라운드</td>
+</tr>
+<tr>
+<td>Content Provider</td>
+<td>데이터 공유</td>
+</tr>
+<tr>
+<td>Broadcast Receiver</td>
+<td>이벤트 처리</td>
+</tr>
+</tbody>
+</table>
 <hr>
 <h2>9. Content Provider 취약점</h2>
 <h3>9.1 코드 예시</h3>
@@ -210,11 +250,28 @@ showMessage("오류", decrypt(error_msg));
 </code></pre>
 <hr>
 <h2>13. 취약점 실습 앱</h2>
-<p>| 앱             | 설명                  |
-| -------------- | --------------------- |
-| AndroGoat      | 공식 취약점 실습      |
-| InsecureBankV2 | 은행 앱 취약점        |
-| DIVA           | 구버전 Android 취약점 |</p>
+<table>
+<thead>
+<tr>
+<th>앱</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AndroGoat</td>
+<td>공식 취약점 실습</td>
+</tr>
+<tr>
+<td>InsecureBankV2</td>
+<td>은행 앱 취약점</td>
+</tr>
+<tr>
+<td>DIVA</td>
+<td>구버전 Android 취약점</td>
+</tr>
+</tbody>
+</table>
 <hr>
 <h2>14. 기타</h2>
 <ul>

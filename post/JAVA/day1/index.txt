@@ -4,8 +4,8 @@
 8:I[5250,["250","static/chunks/250-069982e43c2ae463.js","931","static/chunks/app/page-e31ae51de7be232e.js"],""]
 4:["category","JAVA","d"]
 5:["slug","day1","d"]
-0:["16MaIM6sfU5RrcCsiLE0O",[[["",{"children":["post",{"children":[["category","JAVA","d"],{"children":[["slug","day1","d"],{"children":["__PAGE__?{\"category\":\"JAVA\",\"slug\":\"day1\"}",{}]}]}]}]},"$undefined","$undefined",true],["",{"children":["post",{"children":[["category","JAVA","d"],{"children":[["slug","day1","d"],{"children":["__PAGE__",{},["$L1","$L2",null]]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","post","children","$4","children","$5","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","post","children","$4","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","post","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},[null,["$","html",null,{"lang":"ko","suppressHydrationWarning":true,"children":[["$","head",null,{"children":["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n              (function() {\n                try {\n                  const savedTheme = localStorage.getItem('theme');\n                  // Default to 'dark' if no save found, ignoring system preference for now to start dark\n                  const theme = savedTheme || 'dark';\n                  document.documentElement.setAttribute('data-theme', theme);\n                } catch (e) {}\n              })();\n            "}}]}],["$","body",null,{"children":["$","div",null,{"className":"app-container","children":[["$","$L7",null,{"categories":["AWS","Android","JAVA"]}],["$","main",null,{"className":"main-content","children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","div",null,{"className":"flex flex-col items-center justify-center min-h-[60vh] text-center px-4","children":[["$","h2",null,{"className":"text-4xl font-bold mb-4","children":"404 - Not Found"}],["$","p",null,{"className":"text-gray-500 mb-8","children":"요청하신 페이지를 찾을 수 없습니다."}],["$","$L8",null,{"href":"/","className":"px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition","children":"홈으로 돌아가기"}]]}],"notFoundStyles":[],"styles":null}]}]]}]}]]}],null]],[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/fff7d7d50ba66cff.css","precedence":"next","crossOrigin":""}]],"$L9"]]]]
-a:T14f0,<h1>Java 입문 - Hello World</h1>
+0:["2BDZlJ6cDPI6q5M9NRLC3",[[["",{"children":["post",{"children":[["category","JAVA","d"],{"children":[["slug","day1","d"],{"children":["__PAGE__?{\"category\":\"JAVA\",\"slug\":\"day1\"}",{}]}]}]}]},"$undefined","$undefined",true],["",{"children":["post",{"children":[["category","JAVA","d"],{"children":[["slug","day1","d"],{"children":["__PAGE__",{},["$L1","$L2",null]]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","post","children","$4","children","$5","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","post","children","$4","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","post","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},[null,["$","html",null,{"lang":"ko","suppressHydrationWarning":true,"children":[["$","head",null,{"children":["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n              (function() {\n                try {\n                  const savedTheme = localStorage.getItem('theme');\n                  // Default to 'dark' if no save found, ignoring system preference for now to start dark\n                  const theme = savedTheme || 'dark';\n                  document.documentElement.setAttribute('data-theme', theme);\n                } catch (e) {}\n              })();\n            "}}]}],["$","body",null,{"children":["$","div",null,{"className":"app-container","children":[["$","$L7",null,{"categories":["AWS","Android","JAVA"]}],["$","main",null,{"className":"main-content","children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","div",null,{"className":"flex flex-col items-center justify-center min-h-[60vh] text-center px-4","children":[["$","h2",null,{"className":"text-4xl font-bold mb-4","children":"404 - Not Found"}],["$","p",null,{"className":"text-gray-500 mb-8","children":"요청하신 페이지를 찾을 수 없습니다."}],["$","$L8",null,{"href":"/","className":"px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition","children":"홈으로 돌아가기"}]]}],"notFoundStyles":[],"styles":null}]}]]}]}]]}],null]],[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/fff7d7d50ba66cff.css","precedence":"next","crossOrigin":""}]],"$L9"]]]]
+a:T1506,<h1>Java 입문 - Hello World</h1>
 <h2>개발 환경 설정</h2>
 <h3>IDE 선택</h3>
 <ul>
@@ -74,12 +74,32 @@ a:T14f0,<h1>Java 입문 - Hello World</h1>
 }
 </code></pre>
 <h3>주요 구성</h3>
-<p>| 구문                                     | 설명            |
-| ---------------------------------------- | --------------- |
-| <code>public class HelloJava</code>                 | 클래스 선언     |
-| <code>public static void main(String[] args)</code> | 프로그램 시작점 |
-| <code>System.out.println()</code>                   | 콘솔 출력 명령  |
-| <code>;</code>                                      | 문장 끝 구분자  |</p>
+<table>
+<thead>
+<tr>
+<th>구문</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public class HelloJava</code></td>
+<td>클래스 선언</td>
+</tr>
+<tr>
+<td><code>public static void main(String[] args)</code></td>
+<td>프로그램 시작점</td>
+</tr>
+<tr>
+<td><code>System.out.println()</code></td>
+<td>콘솔 출력 명령</td>
+</tr>
+<tr>
+<td><code>;</code></td>
+<td>문장 끝 구분자</td>
+</tr>
+</tbody>
+</table>
 <p><strong>실행 과정</strong></p>
 <ol>
 <li>프로그램 시작</li>
@@ -106,11 +126,28 @@ a:T14f0,<h1>Java 입문 - Hello World</h1>
 </blockquote>
 <h2>자바란?</h2>
 <p>자바는 <strong>표준 스펙</strong>과 <strong>구현체</strong>로 구성됨.</p>
-<p>| 표준 스펙          | 구현체 예시     |
-| ------------------ | --------------- |
-| 자바 컴파일러, JVM | Oracle OpenJDK  |
-|                    | Eclipse Temurin |
-|                    | Amazon Corretto |</p>
+<table>
+<thead>
+<tr>
+<th>표준 스펙</th>
+<th>구현체 예시</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>자바 컴파일러, JVM</td>
+<td>Oracle OpenJDK</td>
+</tr>
+<tr>
+<td></td>
+<td>Eclipse Temurin</td>
+</tr>
+<tr>
+<td></td>
+<td>Amazon Corretto</td>
+</tr>
+</tbody>
+</table>
 <p>→ 모두 <strong>서로 호환 가능</strong>
 → OpenJDK에서 Temurin으로 바꿔도 대부분 문제 없이 동작</p>
 <hr>
@@ -126,19 +163,50 @@ java Hello
 <p>IntelliJ에서는 이 과정이 자동으로 처리됨.</p>
 </blockquote>
 <h2>자바와 OS 독립성</h2>
-<p>| 일반 프로그램           | 자바 프로그램                |
-| ----------------------- | ---------------------------- |
-| OS 전용 실행파일 (.exe) | JVM 위에서 실행되는 <code>.class</code> |
-| OS 간 호환 불가         | 모든 OS에서 실행 가능        |</p>
+<table>
+<thead>
+<tr>
+<th>일반 프로그램</th>
+<th>자바 프로그램</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OS 전용 실행파일 (.exe)</td>
+<td>JVM 위에서 실행되는 <code>.class</code></td>
+</tr>
+<tr>
+<td>OS 간 호환 불가</td>
+<td>모든 OS에서 실행 가능</td>
+</tr>
+</tbody>
+</table>
 <p>즉,
 Windows에서 작성한 Java 코드 → Mac/Linux에서도 실행 가능.
 운영체제 호환 문제를 <strong>JVM이 해결</strong>해 준다1. Hello World.</p>
 <hr>
 <h2>개발과 배포 환경</h2>
-<p>| 구분    | 환경          | 설명                           |
-| ------- | ------------- | ------------------------------ |
-| 개발 PC | Windows / Mac | OpenJDK 사용                   |
-| 서버    | Linux         | Amazon Corretto 자바 사용 가능 |</p>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>환경</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>개발 PC</td>
+<td>Windows / Mac</td>
+<td>OpenJDK 사용</td>
+</tr>
+<tr>
+<td>서버</td>
+<td>Linux</td>
+<td>Amazon Corretto 자바 사용 가능</td>
+</tr>
+</tbody>
+</table>
 <p>자바의 운영체제 독립성 덕분에
 <strong>개발 환경과 서버 환경이 달라도 문제 없이 동작</strong>한다1. Hello World.</p>
 <hr>

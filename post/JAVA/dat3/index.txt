@@ -4,8 +4,8 @@
 8:I[5250,["250","static/chunks/250-069982e43c2ae463.js","931","static/chunks/app/page-e31ae51de7be232e.js"],""]
 4:["category","JAVA","d"]
 5:["slug","dat3","d"]
-0:["16MaIM6sfU5RrcCsiLE0O",[[["",{"children":["post",{"children":[["category","JAVA","d"],{"children":[["slug","dat3","d"],{"children":["__PAGE__?{\"category\":\"JAVA\",\"slug\":\"dat3\"}",{}]}]}]}]},"$undefined","$undefined",true],["",{"children":["post",{"children":[["category","JAVA","d"],{"children":[["slug","dat3","d"],{"children":["__PAGE__",{},["$L1","$L2",null]]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","post","children","$4","children","$5","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","post","children","$4","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","post","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},[null,["$","html",null,{"lang":"ko","suppressHydrationWarning":true,"children":[["$","head",null,{"children":["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n              (function() {\n                try {\n                  const savedTheme = localStorage.getItem('theme');\n                  // Default to 'dark' if no save found, ignoring system preference for now to start dark\n                  const theme = savedTheme || 'dark';\n                  document.documentElement.setAttribute('data-theme', theme);\n                } catch (e) {}\n              })();\n            "}}]}],["$","body",null,{"children":["$","div",null,{"className":"app-container","children":[["$","$L7",null,{"categories":["AWS","Android","JAVA"]}],["$","main",null,{"className":"main-content","children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","div",null,{"className":"flex flex-col items-center justify-center min-h-[60vh] text-center px-4","children":[["$","h2",null,{"className":"text-4xl font-bold mb-4","children":"404 - Not Found"}],["$","p",null,{"className":"text-gray-500 mb-8","children":"요청하신 페이지를 찾을 수 없습니다."}],["$","$L8",null,{"href":"/","className":"px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition","children":"홈으로 돌아가기"}]]}],"notFoundStyles":[],"styles":null}]}]]}]}]]}],null]],[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/fff7d7d50ba66cff.css","precedence":"next","crossOrigin":""}]],"$L9"]]]]
-a:T12c1,<h1>연산자 (Operators)</h1>
+0:["2BDZlJ6cDPI6q5M9NRLC3",[[["",{"children":["post",{"children":[["category","JAVA","d"],{"children":[["slug","dat3","d"],{"children":["__PAGE__?{\"category\":\"JAVA\",\"slug\":\"dat3\"}",{}]}]}]}]},"$undefined","$undefined",true],["",{"children":["post",{"children":[["category","JAVA","d"],{"children":[["slug","dat3","d"],{"children":["__PAGE__",{},["$L1","$L2",null]]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","post","children","$4","children","$5","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","post","children","$4","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","post","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},[null,["$","html",null,{"lang":"ko","suppressHydrationWarning":true,"children":[["$","head",null,{"children":["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n              (function() {\n                try {\n                  const savedTheme = localStorage.getItem('theme');\n                  // Default to 'dark' if no save found, ignoring system preference for now to start dark\n                  const theme = savedTheme || 'dark';\n                  document.documentElement.setAttribute('data-theme', theme);\n                } catch (e) {}\n              })();\n            "}}]}],["$","body",null,{"children":["$","div",null,{"className":"app-container","children":[["$","$L7",null,{"categories":["AWS","Android","JAVA"]}],["$","main",null,{"className":"main-content","children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","div",null,{"className":"flex flex-col items-center justify-center min-h-[60vh] text-center px-4","children":[["$","h2",null,{"className":"text-4xl font-bold mb-4","children":"404 - Not Found"}],["$","p",null,{"className":"text-gray-500 mb-8","children":"요청하신 페이지를 찾을 수 없습니다."}],["$","$L8",null,{"href":"/","className":"px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition","children":"홈으로 돌아가기"}]]}],"notFoundStyles":[],"styles":null}]}]]}]}]]}],null]],[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/fff7d7d50ba66cff.css","precedence":"next","crossOrigin":""}]],"$L9"]]]]
+a:T144b,<h1>연산자 (Operators)</h1>
 <p>자바에서 <strong>연산자(operator)</strong> 는 값을 계산·비교·대입하기 위한 기호이다.
 예: <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>==</code>, <code>&#x26;&#x26;</code>, <code>=</code> 등 3. 연산자</p>
 <hr>
@@ -20,13 +20,36 @@ a + b
 <hr>
 <h2>2. 산술 연산자</h2>
 <p>숫자 계산에 사용되는 기본 연산자 3. 연산자</p>
-<p>| 연산자 | 의미   |
-| ------ | ------ |
-| <code>+</code>    | 더하기 |
-| <code>-</code>    | 빼기   |
-| <code>*</code>    | 곱하기 |
-| <code>/</code>    | 나누기 |
-| <code>%</code>    | 나머지 |</p>
+<table>
+<thead>
+<tr>
+<th>연산자</th>
+<th>의미</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>+</code></td>
+<td>더하기</td>
+</tr>
+<tr>
+<td><code>-</code></td>
+<td>빼기</td>
+</tr>
+<tr>
+<td><code>*</code></td>
+<td>곱하기</td>
+</tr>
+<tr>
+<td><code>/</code></td>
+<td>나누기</td>
+</tr>
+<tr>
+<td><code>%</code></td>
+<td>나머지</td>
+</tr>
+</tbody>
+</table>
 <h3>️ 주의 사항</h3>
 <ul>
 <li>
@@ -74,24 +97,64 @@ a + b
 --a;  // a = a - 1
 </code></pre>
 <h3>전위 / 후위 차이</h3>
-<p>| 형태  | 설명              |
-| ----- | ----------------- |
-| <code>++a</code> | 먼저 증가 후 사용 |
-| <code>a++</code> | 먼저 사용 후 증가 |</p>
+<table>
+<thead>
+<tr>
+<th>형태</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>++a</code></td>
+<td>먼저 증가 후 사용</td>
+</tr>
+<tr>
+<td><code>a++</code></td>
+<td>먼저 사용 후 증가</td>
+</tr>
+</tbody>
+</table>
 <pre><code>b = ++a; // a 증가 → b 대입
 b = a++; // b 대입 → a 증가
 </code></pre>
 <hr>
 <h2>6. 비교 연산자</h2>
 <p>두 값을 비교하여 <strong>boolean(true/false)</strong> 반환 3. 연산자</p>
-<p>| 연산자 | 의미        |
-| ------ | ----------- |
-| <code>==</code>   | 같다        |
-| <code>!=</code>   | 다르다      |
-| <code>></code>    | 크다        |
-| <code>&#x3C;</code>    | 작다        |
-| <code>>=</code>   | 크거나 같다 |
-| <code>&#x3C;=</code>   | 작거나 같다 |</p>
+<table>
+<thead>
+<tr>
+<th>연산자</th>
+<th>의미</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>==</code></td>
+<td>같다</td>
+</tr>
+<tr>
+<td><code>!=</code></td>
+<td>다르다</td>
+</tr>
+<tr>
+<td><code>></code></td>
+<td>크다</td>
+</tr>
+<tr>
+<td><code>&#x3C;</code></td>
+<td>작다</td>
+</tr>
+<tr>
+<td><code>>=</code></td>
+<td>크거나 같다</td>
+</tr>
+<tr>
+<td><code>&#x3C;=</code></td>
+<td>작거나 같다</td>
+</tr>
+</tbody>
+</table>
 <h3>️ 문자열 비교 주의</h3>
 <pre><code>str1 == str2      //  사용 금지
 str1.equals(str2) //  문자열 비교
@@ -99,10 +162,28 @@ str1.equals(str2) //  문자열 비교
 <hr>
 <h2>7. 논리 연산자</h2>
 <p>boolean 값의 논리 연산 3. 연산자</p>
-<p>| 연산자 | 의미            |
-| ------ | --------------- |
-| <code>&#x26;&#x26;</code>   | AND (모두 true) |
-| <code>     |                 | |</code>!`    | NOT (반전)      |</p>
+<table>
+<thead>
+<tr>
+<th>연산자</th>
+<th>의미</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&#x26;&#x26;</code></td>
+<td>AND (모두 true)</td>
+</tr>
+<tr>
+<td>`</td>
+<td></td>
+</tr>
+<tr>
+<td><code>!</code></td>
+<td>NOT (반전)</td>
+</tr>
+</tbody>
+</table>
 <pre><code>a > 10 &#x26;&#x26; a &#x3C; 20
 </code></pre>
 <hr>
