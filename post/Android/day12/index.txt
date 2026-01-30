@@ -1,0 +1,469 @@
+3:I[5613,[],""]
+6:I[1778,[],""]
+7:I[8383,["250","static/chunks/250-069982e43c2ae463.js","185","static/chunks/app/layout-10c7e025b6149e17.js"],""]
+8:I[5250,["250","static/chunks/250-069982e43c2ae463.js","931","static/chunks/app/page-e31ae51de7be232e.js"],""]
+4:["category","Android","d"]
+5:["slug","day12","d"]
+0:["16MaIM6sfU5RrcCsiLE0O",[[["",{"children":["post",{"children":[["category","Android","d"],{"children":[["slug","day12","d"],{"children":["__PAGE__?{\"category\":\"Android\",\"slug\":\"day12\"}",{}]}]}]}]},"$undefined","$undefined",true],["",{"children":["post",{"children":[["category","Android","d"],{"children":[["slug","day12","d"],{"children":["__PAGE__",{},["$L1","$L2",null]]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","post","children","$4","children","$5","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","post","children","$4","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","post","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},[null,["$","html",null,{"lang":"ko","suppressHydrationWarning":true,"children":[["$","head",null,{"children":["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n              (function() {\n                try {\n                  const savedTheme = localStorage.getItem('theme');\n                  // Default to 'dark' if no save found, ignoring system preference for now to start dark\n                  const theme = savedTheme || 'dark';\n                  document.documentElement.setAttribute('data-theme', theme);\n                } catch (e) {}\n              })();\n            "}}]}],["$","body",null,{"children":["$","div",null,{"className":"app-container","children":[["$","$L7",null,{"categories":["AWS","Android","JAVA"]}],["$","main",null,{"className":"main-content","children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","div",null,{"className":"flex flex-col items-center justify-center min-h-[60vh] text-center px-4","children":[["$","h2",null,{"className":"text-4xl font-bold mb-4","children":"404 - Not Found"}],["$","p",null,{"className":"text-gray-500 mb-8","children":"요청하신 페이지를 찾을 수 없습니다."}],["$","$L8",null,{"href":"/","className":"px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition","children":"홈으로 돌아가기"}]]}],"notFoundStyles":[],"styles":null}]}]]}]}]]}],null]],[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/fff7d7d50ba66cff.css","precedence":"next","crossOrigin":""}]],"$L9"]]]]
+a:T2ddc,<p>Frida Labs 직접 실습</p>
+<h2>Challenge 풀이 요약</h2>
+<h3>1️⃣ chall01</h3>
+<ul>
+<li>
+<p>대상 클래스: <code>challenge_01.chall01</code></p>
+</li>
+<li>
+<p>내부 필드 값을 직접 수정하여 <strong>값을 1로 설정</strong></p>
+</li>
+<li>
+<p>함수 호출 없이 필드 조작만으로 해결</p>
+<pre><code>Java.perform(() => {
+    var chall01 = Java.use("uk.rossmarks.fridalab.challenge_01");
+    chall01.chall01.value = 1;
+});
+</code></pre>
+</li>
+</ul>
+<hr>
+<h3>2️⃣ chall02</h3>
+<ul>
+<li>
+<p><code>MainActivity</code> 인스턴스를 찾아</p>
+</li>
+<li>
+<p><code>chall02()</code> 메서드를 <strong>직접 호출</strong></p>
+</li>
+<li>
+<p>파라미터 없이 호출 시 자동으로 완료</p>
+<pre><code>Java.perform(function () {
+    Java.choose("uk.rossmarks.fridalab.MainActivity", {
+        onMatch: function (instance) {
+            instance.chall02();
+        },
+        onComplete: function () { }
+    });
+});
+</code></pre>
+</li>
+</ul>
+<hr>
+<h3>3️⃣ chall03</h3>
+<ul>
+<li>
+<p>대상 메서드: <code>MainActivity.chall03()</code></p>
+</li>
+<li>
+<p>반환값을 항상 <code>true</code>로 <strong>후킹하여 고정</strong></p>
+</li>
+<li>
+<p>로직 무시 방식</p>
+<pre><code>Java.perform(() => {
+   var MainActivity = Java.use("uk.rossmarks.fridalab.MainActivity");
+    MainActivity.chall03.implementation = function () {
+        return true;
+};
+});
+</code></pre>
+</li>
+</ul>
+<hr>
+<h3>4️⃣ chall04</h3>
+<ul>
+<li>
+<p><code>MainActivity.chall04("frida")</code> 호출</p>
+</li>
+<li>
+<p>문자열 비교 로직을 만족하도록 <strong>입력값 조작</strong></p>
+</li>
+<li>
+<p>인자 값 <code>"frida"</code> 전달로 해결</p>
+<pre><code>Java.perform(() => {
+    Java.choose("uk.rossmarks.fridalab.MainActivity", {
+        onMatch(instance) {
+            instance.chall04("frida");
+        },
+        onComplete() {}
+    });
+});
+</code></pre>
+</li>
+</ul>
+<hr>
+<h3>5️⃣ chall05</h3>
+<ul>
+<li>
+<p><code>MainActivity.chall05</code> 메서드 후킹</p>
+</li>
+<li>
+<p>어떤 입력이 오더라도 내부에서 <code>"frida"</code>로 치환</p>
+</li>
+<li>
+<p>입력 무력화 방식</p>
+<pre><code>Java.perform(() => {
+    var MainActivity = Java.use("uk.rossmarks.fridalab.MainActivity");
+
+    MainActivity.chall05.implementation = function (str) {
+        return this.chall05("frida");
+    };
+});
+</code></pre>
+</li>
+</ul>
+<hr>
+<h3>6️⃣ chall06</h3>
+<ul>
+<li>
+<p>앱 실행 후 <strong>10초 대기 (총 11초 이상)</strong></p>
+</li>
+<li>
+<p><code>challenge_06.chall06</code> 내부 값 읽기</p>
+</li>
+<li>
+<p>해당 값을 <code>MainActivity.chall06(value)</code>로 전달</p>
+</li>
+<li>
+<p><strong>타이밍 + 값 추출</strong> 조합 문제</p>
+<pre><code>Java.perform(() => {
+    setTimeout(function () {
+        const Challenge06 = Java.use("uk.rossmarks.fridalab.challenge_06");
+        Java.choose("uk.rossmarks.fridalab.MainActivity", {
+            onMatch(instance) {
+                const value = Challenge06.chall06.value;
+                instance.chall06(value);
+            },
+            onComplete() {}
+        });
+    }, 11000);
+});
+</code></pre>
+</li>
+</ul>
+<hr>
+<h3>7️⃣ chall07</h3>
+<ul>
+<li>
+<p>PIN 코드 <strong>0000 ~ 9999 전체 브루트포스</strong></p>
+</li>
+<li>
+<p><code>chall07(pin)</code> 반복 호출</p>
+</li>
+<li>
+<p>성공 조건:</p>
+<pre><code>completeArr[6] === 1
+</code></pre>
+</li>
+<li>
+<p>자동화 스크립트로 해결</p>
+<pre><code>Java.perform(() => {
+    setTimeout(() => {
+        Java.choose("uk.rossmarks.fridalab.MainActivity", {
+            onMatch(instance) {
+
+                for (let i = 0; i &#x3C;= 9999; i++) {
+                    const pin = ("0000" + i).slice(-4);
+
+                    instance.chall07(pin);
+
+                    if (instance.completeArr.value[6] === 1) {
+                        console.log("[비밀번호 확인] =", pin);
+                        break;
+                    }
+                }
+
+            },
+            onComplete() {}
+        });
+    }, 1000);
+});
+</code></pre>
+</li>
+</ul>
+<hr>
+<h3>8️⃣ chall08</h3>
+<ul>
+<li>
+<p>버튼 ID: <code>check</code></p>
+</li>
+<li>
+<p>버튼 텍스트를 <code>"Confirm"</code>으로 변경</p>
+</li>
+<li>
+<p>이후 <code>chall08()</code> 메서드 호출</p>
+</li>
+<li>
+<p><strong>UI 조작 + 함수 호출</strong> 문제</p>
+<pre><code>Java.perform(() => {
+    const Button = Java.use("android.widget.Button");
+    const JString = Java.use("java.lang.String");
+    const checkId = Java.use("uk.rossmarks.fridalab.R$id").check.value;
+
+    Java.choose("uk.rossmarks.fridalab.MainActivity", {
+        onMatch(instance) {
+            const view = instance.findViewById(checkId);
+            if (!view) return;
+
+            const btn = Java.cast(view, Button);
+            btn.setText(JString.$new("Confirm"));
+        },
+        onComplete() {}
+    });
+});
+</code></pre>
+</li>
+</ul>
+<p>9️⃣ 전체 합친 코드</p>
+<pre><code>// challenge 1
+Java.perform(() => {
+    var chall01 = Java.use("uk.rossmarks.fridalab.challenge_01");
+    chall01.chall01.value = 1;
+});
+
+// challenge 2
+Java.perform(function () {
+    Java.choose("uk.rossmarks.fridalab.MainActivity", {
+        onMatch: function (instance) {
+            instance.chall02();
+        },
+        onComplete: function () { }
+    });
+});
+
+// challenge 3
+Java.perform(() => {
+   var MainActivity = Java.use("uk.rossmarks.fridalab.MainActivity");
+    MainActivity.chall03.implementation = function () {
+        return true;
+};
+});
+
+// challenge 4
+Java.perform(() => {
+    Java.choose("uk.rossmarks.fridalab.MainActivity", {
+        onMatch(instance) {
+            instance.chall04("frida");
+        },
+        onComplete() {}
+    });
+});
+
+// challenge 5
+Java.perform(() => {
+    var MainActivity = Java.use("uk.rossmarks.fridalab.MainActivity");
+
+    MainActivity.chall05.implementation = function (str) {
+        return this.chall05("frida");
+    };
+});
+
+// challenge 6
+Java.perform(() => {
+    setTimeout(function () {
+        const Challenge06 = Java.use("uk.rossmarks.fridalab.challenge_06");
+        Java.choose("uk.rossmarks.fridalab.MainActivity", {
+            onMatch(instance) {
+                const value = Challenge06.chall06.value;
+                instance.chall06(value);
+            },
+            onComplete() {}
+        });
+    }, 11000);
+});
+
+// challenge 7
+Java.perform(() => {
+    setTimeout(() => {
+        Java.choose("uk.rossmarks.fridalab.MainActivity", {
+            onMatch(instance) {
+
+                for (let i = 0; i &#x3C;= 9999; i++) {
+                    const pin = ("0000" + i).slice(-4);
+
+                    instance.chall07(pin);
+
+                    if (instance.completeArr.value[6] === 1) {
+                        console.log("[?????? ???] =", pin);
+                        break;
+                    }
+                }
+
+            },
+            onComplete() {}
+        });
+    }, 1000);
+});
+
+// challenge 8
+Java.perform(() => {
+    const Button = Java.use("android.widget.Button");
+    const JString = Java.use("java.lang.String");
+    const checkId = Java.use("uk.rossmarks.fridalab.R$id").check.value;
+
+    Java.choose("uk.rossmarks.fridalab.MainActivity", {
+        onMatch(instance) {
+            const view = instance.findViewById(checkId);
+            if (!view) return;
+
+            const btn = Java.cast(view, Button);
+            btn.setText(JString.$new("Confirm"));
+        },
+        onComplete() {}
+    });
+});
+
+</code></pre>
+<h3>frida labs 풀이</h3>
+<h3>1️⃣ com.ad2001.frida0x1`</h3>
+<ul>
+<li>
+<p>스크립트: <code>fridalabs/1번.js</code></p>
+</li>
+<li>
+<p>설명
+<code>MainActivity.get_random()</code> 메서드를 후킹하여
+랜덤 값을 고정하거나 직접 제어해 조건을 만족시킴.</p>
+<pre><code>Java.perform(() => {
+var MainActivity = Java.use("com.ad2001.frida0x1.MainActivity");
+MainActivity["get_random"].implementation = function () {
+    console.log(`MainActivity.get_random is called`);
+    let result = this["get_random"]();
+    console.log(`MainActivity.get_random result=${result}`);
+    return result;
+};
+});
+</code></pre>
+</li>
+</ul>
+<hr>
+<h3>2️⃣ <code>com.ad2001.frida0x2</code></h3>
+<ul>
+<li>
+<p>스크립트: <code>fridalabs/2번.js</code></p>
+</li>
+<li>
+<p>설명
+<code>MainActivity.get_flag(4919)</code> 메서드를 직접 호출하여
+조건 검증을 우회하고 FLAG 획득.</p>
+<pre><code>Java.perform(function () {
+    var Main = Java.use('com.ad2001.frida0x2.MainActivity');
+    Main.get_flag(4919);
+});
+</code></pre>
+</li>
+</ul>
+<hr>
+<h3>3️⃣ <code>com.ad2001.frida0x3</code></h3>
+<ul>
+<li>
+<p>스크립트: <code>fridalabs/3번.js</code></p>
+</li>
+<li>
+<p>설명
+<code>Checker.code</code> 정적 필드를 <strong>512로 강제 설정</strong>하여
+버튼 클릭 시 <code>YOU WON!!!</code> 조건을 만족하도록 조작.</p>
+<pre><code>Java.perform(function () {
+    var Checker = Java.use("com.ad2001.frida0x3.Checker");
+    Checker.code.value = 512;
+});
+</code></pre>
+</li>
+</ul>
+<hr>
+<h3>4️⃣ <code>com.ad2001.frida0x4</code></h3>
+<ul>
+<li>
+<p>스크립트: <code>fridalabs/4번.js</code></p>
+</li>
+<li>
+<p>설명
+<code>Check</code> 클래스의 인스턴스를 Frida로 생성한 뒤
+<code>get_flag(1337)</code>을 직접 호출하여 XOR 기반 복호화 결과 획득.</p>
+<pre><code>Java.perform(function () {
+    var Check = Java.use("com.ad2001.frida0x4.Check");
+
+    var obj = Check.$new();
+    var result = obj.get_flag(1337);
+
+    console.log("플레그 =", result);
+});
+</code></pre>
+</li>
+</ul>
+<hr>
+<h3>5️⃣ <code>com.ad2001.frida0x5</code></h3>
+<ul>
+<li>
+<p>스크립트: <code>fridalabs/5번.js</code></p>
+</li>
+<li>
+<p>설명
+현재 실행 중인 <code>MainActivity</code> 인스턴스를 탐색한 후
+<code>flag(1337)</code> 메서드를 호출하여 AES 복호화된 FLAG 출력.</p>
+<pre><code>Java.perform(function () {
+    Java.choose("com.ad2001.frida0x5.MainActivity", {
+        onMatch: function (obj) {
+            obj.flag(1337);
+        },
+        onComplete: function () {
+        }
+    });
+});
+</code></pre>
+</li>
+</ul>
+<hr>
+<h3>6️⃣ <code>com.ad2001.frida0x6</code></h3>
+<ul>
+<li>
+<p>스크립트: <code>fridalabs/6번.js</code></p>
+</li>
+<li>
+<p>설명
+<code>Checker</code> 객체를 Frida에서 직접 생성하여</p>
+<ul>
+<li>
+<p><code>num1 = 1234</code></p>
+</li>
+<li>
+<p><code>num2 = 4321</code>
+로 세팅한 뒤 <code>MainActivity.get_flag(obj)</code> 호출로 조건 통과.</p>
+<pre><code>Java.perform(function () {
+    Java.choose("com.ad2001.frida0x6.MainActivity", {
+        onMatch: function (activity) {
+            var Checker = Java.use("com.ad2001.frida0x6.Checker");
+            var obj = Checker.$new();
+            obj.num1.value = 1234;
+            obj.num2.value = 4321;
+            activity.get_flag(obj);
+        },
+        onComplete: function () {
+        }
+    });
+});
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3>7️⃣ <code>com.ad2001.frida0x7</code></h3>
+<ul>
+<li>
+<p>스크립트: <code>fridalabs/7번.js</code></p>
+</li>
+<li>
+<p>설명
+<code>Checker</code> 생성자(오버로드)를 후킹하여
+전달되는 인자 값을 강제로 <strong>513 이상</strong>으로 변경함으로써
+조건문(<code>num1 > 512 &#x26;&#x26; num2 > 512</code>)을 항상 만족시키도록 우회.</p>
+<pre><code>Java.perform(function () {
+    var Checker = Java.use("com.ad2001.frida0x7.Checker");
+    Checker.$init.overload('int', 'int').implementation = function (a, b) {
+        return this.$init(513, 513);
+    };
+});
+</code></pre>
+</li>
+</ul>
+2:["$","article",null,{"className":"article-container","children":[["$","div",null,{"className":"article-header","children":[["$","span",null,{"className":"article-category","children":"Android"}],["$","h1",null,{"className":"article-title","children":"Android 보안 12일차"}]]}],["$","div",null,{"className":"article-content","dangerouslySetInnerHTML":{"__html":"$a"}}]]}]
+9:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"jinwk note"}],["$","meta","3",{"name":"description","content":"jinwk dev note"}]]
+1:null

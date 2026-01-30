@@ -1,0 +1,276 @@
+3:I[5613,[],""]
+6:I[1778,[],""]
+7:I[8383,["250","static/chunks/250-069982e43c2ae463.js","185","static/chunks/app/layout-10c7e025b6149e17.js"],""]
+8:I[5250,["250","static/chunks/250-069982e43c2ae463.js","931","static/chunks/app/page-e31ae51de7be232e.js"],""]
+4:["category","AWS","d"]
+5:["slug","day3-AWS","d"]
+0:["16MaIM6sfU5RrcCsiLE0O",[[["",{"children":["post",{"children":[["category","AWS","d"],{"children":[["slug","day3-AWS","d"],{"children":["__PAGE__?{\"category\":\"AWS\",\"slug\":\"day3-AWS\"}",{}]}]}]}]},"$undefined","$undefined",true],["",{"children":["post",{"children":[["category","AWS","d"],{"children":[["slug","day3-AWS","d"],{"children":["__PAGE__",{},["$L1","$L2",null]]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","post","children","$4","children","$5","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","post","children","$4","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","post","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},[null,["$","html",null,{"lang":"ko","suppressHydrationWarning":true,"children":[["$","head",null,{"children":["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n              (function() {\n                try {\n                  const savedTheme = localStorage.getItem('theme');\n                  // Default to 'dark' if no save found, ignoring system preference for now to start dark\n                  const theme = savedTheme || 'dark';\n                  document.documentElement.setAttribute('data-theme', theme);\n                } catch (e) {}\n              })();\n            "}}]}],["$","body",null,{"children":["$","div",null,{"className":"app-container","children":[["$","$L7",null,{"categories":["AWS","Android","JAVA"]}],["$","main",null,{"className":"main-content","children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","div",null,{"className":"flex flex-col items-center justify-center min-h-[60vh] text-center px-4","children":[["$","h2",null,{"className":"text-4xl font-bold mb-4","children":"404 - Not Found"}],["$","p",null,{"className":"text-gray-500 mb-8","children":"요청하신 페이지를 찾을 수 없습니다."}],["$","$L8",null,{"href":"/","className":"px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition","children":"홈으로 돌아가기"}]]}],"notFoundStyles":[],"styles":null}]}]]}]}]]}],null]],[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/fff7d7d50ba66cff.css","precedence":"next","crossOrigin":""}]],"$L9"]]]]
+a:T187a,<h1>4. 스토리지 서비스</h1>
+<h2>1. Amazon S3 (Simple Storage Service)</h2>
+<h3>1.1 개요 및 특징</h3>
+<ul>
+<li><strong>오브젝트 스토리지</strong>
+<ul>
+<li>데이터를 <strong>객체(Object)</strong> 단위로 저장</li>
+<li>각 객체는 <strong>고유 식별자(Key)</strong>, 데이터, 메타데이터 포함</li>
+</ul>
+</li>
+<li><strong>무제한 용량</strong>
+<ul>
+<li>거의 무제한 저장 가능</li>
+<li>개별 객체 최대 크기: <strong>5TB</strong></li>
+</ul>
+</li>
+<li><strong>고가용성 및 내구성</strong>
+<ul>
+<li>최소 <strong>3개 이상의 가용 영역(AZ)</strong> 에 자동 분산 저장</li>
+<li>매우 높은 내구성 제공</li>
+</ul>
+</li>
+<li><strong>버킷(Bucket)</strong>
+<ul>
+<li>객체를 저장하는 최상위 컨테이너</li>
+<li><strong>리전 단위로 생성</strong></li>
+<li><strong>버킷 이름은 전 세계에서 유일</strong>해야 함</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3>1.2 주요 기능</h3>
+<ul>
+<li><strong>버전 관리 (Versioning)</strong>
+<ul>
+<li>객체의 여러 버전 보존</li>
+<li>실수로 삭제·덮어쓰기 시 복구 가능</li>
+</ul>
+</li>
+<li><strong>데이터 암호화</strong>
+<ul>
+<li>서버 측 암호화
+<ul>
+<li><code>SSE-S3</code></li>
+<li><code>SSE-KMS</code></li>
+<li><code>SSE-C</code></li>
+</ul>
+</li>
+<li>전송 중 암호화
+<ul>
+<li><code>SSL / TLS</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>액세스 관리</strong>
+<ul>
+<li>버킷 정책 (JSON 형식)</li>
+<li>ACL</li>
+<li>퍼블릭 액세스 차단 설정</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3>1.3 스토리지 클래스</h3>
+<ul>
+<li><strong>S3 Standard</strong>
+<ul>
+<li>자주 액세스하는 데이터용 (범용)</li>
+</ul>
+</li>
+<li><strong>S3 Intelligent-Tiering</strong>
+<ul>
+<li>액세스 패턴이 불분명하거나 변하는 데이터</li>
+<li>자동 비용 최적화</li>
+</ul>
+</li>
+<li><strong>S3 Standard-IA</strong>
+<ul>
+<li>자주 액세스하지 않지만 즉시 접근 필요</li>
+<li>최소 <strong>30일 보관</strong></li>
+</ul>
+</li>
+<li><strong>S3 One Zone-IA</strong>
+<ul>
+<li>중요도가 낮은 데이터</li>
+<li>단일 가용 영역 저장 → 비용 저렴</li>
+</ul>
+</li>
+<li><strong>S3 Glacier Instant Retrieval</strong>
+<ul>
+<li>아카이브 데이터</li>
+<li><strong>밀리초 단위 즉시 검색</strong></li>
+</ul>
+</li>
+<li><strong>S3 Glacier Flexible Retrieval</strong>
+<ul>
+<li>분~시간 단위 검색</li>
+<li>연 <strong>1회 정도 액세스</strong> 데이터</li>
+</ul>
+</li>
+<li><strong>S3 Glacier Deep Archive</strong>
+<ul>
+<li>최저 비용 스토리지</li>
+<li><strong>7~10년 장기 보관</strong></li>
+<li>검색 시간: <strong>12~48시간</strong></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3>1.4 부가 기능</h3>
+<ul>
+<li><strong>수명 주기 정책 (Lifecycle Policy)</strong>
+<ul>
+<li>일정 기간 후 스토리지 클래스 자동 변경</li>
+<li>객체 자동 삭제</li>
+<li>비용 절감 목적</li>
+</ul>
+</li>
+<li><strong>S3 Transfer Acceleration</strong>
+<ul>
+<li>전 세계 <strong>엣지 로케이션</strong> 활용</li>
+<li>장거리 파일 전송 속도 향상</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2>2. 하이브리드 및 마이그레이션 스토리지</h2>
+<h3>2.1 AWS Storage Gateway</h3>
+<ul>
+<li>온프레미스 데이터 센터와 AWS 스토리지를 연결하는 <strong>하이브리드 서비스</strong></li>
+<li><strong>유형</strong>
+<ul>
+<li>S3 파일 게이트웨이</li>
+<li>FSx 파일 게이트웨이</li>
+<li>볼륨 게이트웨이</li>
+<li>테이프 게이트웨이</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3>2.2 Amazon FSx</h3>
+<ul>
+<li>고성능 <strong>타사 파일 시스템 제공</strong></li>
+<li><strong>유형</strong>
+<ul>
+<li>FSx for Lustre (HPC용)</li>
+<li>FSx for Windows File Server (SMB 지원)</li>
+<li>FSx for NetApp ONTAP</li>
+<li>FSx for OpenZFS</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3>2.3 AWS Snow Family</h3>
+<ul>
+<li>물리적 장치를 배송하여 <strong>대용량 데이터 마이그레이션</strong></li>
+<li><strong>장치</strong>
+<ul>
+<li>Snowcone: <strong>8TB</strong></li>
+<li>Snowball Edge: <strong>80TB / 210TB</strong></li>
+<li>Snowmobile: <strong>100PB</strong></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3>2.4 AWS DataSync</h3>
+<ul>
+<li>온프레미스 ↔ AWS 스토리지 간</li>
+<li><strong>데이터 복사 자동화 및 가속화 서비스</strong></li>
+</ul>
+<h1>5. 데이터베이스 서비스</h1>
+<h2>1. 관계형 데이터베이스 (RDS)</h2>
+<ul>
+<li><strong>Amazon RDS</strong>
+<ul>
+<li>관리형 관계형 DB 서비스</li>
+<li>하드웨어 프로비저닝, 패치, 백업을 AWS가 담당</li>
+</ul>
+</li>
+<li><strong>Amazon Aurora</strong>
+<ul>
+<li>AWS 전용 RDS 호환 DB</li>
+<li>MySQL 대비 <strong>5배</strong></li>
+<li>PostgreSQL 대비 <strong>3배</strong> 빠름</li>
+</ul>
+</li>
+<li><strong>가용성 옵션</strong>
+<ul>
+<li><strong>Read Replica</strong>
+<ul>
+<li>읽기 성능 향상</li>
+</ul>
+</li>
+<li><strong>Multi-AZ</strong>
+<ul>
+<li>고가용성 보장</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2>2. NoSQL 및 기타 데이터베이스</h2>
+<ul>
+<li><strong>Amazon DynamoDB</strong>
+<ul>
+<li>서버리스 NoSQL</li>
+<li>10ms 미만 지연 시간</li>
+<li>무제한 확장</li>
+</ul>
+</li>
+<li><strong>Amazon ElastiCache</strong>
+<ul>
+<li>인메모리 캐시 (Redis, Memcached)</li>
+<li>응답 성능 개선</li>
+</ul>
+</li>
+<li><strong>기타 전용 DB</strong>
+<ul>
+<li>DocumentDB (문서)</li>
+<li>Neptune (그래프)</li>
+<li>QLDB (원장)</li>
+<li>Timestream (시계열)</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1>6. 데이터 분석 서비스</h1>
+<ul>
+<li><strong>Amazon Athena</strong>
+<ul>
+<li>S3 데이터를 표준 SQL로 쿼리</li>
+<li>서버리스</li>
+</ul>
+</li>
+<li><strong>Amazon Redshift</strong>
+<ul>
+<li>대규모 데이터 웨어하우스</li>
+<li>BI 분석에 적합</li>
+</ul>
+</li>
+<li><strong>Amazon OpenSearch</strong>
+<ul>
+<li>로그 분석</li>
+<li>실시간 모니터링 및 검색</li>
+</ul>
+</li>
+<li><strong>AWS Glue</strong>
+<ul>
+<li>서버리스 ETL 서비스</li>
+<li>데이터 추출·변환·로드</li>
+</ul>
+</li>
+<li><strong>Amazon EMR</strong>
+<ul>
+<li>Hadoop / Spark 기반</li>
+<li>대규모 빅데이터 처리</li>
+</ul>
+</li>
+<li><strong>Amazon QuickSight</strong>
+<ul>
+<li>클라우드 기반 BI 시각화 도구</li>
+</ul>
+</li>
+</ul>
+2:["$","article",null,{"className":"article-container","children":[["$","div",null,{"className":"article-header","children":[["$","span",null,{"className":"article-category","children":"AWS"}],["$","h1",null,{"className":"article-title","children":"AWS 3일차"}]]}],["$","div",null,{"className":"article-content","dangerouslySetInnerHTML":{"__html":"$a"}}]]}]
+9:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"jinwk note"}],["$","meta","3",{"name":"description","content":"jinwk dev note"}]]
+1:null

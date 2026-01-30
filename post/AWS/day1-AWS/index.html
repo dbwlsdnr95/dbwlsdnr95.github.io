@@ -1,0 +1,189 @@
+<!DOCTYPE html><html lang="ko"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" as="image" href="/profile_cute.png"/><link rel="stylesheet" href="/_next/static/css/fff7d7d50ba66cff.css" crossorigin="" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-c5f8510880a90daa.js" crossorigin=""/><script src="/_next/static/chunks/fd9d1056-c50cb70e7323352b.js" async="" crossorigin=""></script><script src="/_next/static/chunks/69-0c59dfdc78baeb85.js" async="" crossorigin=""></script><script src="/_next/static/chunks/main-app-baff347ce7e39457.js" async="" crossorigin=""></script><script src="/_next/static/chunks/250-069982e43c2ae463.js" async=""></script><script src="/_next/static/chunks/app/layout-10c7e025b6149e17.js" async=""></script><script src="/_next/static/chunks/app/page-e31ae51de7be232e.js" async=""></script><title>jinwk note</title><meta name="description" content="jinwk dev note"/><script>
+              (function() {
+                try {
+                  const savedTheme = localStorage.getItem('theme');
+                  // Default to 'dark' if no save found, ignoring system preference for now to start dark
+                  const theme = savedTheme || 'dark';
+                  document.documentElement.setAttribute('data-theme', theme);
+                } catch (e) {}
+              })();
+            </script><script src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js" crossorigin="" noModule=""></script></head><body><div class="app-container"><aside class="sidebar"><div class="profile-section"><div class="profile-img-wrapper"><img src="/profile_cute.png" alt="Profile" class="profile-img"/></div><div class="profile-name" style="display:flex;align-items:center;justify-content:center;gap:0.5rem">jinwook yu<a style="font-size:0.9rem;opacity:0.5;text-decoration:none" href="/admin/">⚙️</a></div><div class="profile-subtitle" style="font-size:0.9rem;color:var(--text-muted);margin-bottom:1rem">dbwlsdnr95</div><div class="profile-bio" style="white-space:pre-line;font-size:0.85rem;text-align:left;width:100%">웹·모바일 진단 ,솔루션 운영 및 클라우드 보안을 경험했고, 현재는 모의해킹·취약점 분석·CVE 연구에 집중하고 있습니다. 실전 기반 보안 역량을 꾸준히 확장하고 있습니다.</div></div><nav class="nav-section"><div class="nav-title">분류 전체보기</div><ul class="nav-list" style="margin-bottom:2rem"><li class="nav-item"><a class="" href="/">전체보기</a></li></ul><div style="margin-bottom:2rem"><div class="nav-title">교육</div><ul class="nav-list"><li class="nav-item"><a class="" href="/category/Android/">Android</a></li><li class="nav-item"><a class="" href="/category/JAVA/">JAVA</a></li><li class="nav-item"><a class="" href="/category/AWS/">AWS</a></li></ul></div></nav></aside><main class="main-content"><article class="article-container"><div class="article-header"><span class="article-category">AWS</span><h1 class="article-title">AWS 1일차</h1></div><div class="article-content"><h1>AWS Basic → IAM 전체 정리</h1>
+<h1>#1. 클라우드 컴퓨팅 기본 개념</h1>
+<h2>클라우드 컴퓨팅이란?</h2>
+<blockquote>
+<p><strong>필요한 IT 자원을 인터넷을 통해 필요할 때 즉시 제공받는 서비스</strong></p>
+</blockquote>
+<p>특징:</p>
+<ul>
+<li>온디맨드(On-Demand)</li>
+<li>탄력성(Elasticity)</li>
+<li>확장성(Scalability)</li>
+<li>사용한 만큼만 비용 지불(Pay-as-you-go)</li>
+<li>관리 부담 감소 (AWS가 인프라 운영)</li>
+</ul>
+<hr>
+<h1>#2. 클라우드 배포 모델</h1>
+<h3>Public Cloud</h3>
+<ul>
+<li>AWS, Azure, GCP 등</li>
+<li>다수 고객이 공유 인프라를 사용</li>
+<li>저렴하고 확장 쉬움</li>
+</ul>
+<h3>Private Cloud</h3>
+<ul>
+<li>기업 내부 전용 클라우드</li>
+<li>높은 보안, 비용은 큼</li>
+</ul>
+<h3>Hybrid Cloud</h3>
+<ul>
+<li>Public + Private 조합</li>
+<li>민감한 데이터는 Private, 나머지는 Public</li>
+</ul>
+<hr>
+<h1>#3. AWS 글로벌 인프라</h1>
+<h2>리전(Region)</h2>
+<ul>
+<li>AWS 인프라가 있는 물리적 위치 (한국: <strong>ap-northeast-2</strong>)</li>
+<li>재해 대비/법적 규제/지연 시간 고려하여 선택</li>
+</ul>
+<h2>가용 영역(AZ, Availability Zone)</h2>
+<ul>
+<li>같은 리전 내의 독립적인 데이터센터</li>
+<li>장애 대비 위해 최소 2개 AZ 사용 권장</li>
+</ul>
+<h2>Edge Location</h2>
+<ul>
+<li>CloudFront CDN이 사용하는 전 세계 캐시 서버</li>
+</ul>
+<hr>
+<h1>#4. AWS 공유 책임 모델 (Shared Responsibility Model)</h1>
+<h2>AWS 책임 (Security <strong>of</strong> the Cloud)</h2>
+<ul>
+<li>하드웨어, 네트워크, 물리적 보안</li>
+<li>가상화 계층 관리</li>
+</ul>
+<h2>고객 책임 (Security <strong>in</strong> the Cloud)</h2>
+<ul>
+<li>IAM 권한 관리</li>
+<li>OS, 애플리케이션 보안 패치</li>
+<li>데이터 보호, 암호화 설정</li>
+</ul>
+<blockquote>
+<p>즉, AWS는 인프라를, 고객은 설정을 책임진다.</p>
+</blockquote>
+<hr>
+<h1>#5. AWS 핵심 서비스(간단 정리)</h1>
+<p>| 영역       | 서비스              | 설명                  |
+| ---------- | ------------------- | --------------------- |
+| Compute    | <strong>EC2</strong>             | 가상 서버             |
+| Storage    | <strong>S3</strong>              | 객체 스토리지         |
+| Database   | <strong>RDS / DynamoDB</strong>  | 관계형 / NoSQL DB     |
+| Networking | <strong>VPC</strong>             | 네트워크 구성         |
+| Security   | <strong>IAM / KMS / WAF</strong> | 권한, 암호화, 웹 보안 |</p>
+<hr>
+<h1>#6. IAM (Identity and Access Management)</h1>
+<p>IAM은 AWS 리소스에 대한 접근을 제어하는 <strong>보안 핵심 서비스</strong>이다.</p>
+<hr>
+<h1>## IAM 구성 요소</h1>
+<h2>1. 사용자(User)</h2>
+<ul>
+<li>사람 또는 시스템용 계정</li>
+<li>비밀번호(콘솔), Access Key(API/CLI) 사용 가능</li>
+</ul>
+<hr>
+<h2>2. 그룹(Group)</h2>
+<ul>
+<li>여러 사용자에게 동일 권한을 부여하기 위한 묶음</li>
+<li>그룹 자체로 로그인은 불가</li>
+</ul>
+<hr>
+<h2>3. 정책(Policy)</h2>
+<p>AWS에서 가장 중요한 부분.</p>
+<ul>
+<li>JSON 형태의 <strong>권한 문서</strong></li>
+<li>“누가 무엇을 할 수 있는지” 정의</li>
+</ul>
+<h3>예시 (S3 ReadOnly 정책)</h3>
+<pre><code>{
+  "Effect": "Allow",
+  "Action": ["s3:Get*", "s3:List*"],
+  "Resource": "*"
+}
+</code></pre>
+<hr>
+<h2>4. 역할(Role)</h2>
+<ul>
+<li>사람이 사용하지 않음</li>
+<li>AWS 리소스가 다른 AWS 서비스에 접근할 수 있도록 하는 자격증명</li>
+</ul>
+<p>예:</p>
+<ul>
+<li>EC2 → S3 접근을 허용하는 IAM Role</li>
+<li>Lambda → DynamoDB 접근 허용 Role</li>
+</ul>
+<hr>
+<h1>## IAM 보안 베스트 프랙티스</h1>
+<h3>Root 계정 사용 금지</h3>
+<ul>
+<li>MFA 활성화 후 보관</li>
+<li>결제, 계정 설정 외에는 사용하지 않음</li>
+</ul>
+<h3>최소 권한 원칙(Least Privilege)</h3>
+<ul>
+<li>필요한 리소스만 최소 권한으로 허용</li>
+</ul>
+<h3>MFA 활성화</h3>
+<ul>
+<li>사용자별 MFA 적용 필수</li>
+</ul>
+<h3>Access Key 노출 금지</h3>
+<ul>
+<li>사용하지 않는 키는 즉시 삭제</li>
+<li>역할(Role) 우선 사용</li>
+</ul>
+<h3>CloudTrail 활성화</h3>
+<ul>
+<li>IAM 변경 사항 및 API 호출 기록 모니터링</li>
+</ul>
+<hr>
+<h1>## IAM 정책 유형</h1>
+<p>| 정책 타입        | 설명                              |
+| ---------------- | --------------------------------- |
+| AWS 관리형 정책  | AWS가 제공하는 표준 정책          |
+| 고객 관리형 정책 | 직접 정의한 JSON 정책             |
+| 인라인 정책      | 특정 사용자/역할/그룹에 직접 삽입 |</p>
+<hr>
+<h1>## IAM 인증 방식</h1>
+<p>| 방식            | 설명                        |
+| --------------- | --------------------------- |
+| 비밀번호        | 콘솔 로그인                 |
+| Access Key      | CLI/API 요청                |
+| Temporary Token | STS를 통한 일시적 권한 부여 |</p>
+<hr>
+<h1>## IAM 핵심 서비스 연결 흐름</h1>
+<pre><code>User → IAM User → Policy → API/Console → AWS Resource
+</code></pre>
+<p>역할(Role) 사용 시:</p>
+<pre><code>EC2 → IAM Role → Policy → AWS Resource
+</code></pre>
+<hr>
+<h1>#7. IAM 관련 AWS 시험 포인트</h1>
+<ul>
+<li>IAM은 리전(global) 서비스이다 (전 세계 동일하게 적용)</li>
+<li>최소 권한 모델 기반 운영(LP: Least Privilege)</li>
+<li>Root 계정은 가능한 한 사용하지 않는다</li>
+<li>사용자 그룹으로 권한을 관리하는 것이 효율적</li>
+<li>EC2 인스턴스에 Access Key 넣지 말 것 → 반드시 <strong>IAM Role</strong> 사용</li>
+</ul>
+<p>시험에 아주 자주 나오는 포인트들이다.</p>
+<hr>
+<h1>마무리 요약</h1>
+<p>IAM은 AWS 보안의 기초이며,
+다음과 같은 질문에 답할 수 있어야 한다:</p>
+<ul>
+<li>누가 로그인할 수 있는가? (사용자)</li>
+<li>어떤 권한을 주는가? (정책)</li>
+<li>어떤 방식으로 AWS 서비스에 접근하는가? (자격증명)</li>
+<li>어떤 서비스가 대신 다른 서비스에 접근하는가? (역할)</li>
+</ul>
+</div></article></main></div><script src="/_next/static/chunks/webpack-c5f8510880a90daa.js" crossorigin="" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0]);self.__next_f.push([2,null])</script><script>self.__next_f.push([1,"1:HL[\"/_next/static/css/fff7d7d50ba66cff.css\",\"style\",{\"crossOrigin\":\"\"}]\n0:\"$L2\"\n"])</script><script>self.__next_f.push([1,"3:I[7690,[],\"\"]\n6:I[5613,[],\"\"]\n9:I[1778,[],\"\"]\na:I[8383,[\"250\",\"static/chunks/250-069982e43c2ae463.js\",\"185\",\"static/chunks/app/layout-10c7e025b6149e17.js\"],\"\"]\nb:I[5250,[\"250\",\"static/chunks/250-069982e43c2ae463.js\",\"931\",\"static/chunks/app/page-e31ae51de7be232e.js\"],\"\"]\nd:I[8955,[],\"\"]\n7:[\"category\",\"AWS\",\"d\"]\n8:[\"slug\",\"day1-AWS\",\"d\"]\ne:[]\n"])</script><script>self.__next_f.push([1,"2:[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/fff7d7d50ba66cff.css\",\"precedence\":\"next\",\"crossOrigin\":\"\"}]],[\"$\",\"$L3\",null,{\"buildId\":\"16MaIM6sfU5RrcCsiLE0O\",\"assetPrefix\":\"\",\"initialCanonicalUrl\":\"/post/AWS/day1-AWS/\",\"initialTree\":[\"\",{\"children\":[\"post\",{\"children\":[[\"category\",\"AWS\",\"d\"],{\"children\":[[\"slug\",\"day1-AWS\",\"d\"],{\"children\":[\"__PAGE__?{\\\"category\\\":\\\"AWS\\\",\\\"slug\\\":\\\"day1-AWS\\\"}\",{}]}]}]}]},\"$undefined\",\"$undefined\",true],\"initialSeedData\":[\"\",{\"children\":[\"post\",{\"children\":[[\"category\",\"AWS\",\"d\"],{\"children\":[[\"slug\",\"day1-AWS\",\"d\"],{\"children\":[\"__PAGE__\",{},[\"$L4\",\"$L5\",null]]},[\"$\",\"$L6\",null,{\"parallelRouterKey\":\"children\",\"segmentPath\":[\"children\",\"post\",\"children\",\"$7\",\"children\",\"$8\",\"children\"],\"loading\":\"$undefined\",\"loadingStyles\":\"$undefined\",\"loadingScripts\":\"$undefined\",\"hasLoading\":false,\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L9\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"notFoundStyles\":\"$undefined\",\"styles\":null}]]},[\"$\",\"$L6\",null,{\"parallelRouterKey\":\"children\",\"segmentPath\":[\"children\",\"post\",\"children\",\"$7\",\"children\"],\"loading\":\"$undefined\",\"loadingStyles\":\"$undefined\",\"loadingScripts\":\"$undefined\",\"hasLoading\":false,\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L9\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"notFoundStyles\":\"$undefined\",\"styles\":null}]]},[\"$\",\"$L6\",null,{\"parallelRouterKey\":\"children\",\"segmentPath\":[\"children\",\"post\",\"children\"],\"loading\":\"$undefined\",\"loadingStyles\":\"$undefined\",\"loadingScripts\":\"$undefined\",\"hasLoading\":false,\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L9\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"notFoundStyles\":\"$undefined\",\"styles\":null}]]},[null,[\"$\",\"html\",null,{\"lang\":\"ko\",\"suppressHydrationWarning\":true,\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"script\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"\\n              (function() {\\n                try {\\n                  const savedTheme = localStorage.getItem('theme');\\n                  // Default to 'dark' if no save found, ignoring system preference for now to start dark\\n                  const theme = savedTheme || 'dark';\\n                  document.documentElement.setAttribute('data-theme', theme);\\n                } catch (e) {}\\n              })();\\n            \"}}]}],[\"$\",\"body\",null,{\"children\":[\"$\",\"div\",null,{\"className\":\"app-container\",\"children\":[[\"$\",\"$La\",null,{\"categories\":[\"AWS\",\"Android\",\"JAVA\"]}],[\"$\",\"main\",null,{\"className\":\"main-content\",\"children\":[\"$\",\"$L6\",null,{\"parallelRouterKey\":\"children\",\"segmentPath\":[\"children\"],\"loading\":\"$undefined\",\"loadingStyles\":\"$undefined\",\"loadingScripts\":\"$undefined\",\"hasLoading\":false,\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L9\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[\"$\",\"div\",null,{\"className\":\"flex flex-col items-center justify-center min-h-[60vh] text-center px-4\",\"children\":[[\"$\",\"h2\",null,{\"className\":\"text-4xl font-bold mb-4\",\"children\":\"404 - Not Found\"}],[\"$\",\"p\",null,{\"className\":\"text-gray-500 mb-8\",\"children\":\"요청하신 페이지를 찾을 수 없습니다.\"}],[\"$\",\"$Lb\",null,{\"href\":\"/\",\"className\":\"px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition\",\"children\":\"홈으로 돌아가기\"}]]}],\"notFoundStyles\":[],\"styles\":null}]}]]}]}]]}],null]],\"initialHead\":[false,\"$Lc\"],\"globalErrorComponent\":\"$d\",\"missingSlots\":\"$We\"}]]\n"])</script><script>self.__next_f.push([1,"f:T1829,"])</script><script>self.__next_f.push([1,"\u003ch1\u003eAWS Basic → IAM 전체 정리\u003c/h1\u003e\n\u003ch1\u003e#1. 클라우드 컴퓨팅 기본 개념\u003c/h1\u003e\n\u003ch2\u003e클라우드 컴퓨팅이란?\u003c/h2\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003e필요한 IT 자원을 인터넷을 통해 필요할 때 즉시 제공받는 서비스\u003c/strong\u003e\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cp\u003e특징:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e온디맨드(On-Demand)\u003c/li\u003e\n\u003cli\u003e탄력성(Elasticity)\u003c/li\u003e\n\u003cli\u003e확장성(Scalability)\u003c/li\u003e\n\u003cli\u003e사용한 만큼만 비용 지불(Pay-as-you-go)\u003c/li\u003e\n\u003cli\u003e관리 부담 감소 (AWS가 인프라 운영)\u003c/li\u003e\n\u003c/ul\u003e\n\u003chr\u003e\n\u003ch1\u003e#2. 클라우드 배포 모델\u003c/h1\u003e\n\u003ch3\u003ePublic Cloud\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003eAWS, Azure, GCP 등\u003c/li\u003e\n\u003cli\u003e다수 고객이 공유 인프라를 사용\u003c/li\u003e\n\u003cli\u003e저렴하고 확장 쉬움\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003ePrivate Cloud\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e기업 내부 전용 클라우드\u003c/li\u003e\n\u003cli\u003e높은 보안, 비용은 큼\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003eHybrid Cloud\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003ePublic + Private 조합\u003c/li\u003e\n\u003cli\u003e민감한 데이터는 Private, 나머지는 Public\u003c/li\u003e\n\u003c/ul\u003e\n\u003chr\u003e\n\u003ch1\u003e#3. AWS 글로벌 인프라\u003c/h1\u003e\n\u003ch2\u003e리전(Region)\u003c/h2\u003e\n\u003cul\u003e\n\u003cli\u003eAWS 인프라가 있는 물리적 위치 (한국: \u003cstrong\u003eap-northeast-2\u003c/strong\u003e)\u003c/li\u003e\n\u003cli\u003e재해 대비/법적 규제/지연 시간 고려하여 선택\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003e가용 영역(AZ, Availability Zone)\u003c/h2\u003e\n\u003cul\u003e\n\u003cli\u003e같은 리전 내의 독립적인 데이터센터\u003c/li\u003e\n\u003cli\u003e장애 대비 위해 최소 2개 AZ 사용 권장\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003eEdge Location\u003c/h2\u003e\n\u003cul\u003e\n\u003cli\u003eCloudFront CDN이 사용하는 전 세계 캐시 서버\u003c/li\u003e\n\u003c/ul\u003e\n\u003chr\u003e\n\u003ch1\u003e#4. AWS 공유 책임 모델 (Shared Responsibility Model)\u003c/h1\u003e\n\u003ch2\u003eAWS 책임 (Security \u003cstrong\u003eof\u003c/strong\u003e the Cloud)\u003c/h2\u003e\n\u003cul\u003e\n\u003cli\u003e하드웨어, 네트워크, 물리적 보안\u003c/li\u003e\n\u003cli\u003e가상화 계층 관리\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003e고객 책임 (Security \u003cstrong\u003ein\u003c/strong\u003e the Cloud)\u003c/h2\u003e\n\u003cul\u003e\n\u003cli\u003eIAM 권한 관리\u003c/li\u003e\n\u003cli\u003eOS, 애플리케이션 보안 패치\u003c/li\u003e\n\u003cli\u003e데이터 보호, 암호화 설정\u003c/li\u003e\n\u003c/ul\u003e\n\u003cblockquote\u003e\n\u003cp\u003e즉, AWS는 인프라를, 고객은 설정을 책임진다.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003chr\u003e\n\u003ch1\u003e#5. AWS 핵심 서비스(간단 정리)\u003c/h1\u003e\n\u003cp\u003e| 영역       | 서비스              | 설명                  |\r\n| ---------- | ------------------- | --------------------- |\r\n| Compute    | \u003cstrong\u003eEC2\u003c/strong\u003e             | 가상 서버             |\r\n| Storage    | \u003cstrong\u003eS3\u003c/strong\u003e              | 객체 스토리지         |\r\n| Database   | \u003cstrong\u003eRDS / DynamoDB\u003c/strong\u003e  | 관계형 / NoSQL DB     |\r\n| Networking | \u003cstrong\u003eVPC\u003c/strong\u003e             | 네트워크 구성         |\r\n| Security   | \u003cstrong\u003eIAM / KMS / WAF\u003c/strong\u003e | 권한, 암호화, 웹 보안 |\u003c/p\u003e\n\u003chr\u003e\n\u003ch1\u003e#6. IAM (Identity and Access Management)\u003c/h1\u003e\n\u003cp\u003eIAM은 AWS 리소스에 대한 접근을 제어하는 \u003cstrong\u003e보안 핵심 서비스\u003c/strong\u003e이다.\u003c/p\u003e\n\u003chr\u003e\n\u003ch1\u003e## IAM 구성 요소\u003c/h1\u003e\n\u003ch2\u003e1. 사용자(User)\u003c/h2\u003e\n\u003cul\u003e\n\u003cli\u003e사람 또는 시스템용 계정\u003c/li\u003e\n\u003cli\u003e비밀번호(콘솔), Access Key(API/CLI) 사용 가능\u003c/li\u003e\n\u003c/ul\u003e\n\u003chr\u003e\n\u003ch2\u003e2. 그룹(Group)\u003c/h2\u003e\n\u003cul\u003e\n\u003cli\u003e여러 사용자에게 동일 권한을 부여하기 위한 묶음\u003c/li\u003e\n\u003cli\u003e그룹 자체로 로그인은 불가\u003c/li\u003e\n\u003c/ul\u003e\n\u003chr\u003e\n\u003ch2\u003e3. 정책(Policy)\u003c/h2\u003e\n\u003cp\u003eAWS에서 가장 중요한 부분.\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eJSON 형태의 \u003cstrong\u003e권한 문서\u003c/strong\u003e\u003c/li\u003e\n\u003cli\u003e“누가 무엇을 할 수 있는지” 정의\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003e예시 (S3 ReadOnly 정책)\u003c/h3\u003e\n\u003cpre\u003e\u003ccode\u003e{\r\n  \"Effect\": \"Allow\",\r\n  \"Action\": [\"s3:Get*\", \"s3:List*\"],\r\n  \"Resource\": \"*\"\r\n}\n\u003c/code\u003e\u003c/pre\u003e\n\u003chr\u003e\n\u003ch2\u003e4. 역할(Role)\u003c/h2\u003e\n\u003cul\u003e\n\u003cli\u003e사람이 사용하지 않음\u003c/li\u003e\n\u003cli\u003eAWS 리소스가 다른 AWS 서비스에 접근할 수 있도록 하는 자격증명\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e예:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eEC2 → S3 접근을 허용하는 IAM Role\u003c/li\u003e\n\u003cli\u003eLambda → DynamoDB 접근 허용 Role\u003c/li\u003e\n\u003c/ul\u003e\n\u003chr\u003e\n\u003ch1\u003e## IAM 보안 베스트 프랙티스\u003c/h1\u003e\n\u003ch3\u003eRoot 계정 사용 금지\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003eMFA 활성화 후 보관\u003c/li\u003e\n\u003cli\u003e결제, 계정 설정 외에는 사용하지 않음\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003e최소 권한 원칙(Least Privilege)\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e필요한 리소스만 최소 권한으로 허용\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003eMFA 활성화\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e사용자별 MFA 적용 필수\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003eAccess Key 노출 금지\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e사용하지 않는 키는 즉시 삭제\u003c/li\u003e\n\u003cli\u003e역할(Role) 우선 사용\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003eCloudTrail 활성화\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003eIAM 변경 사항 및 API 호출 기록 모니터링\u003c/li\u003e\n\u003c/ul\u003e\n\u003chr\u003e\n\u003ch1\u003e## IAM 정책 유형\u003c/h1\u003e\n\u003cp\u003e| 정책 타입        | 설명                              |\r\n| ---------------- | --------------------------------- |\r\n| AWS 관리형 정책  | AWS가 제공하는 표준 정책          |\r\n| 고객 관리형 정책 | 직접 정의한 JSON 정책             |\r\n| 인라인 정책      | 특정 사용자/역할/그룹에 직접 삽입 |\u003c/p\u003e\n\u003chr\u003e\n\u003ch1\u003e## IAM 인증 방식\u003c/h1\u003e\n\u003cp\u003e| 방식            | 설명                        |\r\n| --------------- | --------------------------- |\r\n| 비밀번호        | 콘솔 로그인                 |\r\n| Access Key      | CLI/API 요청                |\r\n| Temporary Token | STS를 통한 일시적 권한 부여 |\u003c/p\u003e\n\u003chr\u003e\n\u003ch1\u003e## IAM 핵심 서비스 연결 흐름\u003c/h1\u003e\n\u003cpre\u003e\u003ccode\u003eUser → IAM User → Policy → API/Console → AWS Resource\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003e역할(Role) 사용 시:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003eEC2 → IAM Role → Policy → AWS Resource\n\u003c/code\u003e\u003c/pre\u003e\n\u003chr\u003e\n\u003ch1\u003e#7. IAM 관련 AWS 시험 포인트\u003c/h1\u003e\n\u003cul\u003e\n\u003cli\u003eIAM은 리전(global) 서비스이다 (전 세계 동일하게 적용)\u003c/li\u003e\n\u003cli\u003e최소 권한 모델 기반 운영(LP: Least Privilege)\u003c/li\u003e\n\u003cli\u003eRoot 계정은 가능한 한 사용하지 않는다\u003c/li\u003e\n\u003cli\u003e사용자 그룹으로 권한을 관리하는 것이 효율적\u003c/li\u003e\n\u003cli\u003eEC2 인스턴스에 Access Key 넣지 말 것 → 반드시 \u003cstrong\u003eIAM Role\u003c/strong\u003e 사용\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e시험에 아주 자주 나오는 포인트들이다.\u003c/p\u003e\n\u003chr\u003e\n\u003ch1\u003e마무리 요약\u003c/h1\u003e\n\u003cp\u003eIAM은 AWS 보안의 기초이며,\r\n다음과 같은 질문에 답할 수 있어야 한다:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e누가 로그인할 수 있는가? (사용자)\u003c/li\u003e\n\u003cli\u003e어떤 권한을 주는가? (정책)\u003c/li\u003e\n\u003cli\u003e어떤 방식으로 AWS 서비스에 접근하는가? (자격증명)\u003c/li\u003e\n\u003cli\u003e어떤 서비스가 대신 다른 서비스에 접근하는가? (역할)\u003c/li\u003e\n\u003c/ul\u003e\n"])</script><script>self.__next_f.push([1,"5:[\"$\",\"article\",null,{\"className\":\"article-container\",\"children\":[[\"$\",\"div\",null,{\"className\":\"article-header\",\"children\":[[\"$\",\"span\",null,{\"className\":\"article-category\",\"children\":\"AWS\"}],[\"$\",\"h1\",null,{\"className\":\"article-title\",\"children\":\"AWS 1일차\"}]]}],[\"$\",\"div\",null,{\"className\":\"article-content\",\"dangerouslySetInnerHTML\":{\"__html\":\"$f\"}}]]}]\nc:[[\"$\",\"meta\",\"0\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}],[\"$\",\"meta\",\"1\",{\"charSet\":\"utf-8\"}],[\"$\",\"title\",\"2\",{\"childre"])</script><script>self.__next_f.push([1,"n\":\"jinwk note\"}],[\"$\",\"meta\",\"3\",{\"name\":\"description\",\"content\":\"jinwk dev note\"}]]\n4:null\n"])</script><script>self.__next_f.push([1,""])</script></body></html>
