@@ -13,3 +13,7 @@ aux_links:
 # plugins:
 #   - jekyll-feed
 #   - jekyll-seo-tag
+
+# Next.js asset folder inclusion
+include:
+  - blog/_next
