@@ -18,8 +18,8 @@ GET /api/v2/ HTTP/1.1
 }
 ```
 
-- 모바일 앱 ↔ 서버 간 API 통신
-- PC ↔ 모바일 개발자 도구를 통해 트래픽 분석 가능
+- 모바일 앱  서버 간 API 통신
+- PC  모바일 개발자 도구를 통해 트래픽 분석 가능
 - Burp Suite, mitmproxy 등으로 **MITM 분석**
 
 ------
@@ -54,7 +54,7 @@ WHERE title LIKE '%검색어%';
 ### 3.1 Activity / Memory 변조
 
 - **Activity 변조**
-  - 숫자만 입력되도록 제한된 View → 강제 변조
+  - 숫자만 입력되도록 제한된 View  강제 변조
 - **Memory 변조**
   - 중요 데이터가 메모리에 상주하는 위치 분석
 
@@ -63,8 +63,8 @@ String a = "test"; // 메모리에 장시간 남음 (위험)
 char[] a = {0x00, 0x00, 0x00}; // 사용 후 초기화 가능 (권장)
 ```
 
-- Java / Kotlin: `String` → GC 전까지 메모리 잔존
-- C 계열: `char[]` → 직접 초기화 가능
+- Java / Kotlin: `String`  GC 전까지 메모리 잔존
+- C 계열: `char[]`  직접 초기화 가능
 
 ------
 
@@ -84,7 +84,7 @@ frida-dump
 ### 4.1 로그인 흐름
 
 ```
-ID / PW → 로그인 성공 → 인증 토큰 발급
+ID / PW  로그인 성공  인증 토큰 발급
 ```
 
 - 인증 토큰이 **SharedPreferences**에 저장되는 경우 위험
@@ -99,9 +99,9 @@ ID / PW → 로그인 성공 → 인증 토큰 발급
 
 ```
 /data/data/패키지명/
- ├─ shared_prefs/
- ├─ databases/
- ├─ files/
+  shared_prefs/
+  databases/
+  files/
 ```
 
 - Root 환경에서 평문 저장 시 **심각한 취약점**
@@ -149,11 +149,11 @@ test.com/login?id=&pw=&url=test.com/member/
 
 ```
 abank.apk
- ├─ AndroidManifest.xml
- ├─ classes.dex
- ├─ lib/
- ├─ assets/
- ├─ resources/
+  AndroidManifest.xml
+  classes.dex
+  lib/
+  assets/
+  resources/
 ```
 
 - APK = 압축 파일
@@ -175,8 +175,8 @@ abank.apk
 ### 7.3 코드 변환 흐름
 
 ```
-Java / Kotlin → class → smali → classes.dex
-C / C++ → .so → JNI → Java
+Java / Kotlin  class  smali  classes.dex
+C / C++  .so  JNI  Java
 ```
 
 ------
@@ -293,15 +293,15 @@ showMessage("오류", decrypt(error_msg));
 
 ## 14. 기타
 
-- Termux → Android 내부 Linux 환경
-- Unity 앱 → C# / DLL → dnSpy / ILSpy 분석
-- log4j 취약점 → `cmd.jsp?cmd=ls -al`
+- Termux  Android 내부 Linux 환경
+- Unity 앱  C# / DLL  dnSpy / ILSpy 분석
+- log4j 취약점  `cmd.jsp?cmd=ls -al`
 
 ------
 
-### ✅ 정리 포인트
+###  정리 포인트
 
-- **입력값 → 서버/로컬 쿼리 흐름 추적**
+- **입력값  서버/로컬 쿼리 흐름 추적**
 - **메모리·스토리지·컴포넌트 접근 제어**
 - **Intent / Content Provider 검증**
 - **난독화·무결성 검증 유무 확인**

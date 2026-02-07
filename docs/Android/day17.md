@@ -5,7 +5,7 @@ parent: Android
 nav_order: 17
 ---
 
-# EQST LMS Wargame – JNI 분석 정리
+# EQST LMS Wargame  JNI 분석 정리
 
 ## 1. Frida 버전 이슈
 
@@ -26,7 +26,7 @@ Module.findGlobalExportByName("함수명");
 ### 버전 호환성
 
 - 최신 Frida에서 일부 Wargame 동작 문제 발생
-- **Frida 17 → 14로 다운그레이드 후 정상 동작**
+- **Frida 17  14로 다운그레이드 후 정상 동작**
 
 ------
 
@@ -65,7 +65,7 @@ jobject (this)
 
 ------
 
-## 4. 3번 문제 – strcmp 리턴값 변조
+## 4. 3번 문제  strcmp 리턴값 변조
 
 ### 핵심 아이디어
 
@@ -89,7 +89,7 @@ Interceptor.attach(strcmpPtr, {
     onLeave: function (re) {
         if (inja2 == "eqst") {
             console.log("결과를 참으로 변조");
-            re.replace(0x0); // strcmp == 0 → 동일
+            re.replace(0x0); // strcmp == 0  동일
         }
     }
 });
@@ -200,7 +200,7 @@ Java.perform(function () {
 ## 9. 핵심 개념 요약
 
 - `Module.findGlobalExportByName` 사용
-- `strcmp == 0` → 문자열 동일
+- `strcmp == 0`  문자열 동일
 - Native 함수는 **base + offset** 사고
 - Spawn 모드에서는 Native 로딩 타이밍 중요
 - `jstring`은 반드시 `JNIEnv`를 통해 문자열로 변환

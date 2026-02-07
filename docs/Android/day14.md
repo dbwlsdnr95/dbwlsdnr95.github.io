@@ -11,12 +11,12 @@ nav_order: 14
 
 ### JNI란?
 
-- **Java/Kotlin ↔ C/C++** 간의 상호 호출을 가능하게 하는 인터페이스
+- **Java/Kotlin  C/C++** 간의 상호 호출을 가능하게 하는 인터페이스
 - Android에서 **Native 코드(.so)** 를 사용하기 위한 표준 방식
 
 ### 기본 구조
 
-- Java/Kotlin → JNI → C/C++
+- Java/Kotlin  JNI  C/C++
 - Native 라이브러리 형태: `.so`
 
 ------
@@ -83,16 +83,16 @@ C:\Program Files (x86)\Nox\bin\
 ### 적용 방법
 
 - 기존 파일 덮어쓰기
-- `adb.exe` 복사 → 이름 변경 → `nox_adb.exe`
+- `adb.exe` 복사  이름 변경  `nox_adb.exe`
 
 ------
 
 ## 4. NOX USB 디버깅 활성화
 
-1. NOX 설정 → 시스템 → 태블릿 정보
+1. NOX 설정  시스템  태블릿 정보
 2. **빌드 번호 연속 클릭**
 3. 개발자 모드 활성화
-4. 고급 설정 → 개발자 옵션
+4. 고급 설정  개발자 옵션
 5. USB 디버깅 활성화
 
 ------
@@ -145,7 +145,7 @@ char* a = {'a','b','c','d','\0'};
 
 ### Google 권장
 
-- “가능하면 JNI 쓰지 마라”
+- 가능하면 JNI 쓰지 마라
 - Kotlin / Java API로 대부분 해결 가능
 
 ### 그럼에도 JNI를 쓰는 이유
@@ -174,7 +174,7 @@ char* a = {'a','b','c','d','\0'};
 
 - JVM 위에서 실행
 - Cross-platform
-- 동일 APK → 모든 기기 실행 가능
+- 동일 APK  모든 기기 실행 가능
 
 ### Native (C/C++)
 

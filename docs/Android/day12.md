@@ -9,7 +9,7 @@ Frida Labs 직접 실습
 
 ## Challenge 풀이 요약
 
-### 1️⃣ chall01
+### 1 chall01
 
 - 대상 클래스: `challenge_01.chall01`
 
@@ -28,7 +28,7 @@ Frida Labs 직접 실습
 
 ------
 
-### 2️⃣ chall02
+### 2 chall02
 
 - `MainActivity` 인스턴스를 찾아
 
@@ -51,7 +51,7 @@ Frida Labs 직접 실습
 
 ------
 
-### 3️⃣ chall03
+### 3 chall03
 
 - 대상 메서드: `MainActivity.chall03()`
 
@@ -72,7 +72,7 @@ Frida Labs 직접 실습
 
 ------
 
-### 4️⃣ chall04
+### 4 chall04
 
 - `MainActivity.chall04("frida")` 호출
 
@@ -95,7 +95,7 @@ Frida Labs 직접 실습
 
 ------
 
-### 5️⃣ chall05
+### 5 chall05
 
 - `MainActivity.chall05` 메서드 후킹
 
@@ -117,7 +117,7 @@ Frida Labs 직접 실습
 
 ------
 
-### 6️⃣ chall06
+### 6 chall06
 
 - 앱 실행 후 **10초 대기 (총 11초 이상)**
 
@@ -146,7 +146,7 @@ Frida Labs 직접 실습
 
 ------
 
-### 7️⃣ chall07
+### 7 chall07
 
 - PIN 코드 **0000 ~ 9999 전체 브루트포스**
 
@@ -188,7 +188,7 @@ Frida Labs 직접 실습
 
 ------
 
-### 8️⃣ chall08
+### 8 chall08
 
 - 버튼 ID: `check`
 
@@ -217,7 +217,7 @@ Frida Labs 직접 실습
   });
   ```
 
-9️⃣ 전체 합친 코드
+9 전체 합친 코드
 
 ````
 // challenge 1
@@ -322,7 +322,7 @@ Java.perform(() => {
 
 ### frida labs 풀이
 
-### 1️⃣ com.ad2001.frida0x1`
+### 1 com.ad2001.frida0x1`
 
 - 스크립트: `fridalabs/1번.js`
 
@@ -346,7 +346,7 @@ Java.perform(() => {
 
 ------
 
-### 2️⃣ `com.ad2001.frida0x2`
+### 2 `com.ad2001.frida0x2`
 
 - 스크립트: `fridalabs/2번.js`
 
@@ -365,7 +365,7 @@ Java.perform(() => {
 
 ------
 
-### 3️⃣ `com.ad2001.frida0x3`
+### 3 `com.ad2001.frida0x3`
 
 - 스크립트: `fridalabs/3번.js`
 
@@ -384,7 +384,7 @@ Java.perform(() => {
 
 ------
 
-### 4️⃣ `com.ad2001.frida0x4`
+### 4 `com.ad2001.frida0x4`
 
 - 스크립트: `fridalabs/4번.js`
 
@@ -407,7 +407,7 @@ Java.perform(() => {
 
 ------
 
-### 5️⃣ `com.ad2001.frida0x5`
+### 5 `com.ad2001.frida0x5`
 
 - 스크립트: `fridalabs/5번.js`
 
@@ -431,7 +431,7 @@ Java.perform(() => {
 
 ------
 
-### 6️⃣ `com.ad2001.frida0x6`
+### 6 `com.ad2001.frida0x6`
 
 - 스크립트: `fridalabs/6번.js`
 
@@ -463,7 +463,7 @@ Java.perform(() => {
 
 ------
 
-### 7️⃣ `com.ad2001.frida0x7`
+### 7 `com.ad2001.frida0x7`
 
 - 스크립트: `fridalabs/7번.js`
 

@@ -6,7 +6,7 @@ nav_order: 2
 
 ---
 
-#  AWS Basic → IAM 전체 정리
+#  AWS Basic  IAM 전체 정리
 
 # #1. 클라우드 컴퓨팅 기본 개념
 
@@ -26,7 +26,7 @@ nav_order: 2
 
 # #2. 클라우드 배포 모델
 
-### ☁ Public Cloud
+###  Public Cloud
 
 - AWS, Azure, GCP 등
 - 다수 고객이 공유 인프라를 사용
@@ -118,7 +118,7 @@ IAM은 AWS 리소스에 대한 접근을 제어하는 **보안 핵심 서비스*
 AWS에서 가장 중요한 부분.
 
 - JSON 형태의 **권한 문서**
-- “누가 무엇을 할 수 있는지” 정의
+- 누가 무엇을 할 수 있는지 정의
 
 ### 예시 (S3 ReadOnly 정책)
 
@@ -139,8 +139,8 @@ AWS에서 가장 중요한 부분.
 
 예:
 
-- EC2 → S3 접근을 허용하는 IAM Role
-- Lambda → DynamoDB 접근 허용 Role
+- EC2  S3 접근을 허용하는 IAM Role
+- Lambda  DynamoDB 접근 허용 Role
 
 ------
 
@@ -193,13 +193,13 @@ AWS에서 가장 중요한 부분.
 # ## IAM 핵심 서비스 연결 흐름
 
 ```
-User → IAM User → Policy → API/Console → AWS Resource
+User  IAM User  Policy  API/Console  AWS Resource
 ```
 
 역할(Role) 사용 시:
 
 ```
-EC2 → IAM Role → Policy → AWS Resource
+EC2  IAM Role  Policy  AWS Resource
 ```
 
 ------
@@ -210,7 +210,7 @@ EC2 → IAM Role → Policy → AWS Resource
 - 최소 권한 모델 기반 운영(LP: Least Privilege)
 - Root 계정은 가능한 한 사용하지 않는다
 - 사용자 그룹으로 권한을 관리하는 것이 효율적
-- EC2 인스턴스에 Access Key 넣지 말 것 → 반드시 **IAM Role** 사용
+- EC2 인스턴스에 Access Key 넣지 말 것  반드시 **IAM Role** 사용
 
 시험에 아주 자주 나오는 포인트들이다.
 

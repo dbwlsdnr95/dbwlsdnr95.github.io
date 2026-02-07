@@ -29,8 +29,8 @@ nav_order: 2
 1. [JetBrains IntelliJ IDEA 다운로드](https://www.jetbrains.com/ko-kr/idea/download)
 2. **Community Edition (무료 버전)** 선택
 3. OS에 맞는 버전 다운로드
-   - Windows → `.exe`
-   - macOS (M1/M2/M3) → Apple Silicon
+   - Windows  `.exe`
+   - macOS (M1/M2/M3)  Apple Silicon
 
 ------
 
@@ -43,7 +43,7 @@ nav_order: 2
 - Language: Java
 - Build System: IntelliJ
 - JDK: 17 이상
-- Add sample code: ✅ 체크
+- Add sample code:  체크
 
 **JDK 설치**
 
@@ -56,7 +56,7 @@ nav_order: 2
 ## 첫 실행
 
 1. 프로젝트 생성 후 자동으로 `Main.java`가 생성됨
-2. 초록색 ▶ 버튼 클릭 → `Run 'Main.main()'`
+2. 초록색  버튼 클릭  `Run 'Main.main()'`
 3. 콘솔에 `Hello World!` 출력
 
 > 참고: Java 25 이상에서는 `System.out.println()` 대신 `IO.print()`도 사용 가능함1. Hello World.
@@ -118,15 +118,15 @@ public class CommentJava {
 |                    | Eclipse Temurin |
 |                    | Amazon Corretto |
 
-→ 모두 **서로 호환 가능**
- → OpenJDK에서 Temurin으로 바꿔도 대부분 문제 없이 동작
+ 모두 **서로 호환 가능**
+  OpenJDK에서 Temurin으로 바꿔도 대부분 문제 없이 동작
 
 ------
 
 ## 컴파일과 실행 과정
 
-1. `.java` (소스 코드) → `javac` 컴파일러 → `.class` (바이트코드)
-2. `.class` 실행 시 → JVM(Java Virtual Machine)이 작동
+1. `.java` (소스 코드)  `javac` 컴파일러  `.class` (바이트코드)
+2. `.class` 실행 시  JVM(Java Virtual Machine)이 작동
 
 ```
 javac Hello.java
@@ -143,7 +143,7 @@ java Hello
 | OS 간 호환 불가         | 모든 OS에서 실행 가능        |
 
 즉,
- Windows에서 작성한 Java 코드 → Mac/Linux에서도 실행 가능.
+ Windows에서 작성한 Java 코드  Mac/Linux에서도 실행 가능.
  운영체제 호환 문제를 **JVM이 해결**해 준다1. Hello World.
 
 ------
@@ -164,5 +164,5 @@ java Hello
 
 - IntelliJ + JDK 21 설치 후 시작
 - `HelloJava.java` 파일로 첫 코드 실행
-- 자바는 **“한 번 작성, 어디서나 실행 (Write Once, Run Anywhere)”** 언어
+- 자바는 **한 번 작성, 어디서나 실행 (Write Once, Run Anywhere)** 언어
 - 학습 초기에는 **Eclipse Temurin 21** 사용 권장

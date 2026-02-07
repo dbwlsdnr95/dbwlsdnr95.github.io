@@ -19,12 +19,12 @@ nav_order: 2
 
 ------
 
-### 🔧 기타 세팅
+###  기타 세팅
 
-#### • Rooting / VT-x
+####  Rooting / VT-x
 
 - Hyper-V 끄기
-  - Windows 기능 → Hyper-V 전체 OFF
+  - Windows 기능  Hyper-V 전체 OFF
   - Windows Sandbox OFF
 - VT-x 활성 여부 확인:
   - https://leomoon.com/downloads/desktop-apps/leomoon-cpu-v/
@@ -36,31 +36,31 @@ nav_order: 2
 1. 실행 중인 에뮬레이터가 64bit인지 확인 (멀티 실행기 Ctrl+6)
 2. 기존 에뮬레이터 삭제 후 Android 9 64bit 추가
 3. 톱니바퀴(설정)
-4. 성능 → 해상도: 스마트폰(540x960)
-5. 일반 → ROOT 켜기
+4. 성능  해상도: 스마트폰(540x960)
+5. 일반  ROOT 켜기
 
 ------
 
 ## 3. ADB(Android Debug Bridge)
 
-### ✔ 개념
+###  개념
 
-PC ↔ 스마트폰을 USB로 연결해 제어/파일관리하는 도구
+PC  스마트폰을 USB로 연결해 제어/파일관리하는 도구
 
-### ✔ 설치 위치 Path 등록
+###  설치 위치 Path 등록
 
-1. 설정 → 시스템 정보 → 고급 시스템 → 환경 변수
-2. Path → 새로 만들기
+1. 설정  시스템 정보  고급 시스템  환경 변수
+2. Path  새로 만들기
 3. Nox/bin 경로 추가
 4. CMD 재실행 필수
 
 ------
 
-### ✔ USB 디버깅 활성화
+###  USB 디버깅 활성화
 
-- 설정 → 시스템 → 정보 → **빌드번호 7회 탭**
+- 설정  시스템  정보  **빌드번호 7회 탭**
 - 개발자 옵션 활성화
-- 개발자 옵션 → USB 디버깅 켜기
+- 개발자 옵션  USB 디버깅 켜기
 
 ------
 
@@ -71,12 +71,12 @@ PC ↔ 스마트폰을 USB로 연결해 제어/파일관리하는 도구
 | adb devices | 연결된 기기 확인       |
 | adb shell   | 스마트폰 OS Shell 접속 |
 | adb install | APK 설치               |
-| adb pull    | 폰 → PC 파일 추출      |
-| adb push    | PC → 폰 파일 전송      |
+| adb pull    | 폰  PC 파일 추출      |
+| adb push    | PC  폰 파일 전송      |
 
 ------
 
-### 📌 설치된 앱 패키지 확인
+###  설치된 앱 패키지 확인
 
 ```
 adb shell
@@ -90,7 +90,7 @@ pm list packages -f | grep 검색어
 ### 스마트폰 수동 설치
 
 1. 다운로드 폴더에서 APK 실행
-2. "알 수 없는 개발자" → 설치 허용
+2. "알 수 없는 개발자"  설치 허용
 
 ### ADB 설치
 
@@ -111,7 +111,7 @@ apktool b 폴더명       # 리컴파일
 
 ```
 com.scottyab.sample.rootbeer
-→ com/scottyab/sample/rootbeer
+ com/scottyab/sample/rootbeer
 ```
 
 ------
@@ -127,7 +127,7 @@ android:name="kr.co.eqst.aos.app008.SplashActivity"
 경로 구조:
 
 ```
-kr → co → eqst → aos → app008 → SplashActivity.java
+kr  co  eqst  aos  app008  SplashActivity.java
 ```
 
 ### exported = true/false
@@ -138,7 +138,7 @@ kr → co → eqst → aos → app008 → SplashActivity.java
 예)
 
 ```
-kr.co.shop → kr.co.kakao.pay.payactivity (exported=false)
+kr.co.shop  kr.co.kakao.pay.payactivity (exported=false)
 ```
 
 ------
@@ -154,17 +154,17 @@ kr.co.shop → kr.co.kakao.pay.payactivity (exported=false)
 
 ## 9. 앱 종류 비교
 
-### ▲ Web App / Mobile Web
+###  Web App / Mobile Web
 
 - 설치 필요 없음
 - 단점: 기기기능(GPS/카메라 등) 제한
 
-### ▲ Native App
+###  Native App
 
 - 빠르고 기능 사용 가능
 - Android/iOS 각각 개발 필요
 
-### ▲ Hybrid App
+###  Hybrid App
 
 - 웹 기반 + Native 기능 혼합
 - 장점: 개발/수정 빠름
@@ -180,4 +180,4 @@ Host: www.naver.com
 User-Agent: PC 크롬 또는 모바일 브라우저
 ```
 
-m.naver.com → 반응형 웹
+m.naver.com  반응형 웹

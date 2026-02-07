@@ -9,7 +9,7 @@ nav_order: 8
 
 ------
 
-## 정적분석 4번 — AES/CBC 기반 암호화 구조 분석
+## 정적분석 4번  AES/CBC 기반 암호화 구조 분석
 
 ### 1. 암호화 로직 구조
 
@@ -17,7 +17,7 @@ nav_order: 8
   - `AES/CBC/PKCS5Padding`
 - 암호화 키
   - 문자열: `0123456789abcdef`
-  - 바이트 배열 변환 → `bArr`
+  - 바이트 배열 변환  `bArr`
 - IV (Initialization Vector)
   - `bArr2`
   - 16바이트 랜덤 값
@@ -33,15 +33,15 @@ Base64( IV(16바이트) + CipherText )
 ```
 
 - `strEncodeToString`
-   → `bArr2 + bArrDoFinal`을 Base64 인코딩한 문자열
+    `bArr2 + bArrDoFinal`을 Base64 인코딩한 문자열
 
 ------
 
 ### 3. 복호화 절차
 
 1. Base64 디코딩
-2. 앞 16바이트 분리 → IV
-3. 나머지 바이트 → 암호문
+2. 앞 16바이트 분리  IV
+3. 나머지 바이트  암호문
 4. AES/CBC/PKCS5Padding 복호화
 5. 원문 획득
 
@@ -98,7 +98,7 @@ a7 9c 57 fe d7 01 f7 84 8d 18 df ca 06 bc 3b 33
 
 ------
 
-## 정적분석 5번 — AES/GCM + PBKDF2 구조 분석
+## 정적분석 5번  AES/GCM + PBKDF2 구조 분석
 
 ------
 
@@ -106,7 +106,7 @@ a7 9c 57 fe d7 01 f7 84 8d 18 df ca 06 bc 3b 33
 
 ```
 encrypt(평문)
- → encrypt(평문, "eqst_lms")
+  encrypt(평문, "eqst_lms")
 ```
 
 ------
@@ -209,7 +209,7 @@ ab 49 f1 90 b8 6f 98 53 cd be d2 38
 
 ### Smali 분석 특징
 
-- dex → smali 변조 가능
+- dex  smali 변조 가능
 - Java 코드 직접 변조는 불가
 - smali 수정 후 재빌드 필요
 

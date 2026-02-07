@@ -99,14 +99,14 @@ a = 50;
 
 ## 4. 변수는 반드시 초기화해야 한다
 
-❌ 잘못된 코드
+ 잘못된 코드
 
 ```
 int a;
 System.out.println(a);
 ```
 
-❌ 컴파일 에러
+ 컴파일 에러
 
 ```
 variable a might not have been initialized
@@ -121,7 +121,7 @@ variable a might not have been initialized
 
 ------
 
-## 5. 변수 타입(Type) – 기본
+## 5. 변수 타입(Type)  기본
 
 ```
 int a = 100;          // 정수
@@ -186,14 +186,14 @@ double d = 10.0;
 
 ------
 
-## 8. 실무에서 자주 쓰는 타입 ⭐
+## 8. 실무에서 자주 쓰는 타입 
 
 - **정수**: `int`, `long`
 - **실수**: `double`
 - **논리**: `boolean`
 - **문자열**: `String`
 
-❌ 거의 사용 안 함
+ 거의 사용 안 함
 
 - `byte`, `short`, `float`, `char`
 
@@ -205,9 +205,9 @@ double d = 10.0;
 
 ### 필수 규칙 (안 지키면 컴파일 에러)
 
-- 숫자로 시작 ❌
-- 공백 ❌
-- 예약어 사용 ❌
+- 숫자로 시작 
+- 공백 
+- 예약어 사용 
 - 사용 가능 문자: 영문, 숫자, `_`, `$`
 
 ### 관례 (사실상 필수)
@@ -233,7 +233,7 @@ int orderDetail;
 
 ## 10. 연습 문제 요약
 
-### 문제 1 – 변수로 중복 제거
+### 문제 1  변수로 중복 제거
 
 ```
 int num1 = 4;
@@ -241,7 +241,7 @@ int num2 = 3;
 System.out.println(num1 + num2);
 ```
 
-### 문제 2 – 합 계산
+### 문제 2  합 계산
 
 ```
 int num1 = 10;
@@ -250,7 +250,7 @@ int sum = num1 + num2;
 System.out.println(sum);
 ```
 
-### 문제 3 – long / boolean
+### 문제 3  long / boolean
 
 ```
 long value = 10000000000L;
@@ -259,7 +259,7 @@ boolean flag = true;
 
 ------
 
-## 핵심 정리 ✅
+## 핵심 정리 
 
 - 변수 = **값을 저장하는 메모리 공간**
 - 사용 전 **반드시 초기화**

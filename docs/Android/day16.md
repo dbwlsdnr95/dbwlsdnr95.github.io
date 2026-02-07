@@ -11,7 +11,7 @@ nav_order: 16
 
 ### JNI란?
 
-- **Java/Kotlin ↔ C/C++** 를 연결하는 인터페이스
+- **Java/Kotlin  C/C++** 를 연결하는 인터페이스
 - Android 앱에서 Native 코드(`.so`)를 사용하기 위한 표준 방식
 
 ### JNI를 사용하는 이유
@@ -84,12 +84,12 @@ System.load("/sdcard/.../libtest.so");
 ## 4. RegisterNative 방식
 
 - 함수 이름을 직접 매핑
-- Java 함수명 ≠ Native 함수명 가능
+- Java 함수명  Native 함수명 가능
 
 ```
 JNI_OnLoad() {
     RegisterNativeMethods(
-        Java test() → C qqqq()
+        Java test()  C qqqq()
     );
 }
 ```
@@ -103,8 +103,8 @@ JNI_OnLoad() {
 ### Android
 
 - APK = ZIP
-- `classes.dex → smali → java (jadx)`
-- Native: `.so` → Ghidra / IDA
+- `classes.dex  smali  java (jadx)`
+- Native: `.so`  Ghidra / IDA
 
 ### iOS
 
@@ -165,7 +165,7 @@ bool Java_kr_seyong_test_MainActivity_checkPassword(
 
 ### 핵심
 
-- `jstring → char*`
+- `jstring  char*`
 - `strcmp` 결과로 인증 판단
 
 ------
@@ -331,7 +331,7 @@ if (a == b) {
 ## 18. 핵심 정리
 
 - JNI 분석은 **주소 + 오프셋 사고**
-- Java String ≠ C String
+- Java String  C String
 - 인증/무결성 로직은 Native에 숨겨지는 경우 많음
 - Ghidra + Frida 조합이 가장 강력
 - attach = 감시

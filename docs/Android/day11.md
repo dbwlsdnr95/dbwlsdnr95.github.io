@@ -20,7 +20,7 @@ nav_order: 11
 
 ------
 
-## Lab 01 — 필드 값 조작
+## Lab 01  필드 값 조작
 
 ### 목표
 
@@ -42,7 +42,7 @@ Java.perform(() => {
 
 ------
 
-## Lab 02 — 인스턴스 메소드 호출
+## Lab 02  인스턴스 메소드 호출
 
 ### 목표
 
@@ -50,7 +50,7 @@ Java.perform(() => {
 
 ### 핵심 포인트
 
-- static 아님 → `Java.use` 불가
+- static 아님  `Java.use` 불가
 - **이미 생성된 MainActivity 인스턴스 필요**
 - `Java.choose()` 사용
 
@@ -69,7 +69,7 @@ Java.perform(() => {
 
 ------
 
-## Lab 03 — 리턴값 강제 변경
+## Lab 03  리턴값 강제 변경
 
 ### 목표
 
@@ -93,7 +93,7 @@ Java.perform(() => {
 
 ------
 
-## Lab 04 — Activity 생성 타이밍 제어
+## Lab 04  Activity 생성 타이밍 제어
 
 ### 목표
 
@@ -125,7 +125,7 @@ Java.perform(() => {
 
 ------
 
-## Lab 05 — 인자 값 강제 변경
+## Lab 05  인자 값 강제 변경
 
 ### 목표
 
@@ -150,7 +150,7 @@ Java.perform(() => {
 
 ------
 
-## Lab 06 — 누적 값 조건 우회
+## Lab 06  누적 값 조건 우회
 
 ### 목표
 
@@ -186,7 +186,7 @@ Java.perform(() => {
 
 ------
 
-## Lab 07 — 내부 비밀값 추출
+## Lab 07  내부 비밀값 추출
 
 ### 목표
 
@@ -215,7 +215,7 @@ Java.perform(() => {
 
 ------
 
-## Lab 08 — UI 동적 조작
+## Lab 08  UI 동적 조작
 
 ### 목표
 
@@ -225,7 +225,7 @@ Java.perform(() => {
 
 - UI 조작은 **Main Thread 필수**
 - `onResume()` 후킹
-- `findViewById()` → Button → `setText()`
+- `findViewById()`  Button  `setText()`
 
 ### Frida 스크립트
 

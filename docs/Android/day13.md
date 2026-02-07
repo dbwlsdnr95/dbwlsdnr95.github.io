@@ -12,9 +12,9 @@ nav_order: 13
 ### 핵심 개념
 
 - 생성자 변조 외에도 **기존 인스턴스 활용**, **필드 값 직접 변조**, **새 인스턴스 생성** 방식으로 우회 가능
-- `Java.use` → 클래스
-- `Java.choose` → 이미 생성된 인스턴스
-- `$new()` → 새로운 인스턴스 생성
+- `Java.use`  클래스
+- `Java.choose`  이미 생성된 인스턴스
+- `$new()`  새로운 인스턴스 생성
 
 ------
 
@@ -81,7 +81,7 @@ Java.perform(() => {
 
 ------
 
-## 1번 – Static 메소드 호출
+## 1번  Static 메소드 호출
 
 ```
 Java.perform(() => {
@@ -98,7 +98,7 @@ Java.perform(() => {
 
 ------
 
-## 2번 – Non-static 메소드 호출
+## 2번  Non-static 메소드 호출
 
 ### 방법 1. 기존 인스턴스 사용
 
@@ -125,7 +125,7 @@ Java.perform(() => {
 
 ------
 
-## 3번 – 내부 함수 직접 호출
+## 3번  내부 함수 직접 호출
 
 ```
 Java.perform(() => {
@@ -143,7 +143,7 @@ Java.perform(() => {
 
 ------
 
-## 4번 – Boolean 필드 변조 (권한 우회)
+## 4번  Boolean 필드 변조 (권한 우회)
 
 ### 클래스 기준
 
@@ -169,12 +169,12 @@ Java.perform(() => {
 
 ### 실행 시점 정리
 
-- `Java.use` → 이후 생성되는 인스턴스
-- `Java.choose` → 이미 생성된 인스턴스
+- `Java.use`  이후 생성되는 인스턴스
+- `Java.choose`  이미 생성된 인스턴스
 
 ------
 
-## 5번 – 함수 오버라이딩으로 인자 변조
+## 5번  함수 오버라이딩으로 인자 변조
 
 ```
 Java.perform(() => {
@@ -219,7 +219,7 @@ MainActivity.changethis2.value = "eqstlab";
 
 ------
 
-## 6번 – Kotlin Intrinsics.areEqual 후킹
+## 6번  Kotlin Intrinsics.areEqual 후킹
 
 ```
 Java.perform(() => {

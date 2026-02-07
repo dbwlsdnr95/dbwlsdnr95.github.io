@@ -78,7 +78,7 @@ new NativePointer("0x0000")
 Module.getExportByName(null, "fopen");
 ```
 
-- `null` → 현재 프로세스
+- `null`  현재 프로세스
 - 라이브러리 지정 가능 (예: `libc.so`, `d3d12.dll`)
 
 ------
@@ -156,8 +156,8 @@ Java.choose("kr.co.eqst.aos.app029.MainActivity", {
 MainActivity ma = new MainActivity();
 ```
 
-- `$new` → 새 인스턴스 생성
-- `Java.choose()` → 기존 인스턴스 접근
+- `$new`  새 인스턴스 생성
+- `Java.choose()`  기존 인스턴스 접근
 
 | 상황            | 사용            |
 | --------------- | --------------- |
@@ -254,13 +254,13 @@ Java.scheduleOnMainThread(function () {
 ## 9. Cheat Engine 개념 비교
 
 - 메모리 스캔
-- 값 검색 → 필터링 → 덮어쓰기
+- 값 검색  필터링  덮어쓰기
 - 게임 치트, 값 고정에 사용
 
 ```
 전체 메모리에서 값 05 검색
-→ 현재 값 03만 필터
-→ 특정 주소 덮어쓰기
+ 현재 값 03만 필터
+ 특정 주소 덮어쓰기
 ```
 
 ------

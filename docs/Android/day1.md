@@ -4,7 +4,7 @@ title: "Android 보안 1일차"
 parent: Android
 nav_order: 1
 ---
-# 📱 모바일 보안 기초 정리 (Android & iOS)
+#  모바일 보안 기초 정리 (Android & iOS)
 
 ## 1. 운영체제 개념
 
@@ -21,7 +21,7 @@ nav_order: 1
 
 ## Android 루팅 이유
 
-- 기본 UI가 마음에 들지 않음 → 커스텀 UI
+- 기본 UI가 마음에 들지 않음  커스텀 UI
 - 오버클럭/언더클럭으로 성능 조절
 - 배터리 최적화
 - 통신사 기본 앱(블로트웨어) 삭제
@@ -31,11 +31,11 @@ nav_order: 1
 
 - 없는 기능 추가(예: 뒤로가기 제스처)
 - 제한된 부분 해제
-- 앱스토어 유료앱을 외부에서 설치 가능 ⛔ (악성 가능성 매우 높음)
+- 앱스토어 유료앱을 외부에서 설치 가능  (악성 가능성 매우 높음)
 
 ## 공통 위험
 
-- 악성 APK / IPA 설치 → Spyware에 노출
+- 악성 APK / IPA 설치  Spyware에 노출
 - 금융앱·보안앱 실행 불가(루팅 탐지)
 - 시스템 보안 강도 저하
 
@@ -51,7 +51,7 @@ Spyware는 다음을 **사용자 모르게** 수집한다:
 - 인터넷 검색 내역
 - 사진 및 파일 접근
 
-→ 앱 목록에도 표시되지 않는 경우가 많음.
+ 앱 목록에도 표시되지 않는 경우가 많음.
 
 ------
 
@@ -65,7 +65,7 @@ Spyware는 다음을 **사용자 모르게** 수집한다:
 - 문서 파일 열기
 - 메시지 앱 취약점 이용 (MMS, iMessage 등)
 
-→ 또한 **피싱 링크 클릭**도 주요 감염 벡터.
+ 또한 **피싱 링크 클릭**도 주요 감염 벡터.
 
 ------
 
@@ -84,15 +84,15 @@ Spyware는 다음을 **사용자 모르게** 수집한다:
 ## Android
 
 - 언어: **Java, Kotlin**
-- 컴파일: `.class` → DEX → Dalvik/ART VM
-- 디컴파일: **쉽다** → Java 코드 거의 복원됨
+- 컴파일: `.class`  DEX  Dalvik/ART VM
+- 디컴파일: **쉽다**  Java 코드 거의 복원됨
 - Native 라이브러리: `.so` (C/C++ 빌드)
 - 구조 분석 난이도: Android > iOS (초보 기준)
 
 ## iOS
 
 - 언어: **Swift, Objective-C**
-- 바이너리(Mach-O)로 컴파일 → 디컴파일 매우 어려움
+- 바이너리(Mach-O)로 컴파일  디컴파일 매우 어려움
 - Swift는 Mangle(Symbol 변환)로 함수 이름 난독화
 - 앱 확장자: **.ipa**
 - 탈옥 기기 필요
@@ -114,7 +114,7 @@ Spyware는 다음을 **사용자 모르게** 수집한다:
 
 # 8. Rooting / Jailbreak 도구
 
-### 🔧 Android 루팅 도구
+###  Android 루팅 도구
 
 - **Magisk** (가장 대표적)
 - KernelSU
@@ -122,10 +122,10 @@ Spyware는 다음을 **사용자 모르게** 수집한다:
 - Custom Recovery (TWRP)
 - 패치된 boot.img 사용
 
-### ⚠️ 주의: 벽돌(Brick) 가능
+###  주의: 벽돌(Brick) 가능
 
 - 잘못하면 기기 부팅 불가
-- 해결법: Recovery → Wipe → Firmware 재설치
+- 해결법: Recovery  Wipe  Firmware 재설치
 
 ------
 
@@ -142,7 +142,7 @@ Spyware는 다음을 **사용자 모르게** 수집한다:
 ## 앱 설치 구조
 
 - Android: `/sdcard/` 접근 가능
-- Root 권한 → `/` 전체 접근 가능
+- Root 권한  `/` 전체 접근 가능
 - 앱은 각자 sandbox에서 실행
 
 ------
@@ -158,13 +158,13 @@ com.facebook.app
 규칙:
 
 ```
-도메인 반대로 → 프로젝트 → 앱이름
+도메인 반대로  프로젝트  앱이름
 kr.co.company.appname
 ```
 
 패키지명이 같으면?
- → 다른 앱이 기존 앱을 **업데이트**처럼 덮어쓰기 가능
- → 악성앱 공격 벡터 중 하나
+  다른 앱이 기존 앱을 **업데이트**처럼 덮어쓰기 가능
+  악성앱 공격 벡터 중 하나
 
 ------
 
@@ -192,9 +192,9 @@ login_fail = 로그인이 실패했습니다.
 # 12. Activity Lifecycle (중요)
 
 ```
-onCreate()      → 화면 로딩 직후 실행
+onCreate()       화면 로딩 직후 실행
 onStart()
-onResume()      → 화면에 보이기 시작
+onResume()       화면에 보이기 시작
 onPause()
 onStop()
 onDestroy()

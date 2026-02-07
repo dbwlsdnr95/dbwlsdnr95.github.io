@@ -7,7 +7,7 @@ nav_order: 18
 
 # EQST LMS Wargame 실습 정리
 
-## 1. 문제 7번 – 파일 삭제 방지 (unlink 후킹)
+## 1. 문제 7번  파일 삭제 방지 (unlink 후킹)
 
 ### 목적
 
@@ -83,17 +83,17 @@ Interceptor.attach(writeAddr, {
 
 ### PC 프록시 설정
 
-- PC 인터넷 설정 → 프록시 수동 설정 (IP, Port)
+- PC 인터넷 설정  프록시 수동 설정 (IP, Port)
 
 ### Android 설정
 
-- Wi-Fi → 프록시 → 수동 → PC IP / Port
+- Wi-Fi  프록시  수동  PC IP / Port
 
 ### Burp 인증서 설치 (Android 6 이하)
 
 1. `https://burp/` 접속
 2. CA 인증서 다운로드
-3. `cert.der → cert.cer`로 변경
+3. `cert.der  cert.cer`로 변경
 4. 설치
 
 ------
@@ -113,7 +113,7 @@ Interceptor.attach(writeAddr, {
 ### 인증서 설치 과정
 
 ```
-# DER → PEM 변환
+# DER  PEM 변환
 openssl x509 -inform DER -in burp.der -out burp.pem
 
 # 해시 추출
@@ -128,7 +128,7 @@ adb shell "mount -o rw,remount /system"
 adb push 9a5ba575.0 /system/etc/security/cacerts/
 ```
 
-- 설정 → 보안 → 신뢰할 수 있는 자격 증명에서 **Portswigger CA 활성화 확인**
+- 설정  보안  신뢰할 수 있는 자격 증명에서 **Portswigger CA 활성화 확인**
 
 ------
 
@@ -137,7 +137,7 @@ adb push 9a5ba575.0 /system/etc/security/cacerts/
 ### 구조
 
 ```
-앱 → (인증서 고정) → 서버
+앱  (인증서 고정)  서버
 ```
 
 - 앱 내부에 서버 인증서를 **하드코딩**
@@ -199,7 +199,7 @@ recv  -> {"result":"false"}
 
 ------
 
-## 9. TCP → HTTP 변환 (MITMRelay)
+## 9. TCP  HTTP 변환 (MITMRelay)
 
 ### 목적
 
@@ -208,7 +208,7 @@ recv  -> {"result":"false"}
 ### 구성
 
 ```
-폰 → (TCP) → PC(MITMRelay) → Burp → 서버
+폰  (TCP)  PC(MITMRelay)  Burp  서버
 ```
 
 ------
@@ -257,7 +257,7 @@ py mitm_relay.py \
 
 ------
 
-## 12. 문제 6번 – TCP JSON 데이터
+## 12. 문제 6번  TCP JSON 데이터
 
 ### 전송 데이터
 
@@ -279,9 +279,9 @@ py mitm_relay.py \
 
 ## 13. 핵심 요약
 
-- `unlink()` 후킹 → 파일 삭제 방지
-- `write()` 후킹 → 파일 내용 확인
-- HTTP → Burp 직접 분석
-- HTTPS → 시스템 인증서 + SSL Pinning 우회
-- TCP → iptables + MITMRelay + Burp
+- `unlink()` 후킹  파일 삭제 방지
+- `write()` 후킹  파일 내용 확인
+- HTTP  Burp 직접 분석
+- HTTPS  시스템 인증서 + SSL Pinning 우회
+- TCP  iptables + MITMRelay + Burp
 - Native 통신은 **Frida + 네트워크 우회** 병행 필요

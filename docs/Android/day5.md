@@ -7,7 +7,7 @@ nav_order: 5
 
 ## 1. Android 개발 기초
 
-- Java → Kotlin(.kt)
+- Java  Kotlin(.kt)
 - 버튼 클릭 이벤트 처리
 - Service 생성
 - JNI(Java Native Interface)
@@ -17,7 +17,7 @@ nav_order: 5
 
 ## 2. Content Provider & adb content 명령어
 
-### ▶ 기본 구조
+###  기본 구조
 
 ```
 content query --uri content://패키지명/테이블명
@@ -26,17 +26,17 @@ content query --uri content://패키지명/테이블명
               --sorting 정렬
 ```
 
-### ▶ 주요 명령
+###  주요 명령
 
 - `content query`
 - `content insert`
 - `content update`
 - `content delete`
 
-### ▶ Content Provider 개념
+###  Content Provider 개념
 
 - 앱 내부 데이터를 외부 앱이 접근할 수 있도록 만든 API
-- 예: 카카오톡이 주소록 접근 → 친구 추가 기능
+- 예: 카카오톡이 주소록 접근  친구 추가 기능
 - 실제 데이터 위치 예:
   - `/data/data/com.kakao.talk`
   - `/data/data/com.google.phone`
@@ -45,7 +45,7 @@ content query --uri content://패키지명/테이블명
 
 ## 3. 워게임 컴포넌트 분석
 
-### ▶ projection 처리
+###  projection 처리
 
 ```
 String[] strArr = projection == null
@@ -53,7 +53,7 @@ String[] strArr = projection == null
     : projection;
 ```
 
-### ▶ SELECT 구문 구성
+###  SELECT 구문 구성
 
 ```
 SELECT __projection__
@@ -63,27 +63,27 @@ AND (selection)
 ORDER BY 정렬
 ```
 
-### ▶ content query 예제
+###  content query 예제
 
 ```
 content query --uri content://kr.co.eqst.aos.app022.memos/memos
 ```
 
-→ `select id, owner, memo from memos where owner != 'admin'`
+ `select id, owner, memo from memos where owner != 'admin'`
 
 ```
 content query --uri content://kr.co.eqst.aos.app022.memos/memos --projection owner:memo
 ```
 
-→ `select owner, memo from memos where owner != 'admin'`
+ `select owner, memo from memos where owner != 'admin'`
 
-### ▶ 공격 포인트 예시
+###  공격 포인트 예시
 
 ```
 --where 1=2) or (owner='admin'
 ```
 
-→ 테이블 전체 출력 가능
+ 테이블 전체 출력 가능
 
 ------
 
@@ -126,7 +126,7 @@ am broadcast -n 리시버이름
 
 ## 7. Encrypt Shared Preference
 
-### ▶ Shared Preference 개념
+###  Shared Preference 개념
 
 - 앱에서 단순 Key-Value 저장 가능
 
@@ -138,11 +138,11 @@ am broadcast -n 리시버이름
 
 - 자동로그인 / 토큰 보관 등에 사용
 
-### ▶ 암호화 버전 특징
+###  암호화 버전 특징
 
 - 키/IV 코드 내 포함 금지
 - 안드로이드 시스템이 처리
-- 루팅 + 함수 후킹 시 복호화 가능 → 보안 취약
+- 루팅 + 함수 후킹 시 복호화 가능  보안 취약
 
 ------
 
@@ -158,19 +158,19 @@ dumpsys activity activities | grep Resume
 
 ## 9. AndroGoat 실습 정리
 
-### ▶ Shared Preferences
+###  Shared Preferences
 
 ```
 cat /data/data/owasp.sat.agoat/shared_pref/users.xml
 ```
 
-### ▶ Shared Preferences 변조
+###  Shared Preferences 변조
 
 ```
 vi /data/data/owasp.sat.agoat/shared_pref/score.xml
 ```
 
-### ▶ SQLite DB
+###  SQLite DB
 
 ```
 sqlite3
@@ -178,7 +178,7 @@ sqlite3
 select * from users;
 ```
 
-### ▶ Temp File 위치
+###  Temp File 위치
 
 ```
 /data/data/owasp.sat.agoat/user___랜덤____tmp

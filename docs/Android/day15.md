@@ -78,7 +78,7 @@ bool Java_kr_seyong_testapp_MainActivity_checkPassword(
 
 ### 핵심 포인트
 
-- `jstring → char*` 변환
+- `jstring  char*` 변환
 - `strcmp()` 로 문자열 비교
 - `"hacker"` 와 동일하면 true
 
@@ -149,9 +149,9 @@ Interceptor.attach(func, {
 ### 인자 구조
 
 ```
-args[0] → JNIEnv*
-args[1] → jobject (this)
-args[2] → jstring pw
+args[0]  JNIEnv*
+args[1]  jobject (this)
+args[2]  jstring pw
 ```
 
 ------
@@ -223,7 +223,7 @@ var strcmpPtr = ptr("0x79cbc06e4010");
 
 주의:
 
-- 문자열 `"0x79cbc06e4010"` → 잘못된 타입
+- 문자열 `"0x79cbc06e4010"`  잘못된 타입
 - 반드시 `ptr()` 또는 `NativePointer` 사용
 
 ------
@@ -259,7 +259,7 @@ jboolean checkPasswordNative(const char* pw) {
   - Node.js 설치 필요
 - VSCode
   - Extension: **Frida Workbench**
-  - 명령 팔레트 → `Frida: Enable Hints`
+  - 명령 팔레트  `Frida: Enable Hints`
 
 ------
 
@@ -267,7 +267,7 @@ jboolean checkPasswordNative(const char* pw) {
 
 - JNI 분석은 **주소 기반 사고**
 - offset 개념 필수
-- Java 문자열 ≠ C 문자열
+- Java 문자열  C 문자열
 - Native 후킹은 `Interceptor`
 - 인증/무결성 로직은 Native에 숨겨지는 경우가 많음
 - Ghidra + Frida 조합이 가장 강력

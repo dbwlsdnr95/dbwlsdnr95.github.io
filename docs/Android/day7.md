@@ -5,7 +5,7 @@ parent: Android
 nav_order: 7
 ---
 
-# Android Security – (정적 분석)
+# Android Security  (정적 분석)
 
 > **정적 분석(Static Analysis)**
 >  앱을 실행하지 않은 상태에서 **APK를 디컴파일**하여 내부 로직, 암호화 방식, 검증 로직 등을 분석하는 기법
@@ -15,7 +15,7 @@ nav_order: 7
 ## 1. 정적 분석 개요
 
 - 앱 **미실행 상태**
-- APK → 디컴파일 → 코드 분석
+- APK  디컴파일  코드 분석
 - 주요 분석 대상
   - Java / Kotlin 코드
   - Smali 코드
@@ -31,7 +31,7 @@ nav_order: 7
 
 - Dalvik VM용 어셈블리 코드
 - **ASM(어셈블리)와 유사**
-- `classes.dex` → smali 변환
+- `classes.dex`  smali 변환
 
 ```
 add v0, v1
@@ -49,8 +49,8 @@ Intrinsics.checkNotNullParameter(obj, "param");
 
 - Kotlin에서 자동 생성
 - **의미**
-  - 검증 로직이 많다는 뜻 ❌
-  - 단순 NPE 방지용 ⭕
+  - 검증 로직이 많다는 뜻 
+  - 단순 NPE 방지용 
 - 디버깅 시 **노이즈가 많아짐**
 - 보안 검증과 직접적인 연관은 적음
 
@@ -62,10 +62,10 @@ Intrinsics.checkNotNullParameter(obj, "param");
 
 ```
 AndroidManifest.xml
- → Activity 선언
-   → onCreate()
-     → onClick()
-       → 특정 메소드 / 로직
+  Activity 선언
+    onCreate()
+      onClick()
+        특정 메소드 / 로직
 ```
 
 ------
@@ -87,7 +87,7 @@ function(arg1, arg2, arg3)
 
 ```
 Intent intent = new Intent(this, MainActivity.class);
-Class → Instance
+Class  Instance
 new Class()
 ```
 
@@ -96,18 +96,18 @@ new Class()
 
 ------
 
-## 4. 정적 분석 실습 1 – ASCII 배열 복원
+## 4. 정적 분석 실습 1  ASCII 배열 복원
 
-- ASCII 값 배열 → 문자열 변환
+- ASCII 값 배열  문자열 변환
 - 암호화 힌트 은닉용으로 자주 사용
 
 ```
-[65, 66, 67] → "ABC"
+[65, 66, 67]  "ABC"
 ```
 
 ------
 
-## 5. 정적 분석 실습 2 – XOR 기반 암호화 분석
+## 5. 정적 분석 실습 2  XOR 기반 암호화 분석
 
 ### 5.1 코드 핵심
 
@@ -186,11 +186,11 @@ for (int i = 0; i < length; i++) {
 
 - 키는 4바이트 반복 사용
 - `i * 11` 값이 가변성 추가
-- **XOR → 복호화도 동일 로직**
+- **XOR  복호화도 동일 로직**
 
 ------
 
-## 6. 정적 분석 실습 3 – AES 고정 키/IV
+## 6. 정적 분석 실습 3  AES 고정 키/IV
 
 ### 6.1 코드
 
@@ -206,7 +206,7 @@ cipher.init(
 ```
 
 - 알고리즘: **AES/CBC/PKCS5Padding**
-- 키 & IV 하드코딩 ❌
+- 키 & IV 하드코딩 
 
 ------
 
@@ -223,7 +223,7 @@ cipher.init(
 
 ------
 
-## 7. 정적 분석 실습 4 – IV 포함 암호문 구조
+## 7. 정적 분석 실습 4  IV 포함 암호문 구조
 
 ### 7.1 암호문 구조
 
@@ -237,8 +237,8 @@ iDigXohA4nl1YXWRdNo0LaecV/7XAfeEjRjfyga8OzMS7rxHBmsm5wz/HjTQkqiY
 ### 7.2 복호화 절차
 
 1. Base64 디코딩
-2. 앞 16바이트 → IV
-3. 나머지 → CipherText
+2. 앞 16바이트  IV
+3. 나머지  CipherText
 4. AES/CBC/PKCS5Padding 복호화
 
 ```
@@ -250,12 +250,12 @@ IV : 암호문 앞 16바이트
 
 ## 8. 정적 분석 핵심 체크리스트
 
-✅ AndroidManifest 내 Exported Activity
- ✅ Intent Extra 권한 검증 여부
- ✅ 하드코딩 키 / IV
- ✅ XOR / CRC32 기반 커스텀 암호화
- ✅ 복호화 가능 여부
- ✅ 힌트 문자열 UI 노출 여부
+ AndroidManifest 내 Exported Activity
+  Intent Extra 권한 검증 여부
+  하드코딩 키 / IV
+  XOR / CRC32 기반 커스텀 암호화
+  복호화 가능 여부
+  힌트 문자열 UI 노출 여부
 
 ------
 
