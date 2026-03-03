@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jinwook Yu | Security Portfolio</title>
+    <!-- Google Fonts: Fira Code -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for Icons (CDN) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="logo">
+            <span class="prompt">root@sec:~#</span> <span class="cursor">_</span>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main id="main-content">
+        <!-- Hero Section (Home View) -->
+        <section id="home" class="view-section active">
+            <div class="hero-content">
+                <p class="intro-text">Hello, I am</p>
+                <h1 class="name">Jinwook Yu</h1>
+                <h2 class="role">Penetration Tester & Security Engineer</h2>
+                <div class="typing-container">
+                    <span class="prompt">user@dbwlsdnr95:~$</span> <span class="typing-text"></span>
+                </div>
+                <!-- Updated Button Link -->
+                <button onclick="navigateTo('about')" class="btn">View Operations</button>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="view-section">
+            <div class="container">
+                <!-- Added Section Title -->
+                <h2 class="section-title"><span class="hash">#</span> About Me</h2>
+
+                <!-- 1. Identity Hero -->
+                <div class="about-hero">
+                    <div class="hero-profile-container">
+                        <!-- Profile Image Placeholder -->
+                        <div class="profile-photo-wrapper">
+                            <div class="profile-photo-placeholder">
+                                <i class="fas fa-user"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hero-text-container">
+                        <h2 class="identity-title">Penetration Tester<span class="dot">.</span></h2>
+                        <div class="identity-bio">
+                            <p>
+                                <strong>보안운영 실무 경험을 바탕으로</strong><br>
+                                현재는 <span class="highlight">웹·모바일 진단</span>, <span class="highlight">CVE PoC 연구</span>,
+                                <span class="highlight">Cloud 보안</span>에 집중하고 있습니다.
+                            </p>
+                            <p>
+                                취약점 분석부터 PoC 재현, 그리고 공격 로그 기반의 대응 전략 수립까지—<br>
+                                <span class="quote">"재현 → 분석 → 대응"</span>의 전 과정을 주도하는 <span class="highlight-text">보안
+                                    전문가(Security Specialist)</span>를 지향합니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-grid">
+                    <!-- 3. Core Competency (Consolidated) -->
+                    <div class="core-expertise">
+                        <h3 class="sub-title">Core Competency</h3>
+                        <div class="core-cards">
+                            <div class="core-card">
+                                <i class="fas fa-bug icon"></i>
+                                <div>
+                                    <h4>Penetration Test</h4>
+                                    <p>Web/Mobile 모의해킹 및 취약점 진단 프로세스 수행</p>
+                                </div>
+                            </div>
+                            <div class="core-card">
+                                <i class="fas fa-crosshairs icon"></i>
+                                <div>
+                                    <h4>CVE Research</h4>
+                                    <p>최신 취약점 분석 및 공격 페이로드(Payload) 작성</p>
+                                </div>
+                            </div>
+                            <div class="core-card">
+                                <i class="fas fa-cloud icon"></i>
+                                <div>
+                                    <h4>Cloud & Sec Ops</h4>
+                                    <p>Cloud WAF 정책 관리 및 클라우드 운영</p>
+                                </div>
+                            </div>
+                            <div class="core-card">
+                                <i class="fas fa-network-wired icon"></i>
+                                <div>
+                                    <h4>Network Security</h4>
+                                    <p>사내 네트워크 인프라 구축 및 보안 장비 운영</p>
+                                </div>
+                            </div>
+                            <!-- Added Compliance Card -->
+                            <div class="core-card">
+                                <i class="fas fa-clipboard-check icon"></i>
+                                <div>
+                                    <h4>Security Compliance</h4>
+                                    <p>ISO27001 인증 심사 대응 및 정보보호 관리체계(ISMS) 운영</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEW: Resume Section -->
+                <div class="resume-section">
+
+                    <!-- Experience Column -->
+                    <div class="resume-col">
+                        <h3 class="sub-title"><i class="fas fa-briefcase"></i> Experience</h3>
+
+                        <!-- Current: InTheForest -->
+                        <div class="resume-item">
+                            <div class="resume-date">2025.06 ~ Present</div>
+                            <div class="resume-content">
+                                <h4>(주)인더포레스트 / 취약점 연구팀</h4>
+                                <span class="resume-role">주임</span>
+                                <ul>
+                                    <li>웹/모바일 어플리케이션 모의해킹</li>
+                                    <li>클라우드 WAF(AWS, Akamai) 운영 및 정책 관리</li>
+                                    <li>사내 네트워크 인프라 및 보안 장비 운영</li>
+                                    <li>최신 CVE 연구 및 분석</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Past: Conifer -->
+                        <div class="resume-item">
+                            <div class="resume-date">2022.06 ~ 2025.06</div>
+                            <div class="resume-content">
+                                <h4>(주)코니퍼 / 정보보안팀</h4>
+                                <span class="resume-role">대리</span>
+                                <ul>
+                                    <li>네트워크 보안 운영 (FW, WAF, IPS, DDoS, L4)</li>
+                                    <li>엔드포인트 보안 운영 (DRM, SEP, NAC)</li>
+                                    <li>메일 보안 및 내부 데이터 유출 방지(Spamsniper, DLP)</li>
+                                    <li>ISO27001 인증 심사 대응 및 프로세스 최적화</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Edu & Cert Column -->
+                    <div class="resume-col">
+                        <h3 class="sub-title"><i class="fas fa-graduation-cap"></i> Education & Certs</h3>
+
+                        <div class="resume-group">
+                            <h4>Education</h4>
+                            <div class="resume-item simple">
+                                <span class="date">2024.02</span>
+                                <span class="text">학점은행제 정보보호학 졸업</span>
+                            </div>
+                            <div class="resume-item simple">
+                                <span class="date">2017.02</span>
+                                <span class="text">동원대학교 정보통신과 졸업</span>
+                            </div>
+                        </div>
+
+                        <div class="resume-group" style="margin-top: 1.5rem;">
+                            <h4>Trainings</h4>
+                            <div class="resume-item simple">
+                                <span class="date">2025.11 ~ 2026.04</span>
+                                <span class="text">SK쉴더스 루키즈 화이트해커 재직자 과정</span>
+                            </div>
+                            <div class="resume-item simple">
+                                <span class="date">2023.06 ~ 2024.01</span>
+                                <span class="text">코리아 IT 아카데미(정보보안)</span>
+                            </div>
+                        </div>
+
+                        <div class="resume-group" style="margin-top: 1.5rem;">
+                            <h4>Certifications</h4>
+                            <div class="resume-item simple">
+                                <span class="date">2024.06</span>
+                                <span class="text highlight">정보처리기사</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- 4. Skills Snapshot -->
+                <div class="skills-snapshot">
+                    <h3 class="sub-title">Tech Stack</h3>
+                    <div class="snapshot-grid">
+                        <div class="snap-item"><i class="fab fa-python"></i> <span>Python</span></div>
+                        <div class="snap-item"><i class="fab fa-js"></i> <span>JavaScript</span></div>
+                        <div class="snap-item"><i class="fab fa-html5"></i> <span>HTML</span></div>
+                        <div class="snap-item"><i class="fab fa-java"></i> <span>Java</span></div>
+                        <div class="snap-item"><i class="fab fa-linux"></i> <span>Linux</span></div>
+                        <div class="snap-item"><i class="fab fa-aws"></i> <span>AWS</span></div>
+                        <div class="snap-item"><i class="fas fa-globe"></i> <span>Akamai</span></div>
+                        <div class="snap-item"><i class="fab fa-docker"></i> <span>Docker</span></div>
+                        <div class="snap-item"><i class="fas fa-ghost"></i> <span>Burp Suite</span></div>
+                        <div class="snap-item"><i class="fas fa-mobile-alt"></i> <span>Frida</span></div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="view-section">
+            <div class="container">
+                <h2 class="section-title"><span class="hash">#</span> Projects</h2>
+
+                <div class="project-list-container">
+                    <!-- List Header -->
+                    <div class="list-header">
+                        <span class="col-id">ID</span>
+                        <span class="col-name">PROJECT NAME</span>
+                        <span class="col-tech">FOCUS AREA</span>
+                    </div>
+
+                    <!-- 1. Web Application Security -->
+                    <h3 class="project-category-title">Web 개발 및 취약점 진단</h3>
+                    <div class="list-row featured-row" onclick="openModal('vulncamp')">
+                        <span class="col-id">LAB-WEB</span>
+                        <div class="col-name">
+                            <strong>Vuln-Camp 취약점 실습 플랫폼</strong>
+                            <span class="sub-text">Vulnerable Commerce Platform (Spring Boot & Next.js)</span>
+                        </div>
+                        <span class="col-tech">Web Security</span>
+
+                        <div id="data-vulncamp" style="display:none;" data-title="Vuln-Camp: 웹 취약점 실습 플랫폼"
+                            data-repo="https://github.com/dbwlsdnr95/Vuln-Camp" data-detail-id="detail-vulncamp">
+                        </div>
+                    </div>
+
+                    <!-- 2. Mobile Security -->
+                    <h3 class="project-category-title">모바일 앱 개발 및 진단</h3>
+                    <div class="list-row featured-row" onclick="openModal('mobile')">
+                        <span class="col-id">LAB-MOB</span>
+                        <div class="col-name">
+                            <strong>모바일 앱 보안 진단 프로젝트</strong>
+                            <span class="sub-text">Android App Analysis</span>
+                        </div>
+                        <span class="col-tech">Mobile App Analysis</span>
+
+                        <div id="data-mobile" style="display:none;" data-title="Mobile Security Testing" data-repo="#"
+                            data-desc="<div class='desc-section'><strong>[Purpose]</strong> 모바일 앱(Android/iOS)의 클라이언트 및 API 보안성을 점검.</div> <div class='desc-section'><strong>[Analysis]</strong> Frida를 이용한 런타임 조작(Hooking)과 APK 디컴파일을 통한 중요 로직 노출 여부 진단.</div> <div class='desc-section'><strong>[Result]</strong> 루팅 탐지 우회 및 중요 정보 암호화 미흡 사항 식별 및 조치.</div>">
+                        </div>
+                    </div>
+
+
+                    <!-- 4. CVE Research -->
+                    <h3 class="project-category-title">CVE 취약점 분석 및 연구</h3>
+
+                    <!-- Item 1 -->
+                    <div class="list-row featured-row" onclick="openModal('react2shell')">
+                        <span class="col-id text-accent">CVE-2025-55182</span>
+                        <div class="col-name">
+                            <strong>React2Shell 취약점 분석</strong>
+                            <span class="sub-text">Next.js RSC Deserialization RCE</span>
+                        </div>
+                        <span class="col-tech">React Vuln Research</span>
+                        <div id="data-react2shell" style="display:none;" data-title="CVE-2025-55182: React2Shell"
+                            data-repo="https://github.com/dbwlsdnr95/CVE-2025-55182-React2Shell-Nextjs-RSC-Analysis"
+                            data-detail-id="detail-react2shell">
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="list-row featured-row" onclick="openModal('spring4shell')">
+                        <span class="col-id text-accent">CVE-2022-22965</span>
+                        <div class="col-name">
+                            <strong>Spring4Shell 취약점 분석</strong>
+                            <span class="sub-text">Spring Core DataBinder RCE</span>
+                        </div>
+                        <span class="col-tech">Spring Vuln Research</span>
+                        <div id="data-spring4shell" style="display:none;" data-title="CVE-2022-22965: Spring4Shell"
+                            data-repo="https://github.com/dbwlsdnr95/CVE-2022-22965-spring4shell"
+                            data-detail-id="detail-spring4shell">
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="list-row featured-row" onclick="openModal('log4shell')">
+                        <span class="col-id text-accent">CVE-2021-44228</span>
+                        <div class="col-name">
+                            <strong>Log4Shell 취약점 분석</strong>
+                            <span class="sub-text">Log4j JNDI Injection RCE</span>
+                        </div>
+                        <span class="col-tech">Java Vuln Research</span>
+                        <div id="data-log4shell" style="display:none;" data-title="CVE-2021-44228: Log4Shell"
+                            data-repo="https://github.com/dbwlsdnr95/CVE-2021-44228-log4shell"
+                            data-detail-id="detail-log4shell">
+                        </div>
+                    </div>
+
+                    <!-- Item 4: More CVEs -->
+                    <div class="list-row" onclick="window.open('https://github.com/dbwlsdnr95/cve-merge', '_blank')">
+                        <span class="col-id">CVE-ALL</span>
+                        <div class="col-name">
+                            <strong>더 많은 CVE 연구 보러가기</strong>
+                            <span class="sub-text">cve-merge Github Repository</span>
+                        </div>
+                        <span class="col-tech">Vulnerability Database</span>
+                    </div>
+
+                    <!-- 5. AI Development -->
+                    <h3 class="project-category-title">AI 개발 및 연구</h3>
+                    <div class="list-row" onclick="openModal('aidev')">
+                        <span class="col-id">LAB-AI</span>
+                        <div class="col-name">
+                            <strong>AI 기반 프로젝트 개발</strong>
+                            <span class="sub-text">LLM Agent & AI-Assisted Development</span>
+                        </div>
+                        <span class="col-tech">AI / LLM Development</span>
+
+                        <div id="data-aidev" style="display:none;" data-title="AI 기반 프로젝트 개발" data-repo="#"
+                            data-desc="<div class='desc-section'><strong>[Purpose]</strong> LLM(대규모 언어 모델) 및 AI 에이전트를 활용하여 실무 프로젝트의 개발 생산성을 극대화하는 워크플로우 연구.</div> <div class='desc-section'><strong>[Analysis]</strong> AI 코딩 에이전트를 활용한 풀스택 웹 어플리케이션 개발, 자동화 스크립트 작성 등 다양한 프로젝트에 AI 도구를 적극 도입하여 개발 효율성 검증.</div> <div class='desc-section'><strong>[Result]</strong> AI 도구를 활용한 빠른 프로토타이핑 및 프로젝트 스케폴딩 역량 확보, 개발 생산성 향상 방법론 정립.</div>">
+                        </div>
+                    </div>
+
+                    <!-- 6. ISO 27001 -->
+                    <h3 class="project-category-title">ISO 27001 기반 보안 운영</h3>
+                    <div class="list-row" onclick="openModal('iso')">
+                        <span class="col-id">LAB-ISO</span>
+                        <div class="col-name">
+                            <strong>ISO 27001 인증 심사 대응</strong>
+                            <span class="sub-text">Information Security Management System</span>
+                        </div>
+                        <span class="col-tech">ISO27001 Audit</span>
+                        <div id="data-iso" style="display:none;" data-title="ISO 27001 Audit Response Management"
+                            data-repo="#"
+                            data-desc="<div class='desc-section'><strong>[Purpose]</strong> 전사적 정보보호 관리체계(ISMS)를 수립하여 ISO 27001 인증 획득 및 유지.</div> <div class='desc-section'><strong>[Analysis]</strong> 관리적/물리적/기술적 보안 통제 항목 114개에 대한 현황 분석 및 갭(Gap) 분석 수행.</div> <div class='desc-section'><strong>[Result]</strong> 내부 보안 정책 개정 및 임직원 보안 인식 제고 교육을 통해 심사 결함 사항 0건 달성.</div>">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="view-section">
+            <div class="container">
+                <h2 class="section-title"><span class="hash">#</span> Contact</h2>
+
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h3 class="contact-headline">Let's build secure and robust systems together.</h3>
+                        <p class="contact-sub">
+                            새로운 취약점 연구부터 엔터프라이즈 보안 인프라 구축까지,<br>
+                            안전한 서비스를 만들기 위한 협업 및 제안을 언제나 환영합니다.
+                        </p>
+                    </div>
+
+                    <div class="contact-cards">
+                        <!-- Email Card -->
+                        <a href="mailto:wlsdnr255@naver.com" class="contact-card email-card">
+                            <div class="card-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="card-text">
+                                <span class="card-label">Email Me</span>
+                                <span class="card-value">wlsdnr255@naver.com</span>
+                            </div>
+                            <div class="card-arrow">
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </a>
+
+                        <!-- GitHub Card -->
+                        <a href="https://github.com/dbwlsdnr95" target="_blank"
+                            class="contact-card social-card hover-github">
+                            <div class="card-icon">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <div class="card-text">
+                                <span class="card-label">GitHub</span>
+                                <span class="card-value">dbwlsdnr95</span>
+                            </div>
+                            <div class="card-arrow">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+
+                        <!-- Tech Blog Card (Optional / Placeholder) -->
+                        <a href="#" class="contact-card social-card hover-blog">
+                            <div class="card-icon">
+                                <i class="fas fa-rss"></i>
+                            </div>
+                            <div class="card-text">
+                                <span class="card-label">Tech Blog</span>
+                                <span class="card-value">Coming Soon</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Structure -->
+    <div id="project-modal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <h3 class="modal-title" id="modal-title">Project Title</h3>
+            <div class="modal-desc" id="modal-desc">Description goes here...</div>
+            <div class="modal-actions">
+                <a href="#" target="_blank" id="modal-repo-btn" class="btn">View Repository</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Detailed Content Templates -->
+    <!-- React2Shell Detail -->
+    <div id="detail-react2shell" style="display:none;">
+        <div class="rich-desc-container">
+
+            <div class="rich-section">
+                <h4>프로젝트 소개</h4>
+                <p>
+                    <strong>React2Shell (CVE-2025-55182)</strong>은 Next.js 15.0.0 버전의 React Server Component(RSC) 아키텍처에서
+                    발견된 강력한 역직렬화 기반의 원격 코드 실행(RCE) 취약점입니다. 최신 React 생태계의 내부 동작 원리를 심층적으로 분석하기 위해 진행되었습니다.
+                </p>
+                <div class="tech-badges" style="margin: 10px 0;">
+                    <img src="https://img.shields.io/badge/Research-Security-red" alt="Research">
+                    <img src="https://img.shields.io/badge/Next.js-15.0.0-black" alt="NextJS">
+                </div>
+            </div>
+
+            <div class="rich-section">
+                <h4>기획 의도</h4>
+                <ul class="rich-list">
+                    <li>최신 프론트엔드 프레임워크(Next.js) 내부의 <strong>RSC 역직렬화(Deserialization) 메커니즘</strong> 이해</li>
+                    <li>알려지지 않은 Server Action 내부 동작 과정에서의 취약성 탐구 및 증명</li>
+                    <li>실제 클라우드 및 SaaS 환경에서 적용할 수 있는 안전한 대응 가이드라인 도출</li>
+                </ul>
+            </div>
+
+            <div class="rich-section">
+                <h4>수행 역할</h4>
+                <ul class="rich-list">
+                    <li><strong>Vulnerability Analysis:</strong> Next.js 서버의 Action State 파싱 로직 및 `__esModule` 속성을 활용한
+                        객체 주입 가능성 분석</li>
+                    <li><strong>PoC Development:</strong> Node.js `child_process.exec`를 호출할 수 있는 `$$ACTION_ID` 연계 페이로드
+                        작성</li>
+                    <li><strong>Verification:</strong> RCE 및 서버 장애 유발(DoS), 정보 유출(Info Leak) 시나리오 검증 시스템 구축 (Docker)
+                    </li>
+                </ul>
+            </div>
+
+            <div class="rich-section">
+                <h4>주요 성과 및 인사이트</h4>
+                <ul class="rich-list">
+                    <li>서버 권한 탈취가 가능한 <strong>RCE 공격 성공 및 원리 완벽 재현</strong></li>
+                    <li>RSC와 Server Actions 내부 동작 원리에 대한 깊은 기술적 이해도 및 보안 진단 역량 입증</li>
+                    <li>단순한 취약점 증명을 넘어 Next.js 인프라(Vercel 등) 환경을 고려한 아키텍처 레벨의 방어 로직 연구</li>
+                </ul>
+            </div>
+
+            <div class="rich-actions" style="margin-top: 2rem; display: flex; gap: 10px; justify-content: center;">
+                <a href="https://github.com/dbwlsdnr95/CVE-2025-55182-React2Shell-Nextjs-RSC-Analysis" target="_blank"
+                    class="btn">
+                    <i class="fab fa-github"></i> Main Repository
+                </a>
+                <a href="https://github.com/dbwlsdnr95/CVE-2025-55182-React2Shell-Nextjs-RSC-Analysis/blob/main/TESTING.md"
+                    target="_blank" class="btn btn-outline">
+                    <i class="fas fa-file-code"></i> Testing Guide
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Spring4Shell Detail -->
+    <div id="detail-spring4shell" style="display:none;">
+        <div class="rich-desc-container">
+
+            <div class="rich-section">
+                <h4>프로젝트 소개</h4>
+                <p>
+                    <strong>Spring4Shell (CVE-2022-22965)</strong>은 Spring Framework Core에서 발생한 심각한 원격 코드 실행(RCE)
+                    취약점입니다.
+                    해당 취약점의 동작 원리를 심층 분석하고, 실제 공격 시나리오(WebShell Upload)를 재현하여 방어 전략을 수립하기 위해 연구를 진행했습니다.
+                </p>
+                <div class="tech-badges" style="margin: 10px 0;">
+                    <img src="https://img.shields.io/badge/Research-Security-red" alt="Research">
+                    <img src="https://img.shields.io/badge/Spring_Boot-2.6.5-green" alt="SpringBoot">
+                </div>
+            </div>
+
+            <div class="rich-section">
+                <h4>기획 의도</h4>
+                <ul class="rich-list">
+                    <li>Spring Core의 <strong>DataBinder</strong> 메커니즘과 객체 바인딩 오류 원리 심도 있는 이해</li>
+                    <li><strong>JDK 9+</strong>의 Module 시스템 특성을 활용한 우회 공격 기법 분석</li>
+                    <li>실제 공격 재현을 통한 엔터프라이즈 환경에서의 파급력 검증 및 보안 대응책 마련</li>
+                </ul>
+            </div>
+
+            <div class="rich-section">
+                <h4>수행 역할</h4>
+                <ul class="rich-list">
+                    <li><strong>Vulnerability Analysis:</strong> CVE-2022-22965 원인이 되는 `CachedIntrospectionResults` 및
+                        `class.module.classLoader` 접근 제어 취약성 분석</li>
+                    <li><strong>PoC Development:</strong> Tomcat의 `AccessLogValve` 속성 조작을 악용한 WebShell 생성 공격 일련의 페이로드 작성
+                    </li>
+                    <li><strong>Verification:</strong> Burp Suite를 활용하여 WAS 장악 시나리오 검증 및 WAF 우회 가능성 테스트 수행</li>
+                </ul>
+            </div>
+
+            <div class="rich-section">
+                <h4>주요 성과 및 인사이트</h4>
+                <ul class="rich-list">
+                    <li>Spring Boot 2.6.5 + Java 11 환경에서 <strong>RCE 공격 성공 및 WebShell 악용 시나리오 재현</strong></li>
+                    <li>프레임워크의 편리한 기능(Data Binding)이 강력한 취약점(Chain of Trust Broken)으로 변모할 수 있음을 실증</li>
+                    <li>다양한 WAF 벤더(AWS, Akamai)의 방어 정책 실효성을 식별하고, 자체적인 Suricata/Snort 기반 탐지 규칙 제안 역량 확보</li>
+                </ul>
+            </div>
+
+            <div class="rich-actions" style="margin-top: 2rem; display: flex; gap: 10px; justify-content: center;">
+                <a href="https://github.com/dbwlsdnr95/CVE-2022-22965-spring4shell" target="_blank" class="btn">
+                    <i class="fab fa-github"></i> Main Repository
+                </a>
+                <a href="https://github.com/dbwlsdnr95/CVE-2022-22965-spring4shell/blob/main/TESTING.md" target="_blank"
+                    class="btn btn-outline">
+                    <i class="fas fa-file-code"></i> Testing Guide
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Log4Shell Detail -->
+    <div id="detail-log4shell" style="display:none;">
+        <div class="rich-desc-container">
+
+            <div class="rich-section">
+                <h4>프로젝트 소개</h4>
+                <p>
+                    <strong>Log4Shell (CVE-2021-44228)</strong>은 Java 기반 로깅 유틸리티인 Log4j에서 발견된, IT 역사상 가장 파급력이 컸던 취약점 중
+                    하나입니다.
+                    널리 쓰이는 라이브러리인 만큼 해당 JNDI Injection의 원리를 완벽하게 분해하고 공격 방어 프로세스를 정립하기 위해 연구되었습니다.
+                </p>
+                <div class="tech-badges" style="margin: 10px 0;">
+                    <img src="https://img.shields.io/badge/Research-Security-red" alt="Research">
+                    <img src="https://img.shields.io/badge/Log4j-2.14.1-orange" alt="Log4j">
+                </div>
+            </div>
+
+            <div class="rich-section">
+                <h4>기획 의도</h4>
+                <ul class="rich-list">
+                    <li>로깅 라이브러리의 <strong>JNDI Lookup</strong> 기능이 어떠한 방식으로 원격 코드 실행을 유발하는지 분석</li>
+                    <li>LDAP 및 RMI 프로토콜을 이용한 원격 객체 로딩 및 역직렬화 공격 플로우 완벽 이해</li>
+                    <li>난독화 및 우회 기법(Obfuscation)에 대응하는 실무적 차원의 탐지 로직 도출</li>
+                </ul>
+            </div>
+
+            <div class="rich-section">
+                <h4>수행 역할</h4>
+                <ul class="rich-list">
+                    <li><strong>Vulnerability Analysis:</strong> Log4j `PatternLayout` 및 `MessagePatternConverter`에서의
+                        문자열 치환 로직 분석</li>
+                    <li><strong>PoC Development:</strong> 악성 LDAP 서버 구축 및 HTTP 헤더(`X-Api-Version`)를 통한 악성 JNDI 페이로드 전송
+                        스크립트 작성</li>
+                    <li><strong>Verification:</strong> 원격 서버 컴파일 코드가 타겟 컨테이너에 다운로드 및 실행(`RCE`)되는 전 단계 모니터링 및 실증</li>
+                </ul>
+            </div>
+
+            <div class="rich-section">
+                <h4>주요 성과 및 인사이트</h4>
+                <ul class="rich-list">
+                    <li>취약한 Log4j 환경 구축 및 강력한 <strong>JNDI 임의 코드 실행 공격 모듈 구축 완료</strong></li>
+                    <li>공격자의 다양한 난독화 페이로드(`${lower:j}ndi...`) 원리 분석을 통해, 단편적인 문자열 차단을 넘어선 심층 방어 아키텍처의 중요성 확인</li>
+                    <li>오픈소스 라이브러리의 Supply Chain 위험성과 이를 조기에 식별 및 패치하는 ISMS 기반 운영의 필요성 시사</li>
+                </ul>
+            </div>
+
+            <div class="rich-actions" style="margin-top: 2rem; display: flex; gap: 10px; justify-content: center;">
+                <a href="https://github.com/dbwlsdnr95/CVE-2021-44228-log4shell" target="_blank" class="btn">
+                    <i class="fab fa-github"></i> Main Repository
+                </a>
+                <a href="https://github.com/dbwlsdnr95/CVE-2021-44228-log4shell/blob/main/TESTING.md" target="_blank"
+                    class="btn btn-outline">
+                    <i class="fas fa-file-code"></i> Testing Guide
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Vuln-Camp Project Detail -->
+    <div id="detail-vulncamp" style="display:none;">
+        <div class="rich-desc-container">
+
+            <div class="rich-section">
+                <h4>프로젝트 소개</h4>
+                <p>
+                    <strong>Vuln-Camp</strong>는 프론트엔드와 백엔드를 연동한 실제 이커머스 아키텍처(Spring Boot + Next.js)를 기반으로 직접 기획/개발한
+                    <strong>'취약점이 내재된 웹 어플리케이션(Vulnerable-by-Design)'</strong>입니다. 단순한 튜토리얼을 넘어 웹 비즈니스 로직 곳곳에 숨겨진 14가지
+                    취약점을 분석하고 스스로 <span class="highlight">보안 코딩(Secure Coding) 가이드</span>를 도출하기 위해 제작했습니다.
+                </p>
+                <div class="tech-badges" style="margin: 10px 0;">
+                    <img src="https://img.shields.io/badge/Security-Vulnerable_by_Design-red" alt="Security">
+                    <img src="https://img.shields.io/badge/Java-17-orange" alt="Java">
+                    <img src="https://img.shields.io/badge/Spring_Boot-3.x-green" alt="SpringBoot">
+                    <img src="https://img.shields.io/badge/Next.js-14-black" alt="NextJS">
+                </div>
+            </div>
+
+            <div class="rich-section">
+                <h4>기획 의도</h4>
+                <ul class="rich-list">
+                    <li>하이브리드 시스템(SSR & CSR 혼합) 환경에서의 취약점 발생 메커니즘 및 <span class="highlight">연계 공격 원리</span> 탐구</li>
+                    <li>OWASP Top 10을 포함한 주요 취약점 14종을 결제 금액 조작, 인증 우회 등 <strong>실제 서비스와 유사한 시나리오</strong>로 구현</li>
+                    <li>설계자 겸 방어자 관점에서 취약점 패치 및 근본적인 방어 로직(Secure Coding)을 고도화하는 경험 축적</li>
+                </ul>
+            </div>
+
+            <div class="rich-section">
+                <h4>수행 역할</h4>
+                <ul class="rich-list">
+                    <li><strong>Injection:</strong> Blind SQL Injection, Stored XSS 등 사용자 입력값 기반의 주입 공격 벡터를 게시판, 로그인,
+                        Q&A 기능에 직접 설계 및 구현</li>
+                    <li><strong>권한 우회 / 인증 결함:</strong> 객체 참조 조작(IDOR), CSRF를 통한 타 사용자 비밀번호 강제 변경, 인증 없이 관리자 페이지 접근 등 인가
+                        누락 시나리오 구현</li>
+                    <li><strong>서버 측 취약점:</strong> SSRF를 이용한 내부 시스템 접근, Path Traversal 기반의 소스코드 유출, 디렉토리 리스팅을 통한 민감 파일
+                        노출 등 서버 측 공격 체인 구성</li>
+                    <li><strong>클라이언트 로직 조작:</strong> 브라우저 단 검증 로직을 우회하여 쿠폰 강제 발급 및 결제 금액 파라미터를 조작하는 Parameter Tampering
+                        공격 로직 설계</li>
+                    <li><strong>취약점 분석 리포트:</strong> 14건의 취약점에 대해 공격 원리, Payload, 그리고 Secure Coding 패치 방법까지 구조화한 상세 리포트
+                        작성</li>
+                </ul>
+            </div>
+
+            <div class="rich-section">
+                <h4>주요 성과 및 인사이트</h4>
+                <ul class="rich-list">
+                    <li>백엔드(Spring Boot) API 및 취약점 로직을 <span class="highlight">직접 설계·구현</span>하여 웹 서비스의 보안 아키텍처를 강력하게
+                        구성하였으며, 프론트엔드(Next.js)는 AI 도구를 활용해 빠르게 스케폴딩하여 프로젝트 효율을 극대화</li>
+                    <li>14종의 보안 취약점을 직접 코드 레벨에서 구현하고, 각 취약점에 대해 <span class="highlight">Secure Coding 대응 방안</span>을 스스로
+                        도출하며 공격자와 방어자 양쪽의 시각을 동시에 체험</li>
+                    <li>프론트엔드 ↔ 백엔드 간 신뢰 경계(Trust Boundary)의 설계적 한계를 실증하고, 실무 투입 시 개발팀에 즉각적이고 구체적인 보안 가이드라인을 제시할 수 있는 역량
+                        확보</li>
+                </ul>
+            </div>
+
+
+            <div class="rich-actions" style="margin-top: 2rem; display: flex; gap: 10px; justify-content: center;">
+                <a href="https://github.com/dbwlsdnr95/Vuln-Camp" target="_blank" class="btn">
+                    <i class="fab fa-github"></i> Repository
+                </a>
+                <a href="https://github.com/dbwlsdnr95/Vuln-Camp/tree/main/vulnerabilities" target="_blank"
+                    class="btn btn-outline">
+                    <i class="fas fa-file-code"></i> 취약점 분석 리포트
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Jinwook Yu. Security Portfolio.</p>
+            <div class="server-status">
+                <span class="status-dot"></span> System Status: <strong>SECURE</strong>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
