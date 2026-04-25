@@ -408,24 +408,56 @@
     </div>
 
     <!-- Detailed Content Templates -->
-        <!-- React2Shell Detail -->
+            <!-- React2Shell Detail -->
     <div id="detail-react2shell" style="display:none;">
         <div class="rich-desc-container">
             <div class="rich-section">
                 <h4>프로젝트 소개</h4>
-                <p><strong>React2Shell (CVE-2025-55182)</strong>은 Next.js React Server Components 처리 과정에서 발생할 수 있는 역직렬화 기반 원격 코드 실행 취약점 분석 프로젝트입니다.</p>
+                <p>
+                    <strong>React2Shell (CVE-2025-55182)</strong>은 Next.js 15.0.0 버전의 React Server Component(RSC)
+                    아키텍처에서 발견된 역직렬화 기반 원격 코드 실행(RCE) 취약점입니다. 최신 React 생태계의 내부 동작 원리를
+                    심층적으로 분석하기 위해 진행한 취약점 연구 프로젝트입니다.
+                </p>
+                <div class="tech-badges" style="margin: 10px 0;">
+                    <img src="https://img.shields.io/badge/Research-Security-red" alt="Research">
+                    <img src="https://img.shields.io/badge/Next.js-15.0.0-black" alt="NextJS">
+                </div>
             </div>
+
+            <div class="rich-section">
+                <h4>기획 의도</h4>
+                <ul class="rich-list">
+                    <li>최신 프론트엔드 프레임워크인 Next.js 내부의 RSC 역직렬화 메커니즘을 이해했습니다.</li>
+                    <li>Server Action 처리 과정에서 발생할 수 있는 객체 주입 및 실행 흐름을 분석했습니다.</li>
+                    <li>실제 클라우드 및 SaaS 환경에서 적용 가능한 대응 가이드라인을 도출했습니다.</li>
+                </ul>
+            </div>
+
             <div class="rich-section">
                 <h4>수행 역할</h4>
                 <ul class="rich-list">
-                    <li>취약한 Next.js 환경을 구성하고 공격 조건을 재현했습니다.</li>
-                    <li>Server Action 및 RSC 처리 흐름을 분석해 취약점 발생 원리를 정리했습니다.</li>
-                    <li>PoC 실행 결과와 대응 방향을 테스트 문서로 구조화했습니다.</li>
+                    <li><strong>Vulnerability Analysis:</strong> Next.js 서버의 Action State 파싱 로직과 `__esModule` 속성을 활용한 객체 주입 가능성을 분석했습니다.</li>
+                    <li><strong>PoC Development:</strong> Node.js `child_process.exec` 호출 가능성을 검증하기 위한 `$$ACTION_ID` 연계 페이로드를 작성했습니다.</li>
+                    <li><strong>Verification:</strong> RCE, 서버 장애 유발(DoS), 정보 유출(Info Leak) 시나리오를 Docker 환경에서 검증했습니다.</li>
                 </ul>
             </div>
+
+            <div class="rich-section">
+                <h4>주요 성과 및 인사이트</h4>
+                <ul class="rich-list">
+                    <li>서버 권한 탈취로 이어질 수 있는 RCE 공격 원리를 재현하고 검증했습니다.</li>
+                    <li>RSC와 Server Actions 내부 동작 원리에 대한 기술적 이해도를 높였습니다.</li>
+                    <li>단순 취약점 증명을 넘어 Next.js 인프라 환경을 고려한 방어 로직을 연구했습니다.</li>
+                </ul>
+            </div>
+
             <div class="rich-actions" style="margin-top: 2rem; display: flex; gap: 10px; justify-content: center;">
-                <a href="https://github.com/dbwlsdnr95/CVE-2025-55182-React2Shell-Nextjs-RSC-Analysis" target="_blank" class="btn"><i class="fab fa-github"></i> Main Repository</a>
-                <a href="https://github.com/dbwlsdnr95/CVE-2025-55182-React2Shell-Nextjs-RSC-Analysis/blob/main/TESTING.md" target="_blank" class="btn btn-outline"><i class="fas fa-file-code"></i> Testing Guide</a>
+                <a href="https://github.com/dbwlsdnr95/CVE-2025-55182-React2Shell-Nextjs-RSC-Analysis" target="_blank" class="btn">
+                    <i class="fab fa-github"></i> Main Repository
+                </a>
+                <a href="https://github.com/dbwlsdnr95/CVE-2025-55182-React2Shell-Nextjs-RSC-Analysis/blob/main/TESTING.md" target="_blank" class="btn btn-outline">
+                    <i class="fas fa-file-code"></i> Testing Guide
+                </a>
             </div>
         </div>
     </div>
@@ -435,19 +467,51 @@
         <div class="rich-desc-container">
             <div class="rich-section">
                 <h4>프로젝트 소개</h4>
-                <p><strong>Spring4Shell (CVE-2022-22965)</strong>은 Spring Framework의 데이터 바인딩 구조에서 발생한 원격 코드 실행 취약점 분석 프로젝트입니다.</p>
+                <p>
+                    <strong>Spring4Shell (CVE-2022-22965)</strong>은 Spring Framework Core에서 발생한 원격 코드 실행(RCE)
+                    취약점입니다. Spring의 데이터 바인딩 구조와 Tomcat 동작 방식을 분석하고, 실제 공격 시나리오를 재현하여
+                    방어 전략을 정리하기 위해 수행했습니다.
+                </p>
+                <div class="tech-badges" style="margin: 10px 0;">
+                    <img src="https://img.shields.io/badge/Research-Security-red" alt="Research">
+                    <img src="https://img.shields.io/badge/Spring_Boot-2.6.5-green" alt="SpringBoot">
+                </div>
             </div>
+
+            <div class="rich-section">
+                <h4>기획 의도</h4>
+                <ul class="rich-list">
+                    <li>Spring Core의 DataBinder 메커니즘과 객체 바인딩 흐름을 이해했습니다.</li>
+                    <li>JDK 9 이상 환경의 classLoader 접근 제어 우회 가능성을 분석했습니다.</li>
+                    <li>엔터프라이즈 Java 환경에서 발생 가능한 RCE 위험과 대응 방안을 정리했습니다.</li>
+                </ul>
+            </div>
+
             <div class="rich-section">
                 <h4>수행 역할</h4>
                 <ul class="rich-list">
-                    <li>취약한 Spring/Tomcat 환경을 구성하고 공격 흐름을 재현했습니다.</li>
-                    <li>DataBinder와 classLoader 접근 흐름을 중심으로 취약점 원리를 분석했습니다.</li>
-                    <li>WebShell 생성 시나리오와 보안 대응 방안을 정리했습니다.</li>
+                    <li><strong>Vulnerability Analysis:</strong> `class.module.classLoader` 접근 흐름과 Spring DataBinder 처리 방식을 분석했습니다.</li>
+                    <li><strong>PoC Development:</strong> Tomcat `AccessLogValve` 속성 조작을 이용한 WebShell 생성 시나리오를 재현했습니다.</li>
+                    <li><strong>Verification:</strong> Burp Suite 기반 요청 조작으로 WAS 장악 가능성과 보안 장비 우회 가능성을 검증했습니다.</li>
                 </ul>
             </div>
+
+            <div class="rich-section">
+                <h4>주요 성과 및 인사이트</h4>
+                <ul class="rich-list">
+                    <li>Spring Boot + Java 환경에서 RCE 공격 흐름과 WebShell 악용 시나리오를 재현했습니다.</li>
+                    <li>프레임워크의 편의 기능이 보안 경계 붕괴로 이어질 수 있음을 코드 레벨에서 확인했습니다.</li>
+                    <li>패치, WAF 탐지, 입력 바인딩 제한 등 방어 관점의 대응 방안을 정리했습니다.</li>
+                </ul>
+            </div>
+
             <div class="rich-actions" style="margin-top: 2rem; display: flex; gap: 10px; justify-content: center;">
-                <a href="https://github.com/dbwlsdnr95/CVE-2022-22965-spring4shell" target="_blank" class="btn"><i class="fab fa-github"></i> Main Repository</a>
-                <a href="https://github.com/dbwlsdnr95/CVE-2022-22965-spring4shell/blob/main/TESTING.md" target="_blank" class="btn btn-outline"><i class="fas fa-file-code"></i> Testing Guide</a>
+                <a href="https://github.com/dbwlsdnr95/CVE-2022-22965-spring4shell" target="_blank" class="btn">
+                    <i class="fab fa-github"></i> Main Repository
+                </a>
+                <a href="https://github.com/dbwlsdnr95/CVE-2022-22965-spring4shell/blob/main/TESTING.md" target="_blank" class="btn btn-outline">
+                    <i class="fas fa-file-code"></i> Testing Guide
+                </a>
             </div>
         </div>
     </div>
@@ -457,19 +521,51 @@
         <div class="rich-desc-container">
             <div class="rich-section">
                 <h4>프로젝트 소개</h4>
-                <p><strong>Log4Shell (CVE-2021-44228)</strong>은 Log4j JNDI Lookup 기능을 악용한 원격 코드 실행 취약점 분석 프로젝트입니다.</p>
+                <p>
+                    <strong>Log4Shell (CVE-2021-44228)</strong>은 Java 로깅 라이브러리 Log4j에서 발견된 JNDI Injection 기반
+                    원격 코드 실행 취약점입니다. JNDI Lookup 기능의 동작 원리와 공격 흐름을 분석하고, 탐지 및 대응 관점에서
+                    정리한 연구 프로젝트입니다.
+                </p>
+                <div class="tech-badges" style="margin: 10px 0;">
+                    <img src="https://img.shields.io/badge/Research-Security-red" alt="Research">
+                    <img src="https://img.shields.io/badge/Log4j-2.14.1-orange" alt="Log4j">
+                </div>
             </div>
+
+            <div class="rich-section">
+                <h4>기획 의도</h4>
+                <ul class="rich-list">
+                    <li>Log4j의 JNDI Lookup 기능이 원격 코드 실행으로 이어지는 원리를 분석했습니다.</li>
+                    <li>LDAP/RMI 프로토콜을 활용한 원격 객체 로딩 및 역직렬화 흐름을 이해했습니다.</li>
+                    <li>우회 페이로드와 탐지 로직을 비교하며 실무형 방어 관점을 정리했습니다.</li>
+                </ul>
+            </div>
+
             <div class="rich-section">
                 <h4>수행 역할</h4>
                 <ul class="rich-list">
-                    <li>취약한 Log4j 환경과 LDAP 기반 공격 흐름을 구성했습니다.</li>
-                    <li>JNDI Injection 페이로드 동작 원리와 우회 가능성을 분석했습니다.</li>
-                    <li>탐지 및 대응 관점의 보안 조치 방향을 정리했습니다.</li>
+                    <li><strong>Vulnerability Analysis:</strong> Log4j `PatternLayout`과 문자열 치환 로직을 분석했습니다.</li>
+                    <li><strong>PoC Development:</strong> 악성 LDAP 서버와 HTTP 헤더 기반 JNDI 페이로드 전송 시나리오를 구성했습니다.</li>
+                    <li><strong>Verification:</strong> 원격 코드가 대상 환경에서 실행되는 흐름을 컨테이너 환경에서 검증했습니다.</li>
                 </ul>
             </div>
+
+            <div class="rich-section">
+                <h4>주요 성과 및 인사이트</h4>
+                <ul class="rich-list">
+                    <li>취약한 Log4j 환경을 구성하고 JNDI 기반 RCE 공격 흐름을 검증했습니다.</li>
+                    <li>`${lower:j}ndi` 형태의 우회 페이로드를 통해 단순 문자열 차단의 한계를 확인했습니다.</li>
+                    <li>오픈소스 라이브러리 취약점 관리와 조기 패치 체계의 중요성을 정리했습니다.</li>
+                </ul>
+            </div>
+
             <div class="rich-actions" style="margin-top: 2rem; display: flex; gap: 10px; justify-content: center;">
-                <a href="https://github.com/dbwlsdnr95/CVE-2021-44228-log4shell" target="_blank" class="btn"><i class="fab fa-github"></i> Main Repository</a>
-                <a href="https://github.com/dbwlsdnr95/CVE-2021-44228-log4shell/blob/main/TESTING.md" target="_blank" class="btn btn-outline"><i class="fas fa-file-code"></i> Testing Guide</a>
+                <a href="https://github.com/dbwlsdnr95/CVE-2021-44228-log4shell" target="_blank" class="btn">
+                    <i class="fab fa-github"></i> Main Repository
+                </a>
+                <a href="https://github.com/dbwlsdnr95/CVE-2021-44228-log4shell/blob/main/TESTING.md" target="_blank" class="btn btn-outline">
+                    <i class="fas fa-file-code"></i> Testing Guide
+                </a>
             </div>
         </div>
     </div>
@@ -560,6 +656,7 @@
 </body>
 
 </html>
+
 
 
 
