@@ -258,6 +258,7 @@ code.block {
     border: 1px solid #30363d;
     overflow-x: auto;
     margin: 16px 0;
+    white-space: pre-wrap;
 }
 
 .center-text {
