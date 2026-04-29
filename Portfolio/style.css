@@ -434,6 +434,7 @@ code.block {
 
 .hero-text-container {
     flex: 1;
+    max-width: 900px;
 }
 
 .identity-title {
@@ -450,9 +451,9 @@ code.block {
 
 .identity-bio p {
     font-size: 1.05rem;
-    line-height: 1.65;
+    line-height: 1.75;
     color: var(--text-secondary);
-    margin-bottom: 0.65rem;
+    margin-bottom: 0;
     word-break: keep-all;
 }
 
