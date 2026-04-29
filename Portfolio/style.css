@@ -450,10 +450,14 @@ code.block {
 
 .identity-bio p {
     font-size: 1.05rem;
-    line-height: 1.8;
+    line-height: 1.65;
     color: var(--text-secondary);
-    margin-bottom: 1rem;
+    margin-bottom: 0.65rem;
     word-break: keep-all;
+}
+
+.identity-bio p:last-child {
+    margin-bottom: 0;
 }
 
 .identity-bio .highlight {
