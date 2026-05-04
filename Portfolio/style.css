@@ -391,50 +391,15 @@ code.block {
 .about-hero {
     display: flex;
     align-items: center;
-    gap: 3rem;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
     border-left: none;
     /* Removed old border */
     padding-left: 0;
 }
 
-.profile-photo-wrapper {
-    width: 150px;
-    height: 190px;
-    border-radius: 14px;
-    border: 2px solid var(--accent-green);
-    padding: 5px;
-    box-shadow: 0 0 15px rgba(0, 255, 65, 0.2);
-    flex-shrink: 0;
-    position: relative;
-    overflow: hidden;
-    background: #0d0d0d;
-}
-
-.profile-photo-placeholder {
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    background: #1a1a1a;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #444;
-    font-size: 3rem;
-}
-
-/* If user adds an actual img later */
-.profile-photo {
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    object-fit: cover;
-    object-position: center 28%;
-}
-
 .hero-text-container {
     flex: 1;
-    max-width: 900px;
+    max-width: 980px;
 }
 
 .identity-title {
